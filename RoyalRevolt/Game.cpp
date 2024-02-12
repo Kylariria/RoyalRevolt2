@@ -5,6 +5,7 @@ Game::Game()
 {
 	windowSize = Vector2f(SREEN_HEIGHT, SCREEN_WIDTH);
 	name = "Royal Revolt";
+
 }
 
 void Game::Launch()
@@ -40,12 +41,7 @@ void Game::UpdateEvent()
 void Game::UpdateWindow()
 {
 	window.clear();
-	
-	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
-	{
-		window.draw(*_entity->GetShape());
-	}
-
+	//window.Draw();
 	window.display();
 }
 

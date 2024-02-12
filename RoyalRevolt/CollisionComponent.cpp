@@ -19,7 +19,6 @@ bool CollisionComponent::CheckCollision(Entity* _currentEntity, const vector<Ent
 		{
 			//on recup le type de l'entity
 
-			const EntityType& _entityType = _entity->GetEntityData()->GetType();
 			EntityType _entityType = EntityType();
 
 			//on cherche si sont type est dans la liste
