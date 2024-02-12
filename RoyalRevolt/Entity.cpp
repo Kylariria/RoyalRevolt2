@@ -1,15 +1,14 @@
 #include "Entity.h"
-#include "Macro.h"
-#include "Component.h"
 #include "EntityManager.h"
-#include "TimerManager.h"
 #include "TextureManager.h"
+#include "TimerManager.h"
+#include "Component.h"
+#include "Macro.h"
 
 Entity::Entity(const EntityData& _data) : IManagable(S_ID(_data.name))
 {
 	Register();
 
-	components = vector<Component*>();
 	shape = new RectangleShape(_data.size);
 	shape->setPosition(_data.position);
 	TextureManager::GetInstance().Load(shape, _data.path);
@@ -25,7 +24,6 @@ Entity::~Entity()
 	}
 }
 
-
 void Entity::Register()
 {
 	EntityManager::GetInstance().Add(id, this);
@@ -33,9 +31,9 @@ void Entity::Register()
 
 void Entity::Update()
 {
-	const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
 	for (Component* _component : components)
 	{
+		const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
 		_component->Update(_deltaTime);
 	}
 }

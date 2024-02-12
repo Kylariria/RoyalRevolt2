@@ -18,7 +18,9 @@ bool CollisionComponent::CheckCollision(Entity* _currentEntity, const vector<Ent
 		if (_rect.intersects(shape->getGlobalBounds()))
 		{
 			//on recup le type de l'entity
+
 			const EntityType& _entityType = _entity->GetType();
+
 			//on cherche si sont type est dans la liste
 			for (CollisionReaction _reaction : _reactions)
 			{
