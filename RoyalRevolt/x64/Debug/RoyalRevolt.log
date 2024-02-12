@@ -1,0 +1,8 @@
+﻿  CollisionComponent.cpp
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\CollisionComponent.h(2,10): error C1083: Impossible d'ouvrir le fichier include : 'EntityType.h' : No such file or directory
+  (compiler le fichier source 'CollisionComponent.cpp')
+  
+  Player.cpp
+  TextureData.cpp
+  TimerManager.cpp
+  Génération de code en cours...
