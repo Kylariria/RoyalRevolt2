@@ -1,0 +1,15 @@
+#pragma once
+
+enum EntityType
+{
+    ENTITY_NONE,
+    ENTITY_TROOP,
+    ENTITY_BARBARE,
+    ENTITY_ARCHER,
+
+    ENTITY_BUILDING,
+    ENTITY_FARM,
+    ENTITY_TAVERN,
+    ENTITY_TRAP,
+    ENTITY_TOUR,
+};

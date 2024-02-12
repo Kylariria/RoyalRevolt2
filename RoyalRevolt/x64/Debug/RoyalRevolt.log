@@ -1,0 +1,31 @@
+﻿  Building.cpp
+  CameraData.cpp
+  CameraManager.cpp
+  CollisionComponent.cpp
+  Component.cpp
+  Entity.cpp
+C:\Users\damie\OneDrive\Documents\GitHub\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(22,45): error C2039: 'GetType' n'est pas membre de 'Entity'
+  C:\Users\damie\OneDrive\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Entity.h(31,7):
+  voir la déclaration de 'Entity'
+  
+C:\Users\damie\OneDrive\Documents\GitHub\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(22,34): error C2530: '_entityType' : les références doivent être initialisées
+  EntityManager.cpp
+  FontData.cpp
+  FontManager.cpp
+  Game.cpp
+  GameInstance.cpp
+  Gestion.cpp
+  InputManager.cpp
+  Main.cpp
+  Map.cpp
+  Player.cpp
+  TextureData.cpp
+  TextureManager.cpp
+  Timer.cpp
+  TimerManager.cpp
+  Génération de code en cours...
+  Compilation en cours...
+  TowerDefense.cpp
+  Troop.cpp
+  Village.cpp
+  Génération de code en cours...

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClCompile Include="Building.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClCompile Include="CameraData.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClCompile Include="CollisionComponent.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="FontData.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClCompile Include="Game.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClCompile Include="Gestion.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClCompile Include="Main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureData.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TowerDefense.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+    <ClCompile Include="Village.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Gestion.cpp">
+=======
+    <ClCompile Include="Troop.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Village.cpp">
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClInclude Include="Building.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClInclude Include="CameraData.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Fichiers sources</Filter>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    </ClInclude>
+    <ClInclude Include="CollisionComponent.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityType.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="FontData.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Fichiers sources</Filter>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInstance.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClInclude Include="Gestion.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClInclude Include="IManagable.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="IManager.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClInclude Include="InputManager.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClInclude Include="Macro.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+=======
+    <ClInclude Include="Player.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    <ClInclude Include="Singleton.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureData.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="TowerDefense.h">
+<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj.filters
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Village.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Gestion.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+=======
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Troop.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Village.h">
+      <Filter>Fichiers sources</Filter>
+>>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj.filters
+    </ClInclude>
+  </ItemGroup>
+</Project>
