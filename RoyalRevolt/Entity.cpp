@@ -1,27 +1,30 @@
 #include "Entity.h"
 #include "EntityManager.h"
 #include "TextureManager.h"
-#include "TimerManager.h"
-#include "Component.h"
 #include "Macro.h"
 
-Entity::Entity(const EntityData& _data) : IManagable(S_ID(_data.name))
+Entity::Entity(const string& _name, const EntityType& _type, const Vector2f& _position,
+	const string& _path, const int _tileAround)
+	: IManagable(_name)
 {
 	Register();
 
-	shape = new RectangleShape(_data.size);
-	shape->setPosition(_data.position);
-	TextureManager::GetInstance().Load(shape, _data.path);
+	type = _type;
+	shape = nullptr;
+	/*const Vector2f& _size = MapManager::GetInstance().GetCurrent()->GetCellSize();
+	shape = new RectangleShape(Vector2f(_size));*/
+	shape->setPosition(_position);
+	SetOriginAtMiddle(shape);//TODO
+	InitTexture(_path);
+	tileAround = _tileAround;
+	currentLap = 0;
+	collision = new CollisionComponent();
 }
 
 Entity::~Entity()
 {
 	delete shape;
-
-	for (Component* _component : components)
-	{
-		delete _component;
-	}
+	delete collision;
 }
 
 void Entity::Register()
@@ -29,11 +32,12 @@ void Entity::Register()
 	EntityManager::GetInstance().Add(id, this);
 }
 
+void Entity::InitTexture(const string& _path)
+{
+	TextureManager::GetInstance().Load(shape, _path);
+}
+
 void Entity::Update()
 {
-	for (Component* _component : components)
-	{
-		const float _deltaTime = TimerManager::GetInstance().GetDeltaTime();
-		_component->Update(_deltaTime);
-	}
+	currentLap++;
 }
