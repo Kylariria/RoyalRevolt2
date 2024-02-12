@@ -1,51 +1,68 @@
 #pragma once
-
 #include "IManagable.h"
-#include "CollisionComponent.h"
-#include "EntityType.h"
-
-#include <iostream>
 #include <SFML/Graphics.hpp>
+#include <string>
 
 using namespace std;
 using namespace sf;
 
-class EntityManager;
+class Component;
+
+struct EntityData
+{
+	string name;
+	Vector2f position;
+	Vector2f size;
+	string path;
+
+	EntityData(const string& _name, const Vector2f& _position, const Vector2f& _size,
+		const string& _path = "")
+	{
+		name = _name;
+		position = _position;
+		size = _size;
+		path = _path;
+	}
+};
 
 class Entity : public IManagable<string>
 {
-    EntityType type;
-    CollisionComponent* collision;
-
 protected:
-    Shape* shape;
-    int tileAround;
-    int currentLap;
+	vector<Component*> components;
+	Shape* shape;
 
 public:
-    EntityType GetType() const
-    {
-        return type;
-    }
-    Vector2f GetPosition() const
-    {
-        return shape->getPosition();
-    }
-    Shape* GetShape() const
-    {
-        return shape;
-    }
+
+	template <typename T>
+	T* GetComponent() const
+	{
+		for (Component* _currentComponent : components)
+		{
+			if (T* _component = dynamic_cast<T*>(_currentComponent))
+			{
+				return _component;
+			}
+		}
+
+		return nullptr;
+	}
+	Shape* GetShape() const
+	{
+		return shape;
+	}
+	Vector2f GetShapePosition() const
+	{
+		if (!shape) return Vector2f();
+		return shape->getPosition();
+	}
 
 public:
-    Entity(const string& _name, const EntityType& _type, const Vector2f& _position, const string& _path, const int _tileAround);
-    ~Entity();
+	Entity(const EntityData& _data);
+	~Entity();
 
 private:
-    virtual void Register() override;
-
-protected:
-    void InitTexture(const string& _path);
+	virtual void Register() override;
 
 public:
-    virtual void Update() = 0;
+	void Update();
 };

@@ -1,10 +1,13 @@
-﻿  Entity.cpp
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Entity.cpp(17,2): error C3861: 'SetOriginAtMiddle' : identificateur introuvable
+﻿  Building.cpp
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.h(7,13): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.h(7,50): error C2143: erreur de syntaxe : absence de ',' avant '&'
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(3,56): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(3,56): error C2143: erreur de syntaxe : absence de ',' avant '&'
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,18): error C2065: '_type' : identificateur non déclaré
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,25): error C2065: '_position' : identificateur non déclaré
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,36): error C2065: '_path' : identificateur non déclaré
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,43): error C2065: '_tileAround' : identificateur non déclaré
+  Entity.cpp
   EntityManager.cpp
-  FontData.cpp
-  FontManager.cpp
-  TextureData.cpp
-  TextureManager.cpp
-  Timer.cpp
   TimerManager.cpp
   Génération de code en cours...
