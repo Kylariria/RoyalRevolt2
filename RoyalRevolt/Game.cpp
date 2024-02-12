@@ -47,4 +47,5 @@ void Game::UpdateWindow()
 void Game::Stop()
 {
 	cout << "End of " << name << endl;
+	window.close();
 }
