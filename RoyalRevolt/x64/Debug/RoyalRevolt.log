@@ -1,13 +1,8 @@
 ﻿  Building.cpp
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.h(7,13): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.h(7,50): error C2143: erreur de syntaxe : absence de ',' avant '&'
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(3,56): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(3,56): error C2143: erreur de syntaxe : absence de ',' avant '&'
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,18): error C2065: '_type' : identificateur non déclaré
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,25): error C2065: '_position' : identificateur non déclaré
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,36): error C2065: '_path' : identificateur non déclaré
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,43): error C2065: '_tileAround' : identificateur non déclaré
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,10): error C2661: 'Entity::Entity' : aucune fonction surchargée ne nécessite 4 arguments
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,10): message : lors de la tentative de mise en correspondance de la liste des arguments '(const std::string, const sf::Vector2f, const sf::Vector2f, const std::string)'
   Entity.cpp
   EntityManager.cpp
   TimerManager.cpp
+  Troop.cpp
   Génération de code en cours...

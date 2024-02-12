@@ -4,7 +4,6 @@
 class Building : public Entity
 {
 public :
-    Building(const string _name, const EntityType& _type, const Vector2f& _position, const string& _path,
-        const int& _tileAround);
+    Building(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path, const int& _tileAround);
 };
 
