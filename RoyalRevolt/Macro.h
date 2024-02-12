@@ -17,3 +17,8 @@ static int Random(const int _max, const int _min = 0)
 {
 	return rand() % _max + _min;
 }
+
+static void SetOriginAtMiddle(Shape* _shape)
+{
+	_shape->setOrigin(_shape->getGlobalBounds().getSize()/2.0f);
+}
