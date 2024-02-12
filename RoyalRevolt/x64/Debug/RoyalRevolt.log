@@ -1,7 +1,1 @@
-﻿  Building.cpp
-  CollisionComponent.cpp
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(22,45): error C2039: 'GetType' n'est pas membre de 'Entity'
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Entity.h(38,7): message : voir la déclaration de 'Entity'
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(22,34): error C2530: '_entityType' : les références doivent être initialisées
-  Village.cpp
-  Génération de code en cours...
+﻿  RoyalRevolt.vcxproj -> C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\RoyalRevolt.exe

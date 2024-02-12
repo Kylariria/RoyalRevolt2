@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include <string>
+#include "EntityManager.h"
 
 using namespace std;
 using namespace sf;
@@ -16,6 +17,8 @@ class Game
 
 public:
 	Game();
+
+
 
 public:
 	void Launch();
