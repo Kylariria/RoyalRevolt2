@@ -39,47 +39,20 @@
     <ClCompile Include="FontManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClCompile Include="Building.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Troop.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="EntityManager.cpp">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Building.cpp">
+    <ClCompile Include="Entity.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="IManagable.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="IManager.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureData.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureManager.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="TimerManager.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="FontData.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="FontManager.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -91,6 +64,42 @@
     </ClInclude>
     <ClInclude Include="Building.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Troop.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="FontData.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="IManagable.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="IManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureData.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TimerManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Macro.h">
+      <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

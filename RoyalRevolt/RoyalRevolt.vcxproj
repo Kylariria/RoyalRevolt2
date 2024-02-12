@@ -109,7 +109,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\SFML-2.6.1\include</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\SFML-2.6.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -144,6 +144,7 @@
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="Troop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
@@ -155,11 +156,13 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="IManagable.h" />
     <ClInclude Include="IManager.h" />
+    <ClInclude Include="Macro.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="Troop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
