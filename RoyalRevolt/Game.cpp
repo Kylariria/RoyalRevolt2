@@ -40,11 +40,17 @@ void Game::UpdateEvent()
 void Game::UpdateWindow()
 {
 	window.clear();
-	//window.draw();
+	
+	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
+	{
+		window.draw(*_entity->GetShape());
+	}
+
 	window.display();
 }
 
 void Game::Stop()
 {
 	cout << "End of " << name << endl;
+	window.close();
 }

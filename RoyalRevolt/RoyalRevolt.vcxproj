@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Archer.cpp" />
+    <ClCompile Include="Barbarian.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="CameraData.cpp" />
     <ClCompile Include="CameraManager.cpp" />
@@ -48,6 +50,8 @@
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Archer.h" />
+    <ClInclude Include="Barbarian.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="CameraData.h" />
     <ClInclude Include="CameraManager.h" />
