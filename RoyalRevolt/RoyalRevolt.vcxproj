@@ -26,6 +26,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="Farm.cpp" />
     <ClCompile Include="FontData.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -35,11 +36,14 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Tavern.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="Tour.cpp" />
     <ClCompile Include="TowerDefense.cpp" />
+    <ClCompile Include="Trap.cpp" />
     <ClCompile Include="Troop.cpp" />
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
@@ -52,6 +56,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="EntityType.h" />
+    <ClInclude Include="Farm.h" />
     <ClInclude Include="FontData.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />
@@ -64,11 +69,14 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Tavern.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="Tour.h" />
     <ClInclude Include="TowerDefense.h" />
+    <ClInclude Include="Trap.h" />
     <ClInclude Include="Troop.h" />
     <ClInclude Include="Village.h" />
   </ItemGroup>
