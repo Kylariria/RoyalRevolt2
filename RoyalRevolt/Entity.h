@@ -79,5 +79,5 @@ private:
 	virtual void Register() override;
 
 public:
-	void Update();
+	virtual void Update()=0;
 };

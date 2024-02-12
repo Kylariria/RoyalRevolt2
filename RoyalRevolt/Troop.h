@@ -1,7 +1,7 @@
 #pragma once
-#include "Entity.h"
+#include "MovingEntity.h"
 
-class Troop : public Entity
+class Troop : public MovingEntity
 {
 
 public:
