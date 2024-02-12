@@ -19,15 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj
-    <ClCompile Include="CameraData.cpp" />
-    <ClCompile Include="CameraManager.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameInstance.cpp" />
-    <ClCompile Include="Gestion.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Map.cpp" />
-=======
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="CameraData.cpp" />
     <ClCompile Include="CameraManager.cpp" />
@@ -39,24 +30,17 @@
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameInstance.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Gestion.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
->>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
     <ClCompile Include="TowerDefense.cpp" />
-<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj
-    <ClCompile Include="Village.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CameraData.h" />
-    <ClInclude Include="CameraManager.h" />
-=======
     <ClCompile Include="Troop.cpp" />
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
@@ -71,37 +55,29 @@
     <ClInclude Include="EntityType.h" />
     <ClInclude Include="FontData.h" />
     <ClInclude Include="FontManager.h" />
->>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameInstance.h" />
+    <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Gestion.h" />
     <ClInclude Include="IManagable.h" />
     <ClInclude Include="IManager.h" />
-<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj
-    <ClInclude Include="Macro.h" />
-    <ClInclude Include="Map.h" />
-=======
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
->>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
     <ClInclude Include="TowerDefense.h" />
-<<<<<<< HEAD:RoyalRevolt2/RoyalRevolt2.vcxproj
-=======
     <ClInclude Include="Troop.h" />
->>>>>>> main:RoyalRevolt/RoyalRevolt.vcxproj
     <ClInclude Include="Village.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9eb5010f-0bea-4722-b0e3-1ab9cd64982f}</ProjectGuid>
+    <ProjectGuid>{c84d736e-025b-46fd-b5af-da85cfd869e5}</ProjectGuid>
     <RootNamespace>RoyalRevolt</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -190,7 +166,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\SFML-2.6.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -208,8 +184,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\SFML-2.6.1\include</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\SFML-2.6.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
