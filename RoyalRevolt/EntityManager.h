@@ -15,10 +15,10 @@ public:
 	{
 		vector<Drawable*> _drawables;
 
-		//for (Entity* _entity : GetAllValues())
-		//{
-		//	_drawables.push_back(_entity->GetShape());
-		//}
+		for (Entity* _entity : GetAllValues())
+		{
+			_drawables.push_back(_entity->GetShape());
+		}
 
 		return _drawables;
 	}
