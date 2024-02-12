@@ -6,7 +6,7 @@
 #include "FontManager.h"
 #include "InputManager.h"
 
-#define FONT_PATH ""
+#define FONT_PATH "Assets/Font/Revolt.otf"
 
 using namespace std;
 using namespace sf;
@@ -85,12 +85,15 @@ struct Button : public BasicElement
 		activateCallback = false;
 	}
 	Button(Shape* _shape, const vector<string> _paths, const Vector2f& _position,
-		const string& _text,function<void()> _callback, const bool _isDraw = true)
+		const string& _text, function<void()> _callback, Vector2f _textPosition = Vector2f(), const bool _isDraw = true)
 		: BasicElement(_shape,_paths,_position,_isDraw)
 	{
 		callback = _callback;
 		text = Text();
 		activateCallback = false;
+
+		InitText(_text, _textPosition);
+		SetOrigin();
 	}
 	template <class Class, typename RType = void, typename... Args>
 	Button(Shape* _shape, const vector<string> _paths, const Vector2f& _position,
@@ -105,6 +108,7 @@ struct Button : public BasicElement
 		activateCallback = false;
 
 		InitText(_text, _textPosition);
+		SetOrigin();
 	}
 	
 	void InitText(const string& _text,Vector2f _textPosition)
@@ -114,10 +118,11 @@ struct Button : public BasicElement
 		
 		if (_textPosition == Vector2f())
 		{
-			const Vector2f& _size = shape->getGlobalBounds().getSize() / 2.0f;
-			_textPosition = _size;
+			const Vector2f& _position = shape->getGlobalBounds().getPosition();
+			_textPosition = _position;
 		}
 		text.setPosition(_textPosition);
+		text.setOrigin(text.getGlobalBounds().getSize() / 2.0f);
 	}
 
 	virtual void Update(Event _event) override
@@ -177,13 +182,14 @@ struct SpecialText : public BasicElement
 		FontManager::GetInstance().Load(&text, FONT_PATH);
 
 		InitSpecialText();
+		SetOrigin();
 	}
 
 	void InitSpecialText()
 	{
 		shape->setFillColor(Color(0, 0, 0, 100));
-		const Vector2f& _origin = shape->getGlobalBounds().getSize() / 2.0f;
-		text.setOrigin(_origin);
+		text.setOrigin(text.getGlobalBounds().getSize() / 2.0f);
+		text.setPosition(shape->getGlobalBounds().getPosition());
 	}
 
 	void Update(Event _event = Event())
