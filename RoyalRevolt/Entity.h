@@ -1,16 +1,12 @@
 #pragma once
-
 #include "IManagable.h"
-#include "EntityType.h"
-#include "IManagable.h"
-
-#include <iostream>
 #include <SFML/Graphics.hpp>
-
-class Component;
+#include <string>
 
 using namespace std;
 using namespace sf;
+
+class Component;
 
 struct EntityData
 {
@@ -19,7 +15,8 @@ struct EntityData
 	Vector2f size;
 	string path;
 
-	EntityData(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path = "")
+	EntityData(const string& _name, const Vector2f& _position, const Vector2f& _size,
+		const string& _path = "")
 	{
 		name = _name;
 		position = _position;
@@ -31,24 +28,24 @@ struct EntityData
 class Entity : public IManagable<string>
 {
 protected:
-	Shape* shape;
 	vector<Component*> components;
+	Shape* shape;
 
 public:
-	template<typename T>
-	T* GetComponent()const
+
+	template <typename T>
+	T* GetComponent() const
 	{
-		for (Component* _component : components)
+		for (Component* _currentComponent : components)
 		{
-			if (T* _components = dynamic_cast<T*>(_component))
+			if (T* _component = dynamic_cast<T*>(_currentComponent))
 			{
-				return _components;
+				return _component;
 			}
 		}
 
 		return nullptr;
 	}
-
 	Shape* GetShape() const
 	{
 		return shape;

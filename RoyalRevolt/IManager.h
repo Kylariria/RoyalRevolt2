@@ -78,6 +78,17 @@ public:
 		if (!Exist(_key)) return nullptr;
 		return allValues[_key];
 	}
+	vector<Value*> GetAllValues() const
+	{
+		vector<Value*> _values;
+
+		for (const auto& _pair : allValues)
+		{
+			_values.push_back(_pair.second);
+		}
+
+		return _values;
+	}
 	map<Key, Value*> GetAll() const
 	{
 		return allValues;
