@@ -1,8 +1,7 @@
 ﻿  Building.cpp
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,10): error C2661: 'Entity::Entity' : aucune fonction surchargée ne nécessite 4 arguments
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Building.cpp(4,10): message : lors de la tentative de mise en correspondance de la liste des arguments '(const std::string, const sf::Vector2f, const sf::Vector2f, const std::string)'
-  Entity.cpp
-  EntityManager.cpp
-  TimerManager.cpp
-  Troop.cpp
+  CollisionComponent.cpp
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(22,45): error C2039: 'GetType' n'est pas membre de 'Entity'
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\Entity.h(38,7): message : voir la déclaration de 'Entity'
+D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(22,34): error C2530: '_entityType' : les références doivent être initialisées
+  Village.cpp
   Génération de code en cours...
