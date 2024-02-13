@@ -110,6 +110,7 @@
       <Filter>.cpp</Filter>
     </ClCompile>
     <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="Hero.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -233,6 +234,7 @@
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="FileManager.h" />
+    <ClInclude Include="Hero.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include=".h">
