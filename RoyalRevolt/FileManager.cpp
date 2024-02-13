@@ -18,7 +18,7 @@ vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
 	vector<Entity*> allEntities;
 
 	ifstream _stream(_path);
-	char _sign[] = { '#', 'R', 'T'};
+	char _sign[] = { '0', 'R', 'T'};
     if (!_stream)
     {
         cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
@@ -35,8 +35,8 @@ vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
         {
             switch (_line[_index])
             {
-            case '#':
-                CreateAndAddEntity<Path>("Path",Vector2f(_posX, _posY), PATH, Vector2f(50.0f, 50.0f));
+            case ' ':
+                CreateAndAddEntity<Path>("Path",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
                 break;
             default:
                 break;
