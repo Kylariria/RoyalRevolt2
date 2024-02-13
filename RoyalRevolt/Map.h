@@ -35,6 +35,20 @@ public:
 	{
 		return cellSize;
 	}
+	vector<Drawable*> GetDrawables()
+	{
+		vector<Drawable*> _drawables;
+
+		for (vector<Cell*> _cells : cells)
+		{
+			for (Cell* _cell : _cells)
+			{
+				_drawables.push_back(_cell->cellShape);
+			}
+		}
+
+		return _drawables;
+	}
 
 public:
 	Map(const string& _name,const Vector2f& _mapSize);

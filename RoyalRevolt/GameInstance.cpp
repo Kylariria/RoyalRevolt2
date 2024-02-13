@@ -15,7 +15,7 @@ GameInstance::~GameInstance()
 
 void GameInstance::LaunchTD()
 {
-	for (Map* _map : GetAllValues())
+	for (Map* _map : mapManager.GetAllValues())
 	{
 		if (TowerDefense* _td = dynamic_cast<TowerDefense*>(_map))
 		{
@@ -26,22 +26,28 @@ void GameInstance::LaunchTD()
 
 void GameInstance::LaunchVillage()
 {
-	for (Map* _map : GetAllValues())
+	bool _hasLaunch = false;
+	for (Map* _map : mapManager.GetAllValues())
 	{
 		if (Village* _village = dynamic_cast<Village*>(_map))
 		{
+			_hasLaunch = true;
 			_village->Launch();
 		}
 	}
-} 
-
-void GameInstance::LaunchGestion()
-{
-	/*for (Map* _map : GetAllValues())
+	if (!_hasLaunch)
 	{
-		if (MapCreator* _gestion = dynamic_cast<MapCreator*>(_map))
+		Village* _village = new Village("Village",Vector2f(10.0f,10.0f));
+		_village->Launch();
+	}
+}
+void GameInstance::LaunchMapManger()
+{
+	/*for (Map* _map : mapManager.GetAllValues())
+	{
+		if (MapCreator* _mapCreator = dynamic_cast<MapCreator*>(_map))
 		{
-			_gestion->Launch();
+			_mapCreator->Launch();
 		}
 	}*/
 }

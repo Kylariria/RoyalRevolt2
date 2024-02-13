@@ -2,6 +2,7 @@
 #include <iostream>
 #include "InputManager.h"
 #include "TowerDefense.h"
+#include "GameInstance.h"
 #include "Macro.h"
 
 Game::Game()
@@ -13,12 +14,11 @@ Game::Game()
 
 void Game::Launch()
 {
-	TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
-	_yeepi.Launch();
+	GameInstance::GetInstance().LaunchVillage();
 
-	Start();
+	//Start();
 
-	Update();
+	//Update();
 }
 
 void Game::Start()
