@@ -3,7 +3,7 @@
 
 MovingEntity::MovingEntity(const string& _name, const EntityType& _type, const Vector2f& _position,
 							const Vector2f& _size, const string& _path, const int _tileAround, 
-							const const int _speed, const int _cooldown)
+							const int _speed, const int _cooldown)
 	                  : Entity(EntityData(_name, _type, _position, _size))
 {
 

@@ -35,12 +35,16 @@
     <ClCompile Include="GameInstance.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Gestion.cpp" />
+    <ClCompile Include="Grass.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="MovingEntity.cpp" />
+    <ClCompile Include="Path.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Removable.cpp" />
+    <ClCompile Include="Rock.cpp" />
     <ClCompile Include="Tavern.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -49,6 +53,7 @@
     <ClCompile Include="Tour.cpp" />
     <ClCompile Include="TowerDefense.cpp" />
     <ClCompile Include="Trap.cpp" />
+    <ClCompile Include="Tree.cpp" />
     <ClCompile Include="Troop.cpp" />
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
@@ -70,6 +75,7 @@
     <ClInclude Include="GameInstance.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Gestion.h" />
+    <ClInclude Include="Grass.h" />
     <ClInclude Include="IManagable.h" />
     <ClInclude Include="IManager.h" />
     <ClInclude Include="InputManager.h" />
@@ -77,7 +83,10 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="MovingEntity.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Removable.h" />
+    <ClInclude Include="Rock.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Tavern.h" />
     <ClInclude Include="TextureData.h" />
@@ -87,6 +96,7 @@
     <ClInclude Include="Tour.h" />
     <ClInclude Include="TowerDefense.h" />
     <ClInclude Include="Trap.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="Troop.h" />
     <ClInclude Include="Village.h" />
   </ItemGroup>
