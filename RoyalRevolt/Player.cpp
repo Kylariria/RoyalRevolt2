@@ -1,8 +1,12 @@
 #include "Player.h"
 #include "Hero.h"
+#include "Map.h"
+
+#define PATH_HERO "Hero.png"
 
 Player::Player()
 {
+	hero = new Hero("Hero", ENTITY_PLAYER, Vector2f(), Map::GetCellSize(), PATH_HERO);
 	Init();
 }
 
@@ -17,14 +21,8 @@ void Player::Actions()
 	// Si le player est dans TD :
 	// 
 	//
-	// On récup la position de la souris
-	const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
-
-
-	// La shape se déplace à la position de la souris
-	//Hero _hero;
-	//_hero.GetShape().move(_mousePosition.x, _mousePosition.y);
-
+	hero->GetMovementComponent()->Move();
+	cout << "bite" << endl;
 	//// si HERO rencontre obstacle >> STOP
 	//if (_hero)
 	//{

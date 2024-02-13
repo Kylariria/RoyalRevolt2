@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <functional>
 #include "InputManager.h"
+#include "Hero.h"
 
 using namespace sf;
 using namespace std;
@@ -21,6 +22,7 @@ struct RessourcesData
 class Player
 {
 	RessourcesData data;
+	Hero* hero;
 public:
 	Player();
 

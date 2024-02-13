@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "CollisionComponent.h"
 
 class MovingEntity;
 
@@ -14,6 +15,7 @@ class MovementComponent
 	int currentCooldown;
 	Vector2f* destination;
 	Shape* shape;
+	CollisionComponent* collision;
 
 public:
 	void SetCanMove(const bool _status)

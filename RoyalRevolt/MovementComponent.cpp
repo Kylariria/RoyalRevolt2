@@ -1,6 +1,13 @@
 #include "MovementComponent.h"
 #include "MovingEntity.h"
+#include "InputManager.h"
+#include "CollisionComponent.h"
 #include "Macro.h"
+#include "EntityManager.h"
+
+#include <vector>
+
+using namespace std;
 
 MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const int _speed, const int _cooldown)
 {
@@ -11,12 +18,26 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 	currentCooldown = 0;
 	destination = nullptr;
 	shape = _shape;
+	collision = new CollisionComponent();
 }
 
 void MovementComponent::Move()
 {
 	if (!canMove || !destination) return;
 
+	// On récup la position de la souris
+	const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
+
+	// La shape se déplace à la position de la souris
+	shape->move(_mousePosition);
+
+	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
+	//si HERO rencontre obstacle >> STOP
+
+	CollisionReaction _reaction = CollisionReaction(ENTITY_GRASS, [&](Shape*) { /*TODO*/; });
+	vector<CollisionReaction> _reactions;
+	_reactions.push_back(_reaction);
+	collision->CheckCollision(owner, _allEntities, _reactions);
 
 
 	/*if (currentCooldown < cooldown)

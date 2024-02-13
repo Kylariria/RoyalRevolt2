@@ -29,5 +29,6 @@ class CollisionComponent
 	Shape* currentShape;
 
 public:
-	bool CheckCollision(Entity* _currentEntity, const vector<Entity*>& _allEntities, const vector<CollisionReaction>& _reactions);
+	bool CheckCollision(Entity* _currentEntity, const vector<Entity*>& _allEntities,
+		const vector<CollisionReaction>& _reactions);
 };

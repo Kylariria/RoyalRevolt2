@@ -8,6 +8,7 @@ Game::Game()
 {
 	windowSize = Vector2f(SCREEN_WIDTH,SCREEN_HEIGHT);
 	name = "Royal Revolt";
+	player = new Player();
 }
 
 void Game::Launch()
@@ -41,7 +42,7 @@ void Game::UpdateEvent()
 	{
 		if (_event.type == Event::Closed) Stop();
 	}
-	InputManager::GetInstance().Update(window,_event);
+	UpdateInputs(_event);
 	UpdateWindow();
 }
 
@@ -51,6 +52,11 @@ void Game::UpdateWindow()
 
 	//window.draw();
 	window.display();
+}
+
+void Game::UpdateInputs(const Event& _event)
+{
+	InputManager::GetInstance().Update(window, _event);
 }
 
 void Game::Stop()
