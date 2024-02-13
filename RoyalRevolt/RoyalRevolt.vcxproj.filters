@@ -46,9 +46,6 @@
     <ClCompile Include="GameWindow.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Gestion.cpp">
-      <Filter>.cpp</Filter>
-    </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
@@ -115,6 +112,9 @@
     <ClCompile Include="FileManager.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -163,9 +163,6 @@
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="GameWindow.h">
-      <Filter>.h</Filter>
-    </ClInclude>
-    <ClInclude Include="Gestion.h">
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="IManagable.h">
@@ -241,6 +238,9 @@
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="FileManager.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
       <Filter>.h</Filter>
     </ClInclude>
   </ItemGroup>
