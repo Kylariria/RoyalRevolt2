@@ -47,6 +47,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Removable.cpp" />
     <ClCompile Include="Rock.cpp" />
+    <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="Tavern.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -92,6 +93,7 @@
     <ClInclude Include="Removable.h" />
     <ClInclude Include="Rock.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Spawner.h" />
     <ClInclude Include="Tavern.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />

@@ -4,7 +4,6 @@
 #include "TowerDefense.h"
 #include "GameInstance.h"
 #include "Macro.h"
-#include "EntityManager.h"
 
 Game::Game()
 {
@@ -16,10 +15,12 @@ Game::Game()
 void Game::Launch()
 {
 	GameInstance::GetInstance().LaunchVillage();
+{
+	//TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
+	//_yeepi.Launch();
 
-	//Start();
-
-	//Update();
+	Start();
+	Update();
 }
 
 void Game::Start()
@@ -32,6 +33,7 @@ void Game::Update()
 	while (window.isOpen())
 	{
 		UpdateEvent();
+		EntityManager::GetInstance().Update();
 	}
 }
 
@@ -49,7 +51,7 @@ void Game::UpdateEvent()
 
 void Game::UpdateWindow()
 {
-	window.clear(Color::Green);
+	window.clear(Color::Black);
 	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
 	{
 		window.draw(*_entity->GetShape());
