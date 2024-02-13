@@ -42,6 +42,7 @@ struct ActionData
 		//callback = bind(_callback, _owner, _args);
 	}
 
+
 	bool operator !()const
 	{
 		return name == "Unknown";

@@ -1,45 +1,99 @@
 #include "Village.h"
 #include "GameWindow.h"
 #include "InputManager.h"
-#include "EntityManager.h"
+#include "GameInstance.h"
+#include "TimerManager.h"
 
-Village::Village(const string& _name,const Vector2f& _mapSize) : Map(_name, _mapSize)
+#define GOLD_PATH "UI/Gold_Texture.png"
+#define DIAMOND_PATH "UI/Diamond_Texture.png"
+#define BREAD_PATH "UI/Bread_Texture.png"
+
+#define BATTLE_BUTTON_PATH "UI/Battle_Button.png"
+#define UPGRADE_BUTTON_PATH "UI/Upgrade_Button.png"
+
+#define FONT_TEXTURE_PATH "UI/Text_Background.png"
+
+Village::Village(const string& _name) : Map(_name, Vector2f(4.0f,4.0f))
 {
-
+	activeElements = vector<BasicElement*>();
+	elementsInformations = ElementsInformations();
 }
 
 void Village::Launch()
 {
+	InitUI();
 	Update();
+}
+
+void Village::InitUI()
+{
+	function<int()> _goldDisplayCallback = [&]() {return PLAYER->GetMoney(); };
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), GOLD_PATH, elementsInformations.goldIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.goldTextPosition, to_string(PLAYER->GetMoney()), _goldDisplayCallback));
+
+	function<int()> _diamondDisplayCallback = [&]() {return PLAYER->GetDiamond(); };
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), DIAMOND_PATH, elementsInformations.diamondIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.diamondTextPosition, to_string(PLAYER->GetMoney()), _diamondDisplayCallback));
+
+	function<int()> _breadDisplayCallback = [&]() {return PLAYER->GetBread(); };
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), BREAD_PATH, elementsInformations.breadIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.breadTextPosition, to_string(PLAYER->GetMoney()), _breadDisplayCallback));
+
+
+	function<void()> _battleCallback = [&]() {cout << "Battle !"; };
+	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !"; };
+
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), BATTLE_BUTTON_PATH, elementsInformations.battleButtonPosition,
+		"", _battleCallback));
+
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), UPGRADE_BUTTON_PATH, elementsInformations.upgradeButtonPosition,
+		"", _upgradeCallback));
 }
 
 void Village::Update()
 {	
 	while (WINDOW.isOpen())
 	{
-		Event _event;
-		while (WINDOW.pollEvent(_event))
-		{
-			if (_event.type == Event::Closed) WINDOW.close();
-
-			InputManager::GetInstance().Update(WINDOW, _event);
-		}
+		UpdateEvent();
 		Display();
+	}
+}
+
+void Village::UpdateEvent()
+{
+	Event _event;
+	while (WINDOW.pollEvent(_event))
+	{
+		if (_event.type == Event::Closed) WINDOW.close();
+
+		InputManager::GetInstance().Update(WINDOW, _event);
+		UpdateActiveElements(_event);
+	}
+	TimerManager::GetInstance().Update();
+	UpdatePassiveElements();
+}
+
+void Village::UpdateActiveElements(Event _event)
+{
+	for (BasicElement* _element : activeElements)
+	{
+		if (_element->GetIsDraw()) _element->Update(_event);
+	}
+}
+
+void Village::UpdatePassiveElements()
+{
+	for (BasicElement* _element : passiveElements)
+	{
+		if (_element->GetIsDraw()) _element->Update(Event());
 	}
 }
 
 void Village::Display()
 {
-	WINDOW.clear(Color::Black);
+	WINDOW.clear(Color::Blue);
 
-	vector<Drawable*> _drawables;
-	vector<Drawable*> _cellDrawables = GetDrawables();
-	vector<Drawable*> _entityDrawables = EntityManager::GetInstance().GetDrawables();
-
-	_drawables.insert(_drawables.begin(), _entityDrawables.begin(), _entityDrawables.end());
-	_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
-
-	for (Drawable* _drawable : _drawables)
+	for (Drawable* _drawable : GetDrawables())
 	{
 		WINDOW.draw(*_drawable);
 	}
