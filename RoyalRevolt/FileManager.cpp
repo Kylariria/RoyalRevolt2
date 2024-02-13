@@ -13,8 +13,6 @@
 //#include "Casern.h"
 //#include "Castle.h"
 
-#define PATH ""
-
 
 //# = Grass
 //' ' = Path  ok
@@ -25,12 +23,16 @@
 //C = Casern
 //E = Castle
 
+
+
+
+
 vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
 {
-	vector<Entity*> allEntities;
+	vector<Entity*> _allEntities;
 
 	ifstream _stream(_path);
-	char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
+	//char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
     if (!_stream)
     {
         cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
@@ -53,34 +55,33 @@ vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
 
             switch (_line[_index])
             {
-            case ' ':
-                //CreateAndAddEntity<Grass>(allEntities,"Grass",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+            case '#':
+                CreateAndAddEntity<Grass>(_allEntities,"Grass",Vector2f(_posX, _posY)* _size.x, "Grass.png", _size);
                 break;
-            case '0':
-                CreateAndAddEntity<Path>(allEntities,"Path",Vector2f(_posX, _posY)* _size.x, PATH, _size);
+            case ' ':
+                CreateAndAddEntity<Path>(_allEntities,"Path",Vector2f(_posX, _posY)* _size.x, "Path.png", _size);
                 break;
             case 'F':
-                //CreateAndAddEntity<Fence>(allEntities,"Fence",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+                //CreateAndAddEntity<Fence>(_allEntities,"Fence",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
                 break;
             case 'T':
-                CreateAndAddEntity<Tree>(allEntities,"Tree",Vector2f(_posX, _posY)* _size.x, PATH, _size);
+                CreateAndAddEntity<Tree>(_allEntities,"Tree",Vector2f(_posX, _posY)* _size.x, "Tree.png", _size);
                 break;
             case 'R':
-                CreateAndAddEntity<Rock>(allEntities,"Rock",Vector2f(_posX, _posY)* _size.x, PATH, _size);
+                CreateAndAddEntity<Rock>(_allEntities,"Rock",Vector2f(_posX, _posY)* _size.x, "Rock.png", _size);
                 break;
             case 'P':
-                CreateAndAddEntity<Hero>(allEntities,"Hero",Vector2f(_posX, _posY)* _size.x, PATH, _size, ENTITY_HERO);
+                CreateAndAddEntity<Hero>(_allEntities,"Hero",Vector2f(_posX, _posY)* _size.x, "Hero.png", _size, ENTITY_HERO);
                 break;
             case 'C':
-                //CreateAndAddEntity<Casern>(allEntities,"Casern",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+                //CreateAndAddEntity<Casern>(_allEntities,"Casern",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
                 break;
             case 'E':
-                //CreateAndAddEntity<Castle>(allEntities,"Castle",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+                //CreateAndAddEntity<Castle>(_allEntities,"Castle",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
                 break;
             default:
                 break;
             }
-            allEntities.back()->GetShape()->setPosition(_posX, _posY);
             _posX += 1;
         }
         _posX = 0;
@@ -93,7 +94,7 @@ vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
 
 
 
-    return vector<Entity*>();
+    return _allEntities;
 
 }
 

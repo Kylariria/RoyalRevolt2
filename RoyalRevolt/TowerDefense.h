@@ -5,6 +5,11 @@
 class TowerDefense : public Map
 {
 
+	vector<string> allLevel;
+	vector<Entity*> map;
+
+
+
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize);
 
