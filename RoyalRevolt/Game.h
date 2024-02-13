@@ -6,9 +6,6 @@
 using namespace std;
 using namespace sf;
 
-#define SCREEN_WIDTH 1080
-#define SREEN_HEIGHT 1920
-
 class Game
 {
 	RenderWindow window;

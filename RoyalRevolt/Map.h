@@ -2,14 +2,45 @@
 #include <SFML/Graphics.hpp>
 #include "IManagable.h"
 #include "Macro.h"
+#include "Entity.h"
+#include <vector>
 
 using namespace sf;
+using namespace std;
+
+struct MapData
+{
+	Vector2f cellSize;
+	Vector2f cellCount;
+};
+
+struct Cell
+{
+	Shape* cellShape;
+	Entity* entityOnCell;
+	bool isRoad;
+
+	Cell(const Vector2f& _cellSize)
+	{
+		cellShape = new RectangleShape(_cellSize);
+		entityOnCell = nullptr;
+		isRoad = false;
+	}
+};
 
 class Map : public IManagable<string>
 {
+	MapData data;
+
+protected:
+	vector<vector<Cell*>> cells;
 
 public:
-	Map(const string& _name);
+	Map(const string& _name,const Vector2f& _mapSize);
+
+public:
+	void Init();
+	virtual void Register() override;
 
 };
 

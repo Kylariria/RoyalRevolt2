@@ -5,7 +5,7 @@ class MapCreator: public Map
 {
 
 public:
-	MapCreator(const string& _name);
+	MapCreator(const string& _name,const Vector2f& _mapSize);
 
 public:
 	void Launch();

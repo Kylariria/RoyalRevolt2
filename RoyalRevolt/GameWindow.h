@@ -6,8 +6,11 @@
 using namespace std;
 using namespace sf;
 
-class GameWindow : Singleton<GameWindow>
+#define WINDOW GameWindow::GetInstance().window
+
+class GameWindow : public Singleton<GameWindow>
 {
+public:
 	RenderWindow window;
 	Vector2f windowSize;
 	string name;

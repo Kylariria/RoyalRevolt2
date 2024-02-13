@@ -1,17 +1,22 @@
 #include "Game.h"
 #include <iostream>
 #include "InputManager.h"
+#include "TowerDefense.h"
+#include "Macro.h"
 
 Game::Game()
 {
-	windowSize = Vector2f(SREEN_HEIGHT, SCREEN_WIDTH);
+	windowSize = Vector2f(SCREEN_WIDTH,SCREEN_HEIGHT);
 	name = "Royal Revolt";
 }
 
 void Game::Launch()
 {
+	TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
+	_yeepi.Launch();
+
 	Start();
-	
+
 	InitTest();
 
 	Update();
