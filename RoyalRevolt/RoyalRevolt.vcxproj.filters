@@ -112,6 +112,9 @@
     <ClCompile Include="Tree.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -235,6 +238,9 @@
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="Tree.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
       <Filter>.h</Filter>
     </ClInclude>
   </ItemGroup>

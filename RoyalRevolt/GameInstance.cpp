@@ -1,11 +1,16 @@
 #include "GameInstance.h"
 #include "TowerDefense.h"
-#include "Gestion.h"
+#include "MapCreator.h"
 #include "Village.h"
 
 GameInstance::GameInstance()
 {
 	player = new Player();
+}
+
+GameInstance::~GameInstance()
+{
+	delete player;
 }
 
 void GameInstance::LaunchTD()
@@ -34,7 +39,7 @@ void GameInstance::LaunchGestion()
 {
 	for (Map* _map : GetAllValues())
 	{
-		if (Gestion* _gestion = dynamic_cast<Gestion*>(_map))
+		if (MapCreator* _gestion = dynamic_cast<MapCreator*>(_map))
 		{
 			_gestion->Launch();
 		}

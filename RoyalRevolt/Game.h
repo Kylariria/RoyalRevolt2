@@ -1,13 +1,10 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include <string>
-#include "EntityManager.h"
+#include "Interface.h"
 
 using namespace std;
 using namespace sf;
-
-#define SCREEN_WIDTH 1080
-#define SREEN_HEIGHT 1920
 
 class Game
 {
@@ -18,8 +15,6 @@ class Game
 public:
 	Game();
 
-
-
 public:
 	void Launch();
 
@@ -29,6 +24,7 @@ private:
 	void UpdateEvent();
 	void UpdateWindow();
 	void Stop();
+
 
 };
 
