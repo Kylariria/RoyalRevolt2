@@ -1,9 +1,2 @@
-﻿  Trap.cpp
-FontData.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
-FontManager.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
-Game.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
-Main.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
-TextureData.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
-TextureManager.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
-Timer.obj : warning LNK4204: '' n'a pas d'informations de débogage pour référencer le module ; édition de liens des objets comme s'il n'y avait aucune information de débogage
+﻿  Main.cpp
   RoyalRevolt.vcxproj -> D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\x64\Debug\RoyalRevolt.exe

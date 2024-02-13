@@ -20,7 +20,8 @@ struct EntityData
 	Vector2f size;
 	string path;
 
-	EntityData(const string& _name, const EntityType& _type, const Vector2f& _position, const Vector2f& _size, const string& _path = "")
+	EntityData(const string& _name, const EntityType& _type, const Vector2f& _position,
+		const Vector2f& _size, const string& _path = "")
 	{
 		name = _name;
 		type = _type;
