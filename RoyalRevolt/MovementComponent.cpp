@@ -32,9 +32,9 @@ void MovementComponent::Move()
 	shape->move(_mousePosition);
 
 	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
-	//si HERO rencontre obstacle >> STOP
 
-	CollisionReaction _reaction = CollisionReaction(ENTITY_GRASS, [&](Shape*) { /*TODO*/; });
+	//si shape rencontre obstacle >> STOP
+	CollisionReaction _reaction = CollisionReaction(ENTITY_GRASS, [&](Shape*) { /*TODO STOP*/; });
 	vector<CollisionReaction> _reactions;
 	_reactions.push_back(_reaction);
 	collision->CheckCollision(owner, _allEntities, _reactions);

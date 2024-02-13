@@ -1,16 +1,25 @@
 ﻿  Archer.cpp
   Barbarian.cpp
   Building.cpp
+  CameraData.cpp
+  CameraManager.cpp
   CollisionComponent.cpp
   Component.cpp
   Entity.cpp
   EntityManager.cpp
   Farm.cpp
   FileManager.cpp
+  FontData.cpp
+  FontManager.cpp
   Game.cpp
   GameInstance.cpp
+  GameWindow.cpp
   Grass.cpp
   Hero.cpp
+  InputManager.cpp
+  Main.cpp
+  Génération de code en cours...
+  Compilation en cours...
   Map.cpp
   MovementComponent.cpp
   MovingEntity.cpp
@@ -18,14 +27,16 @@
   Player.cpp
   Removable.cpp
   Rock.cpp
-  Generating Code...
-  Compiling...
   Tavern.cpp
+  TextureData.cpp
+  TextureManager.cpp
+  Timer.cpp
+  TimerManager.cpp
   Tour.cpp
   TowerDefense.cpp
   Trap.cpp
   Tree.cpp
   Troop.cpp
   Village.cpp
-  Generating Code...
-  RoyalRevolt.vcxproj -> C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\x64\Debug\RoyalRevolt.exe
+  Génération de code en cours...
+  RoyalRevolt.vcxproj -> D:\Projet1VS\SFML\RoyalRevolt2\x64\Debug\RoyalRevolt.exe

@@ -6,7 +6,7 @@
 
 Player::Player()
 {
-	hero = new Hero("Hero", ENTITY_PLAYER, Vector2f(), Map::GetCellSize(), PATH_HERO);
+	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, ENTITY_PLAYER);
 	Init();
 }
 
