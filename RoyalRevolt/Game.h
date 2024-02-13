@@ -12,11 +12,6 @@ class Game
 	Vector2f windowSize;
 	string name;
 
-	float value;
-	Button* button;
-	MovingBar* bar;
-	SpecialText* text;
-
 public:
 	Game();
 
@@ -25,7 +20,6 @@ public:
 
 private:
 	void Start();
-	void InitTest();
 	void Update();
 	void UpdateEvent();
 	void UpdateWindow();

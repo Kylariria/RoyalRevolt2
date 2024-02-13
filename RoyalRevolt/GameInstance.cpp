@@ -8,6 +8,11 @@ GameInstance::GameInstance()
 	player = new Player();
 }
 
+GameInstance::~GameInstance()
+{
+	delete player;
+}
+
 void GameInstance::LaunchTD()
 {
 	for (Map* _map : GetAllValues())
