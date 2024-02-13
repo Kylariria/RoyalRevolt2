@@ -45,7 +45,7 @@ public:
 	}
 
 public:
-	MovementComponent(MovingEntity* _owner, Shape* _shape, const int _speed = 1, const int _cooldown = 0);
+	MovementComponent(MovingEntity* _owner, Shape* _shape, const int _speed = 0, const int _cooldown = 0);
 
 public:
 	bool IsAtLocation() const
