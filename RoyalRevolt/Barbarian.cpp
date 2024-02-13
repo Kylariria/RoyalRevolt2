@@ -1,8 +1,6 @@
 #include "Barbarian.h"
 
-#define PATH_BARBARIAN "Assets/Textures/Barbarian.png"
-
-Barbarian::Barbarian(const string& _name, const Vector2f& _position, const Vector2f& _size) : Troop(_name, ENTITY_BARBARIAN, _position, _size, PATH_BARBARIAN, 1)
+Barbarian::Barbarian(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path) : Troop(_name, ENTITY_BARBARIAN, _position, _size, _path, 1)
 {
 
 }

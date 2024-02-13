@@ -94,7 +94,12 @@
     <ClCompile Include="Village.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="MovingEntity.cpp" />
+    <ClCompile Include="MovingEntity.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -205,6 +210,7 @@
     <ClInclude Include="MovingEntity.h">
       <Filter>.h</Filter>
     </ClInclude>
+    <ClInclude Include="Hero.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include=".h">
