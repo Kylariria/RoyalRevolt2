@@ -21,6 +21,7 @@ public:
 
 public:
 	GameInstance();
+	~GameInstance();
 
 public:
 	void LaunchTD();

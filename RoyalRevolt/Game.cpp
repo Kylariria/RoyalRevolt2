@@ -1,15 +1,22 @@
 #include "Game.h"
 #include <iostream>
+#include "InputManager.h"
+#include "TowerDefense.h"
+#include "Macro.h"
 
 Game::Game()
 {
-	windowSize = Vector2f(SREEN_HEIGHT, SCREEN_WIDTH);
+	windowSize = Vector2f(SCREEN_WIDTH,SCREEN_HEIGHT);
 	name = "Royal Revolt";
 }
 
 void Game::Launch()
 {
+	TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
+	_yeepi.Launch();
+
 	Start();
+
 	Update();
 }
 
@@ -34,18 +41,15 @@ void Game::UpdateEvent()
 	{
 		if (_event.type == Event::Closed) Stop();
 	}
+	InputManager::GetInstance().Update(window,_event);
 	UpdateWindow();
 }
 
 void Game::UpdateWindow()
 {
-	window.clear();
-	
-	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
-	{
-		window.draw(*_entity->GetShape());
-	}
+	window.clear(Color::Green);
 
+	//window.draw();
 	window.display();
 }
 
