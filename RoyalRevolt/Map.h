@@ -8,12 +8,6 @@
 using namespace sf;
 using namespace std;
 
-struct MapData
-{
-	Vector2f cellSize;
-	Vector2f cellCount;
-};
-
 struct Cell
 {
 	Shape* cellShape;
@@ -30,10 +24,17 @@ struct Cell
 
 class Map : public IManagable<string>
 {
-	MapData data;
+	static Vector2f cellSize;
+	Vector2f cellCount;
 
 protected:
 	vector<vector<Cell*>> cells;
+
+public:
+	static Vector2f GetCellSize() 
+	{
+		return cellSize;
+	}
 
 public:
 	Map(const string& _name,const Vector2f& _mapSize);

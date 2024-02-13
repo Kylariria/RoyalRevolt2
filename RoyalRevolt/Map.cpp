@@ -1,13 +1,15 @@
 #include "Map.h"
 #include "GameInstance.h"
 
+Vector2f Map::cellSize;
+
 Map::Map(const string& _name, const Vector2f& _mapSize) : IManagable(S_ID(_name))
 {
-	data.cellCount = _mapSize;
+	cellCount = _mapSize;
 
-	cells = vector<vector<Cell*>>(_mapSize.x);
+	cells = vector<vector<Cell*>>(static_cast<int>(_mapSize.x));
 
-	data.cellSize = Vector2f(50.0f, 50.0f);
+	cellSize = Vector2f(50.0f, 50.0f);
 
 	Register();
 	Init();
@@ -16,15 +18,15 @@ Map::Map(const string& _name, const Vector2f& _mapSize) : IManagable(S_ID(_name)
 
 void Map::Init()
 {
-	for (int _i = 0; _i < data.cellCount.x; _i++)
+	for (int _i = 0; _i < cellCount.x; _i++)
 	{
-		for (int _j = 0; _j < data.cellCount.y; _j++)
+		for (int _j = 0; _j < cellCount.y; _j++)
 		{
-			cells[_i].push_back(new Cell(data.cellSize));
+			cells[_i].push_back(new Cell(cellSize));
 			Shape* _shape = cells[_i][_j]->cellShape;
 
-			const float _posX = data.cellSize.x * _j; 
-			const float _posY = data.cellSize.y * _i;
+			const float _posX = cellSize.x * _j; 
+			const float _posY = cellSize.y * _i;
 			_shape->setPosition(_posX, _posY);
 			_shape->setOutlineThickness(-1.0f);
 			_shape->setOutlineColor(Color::Black);
