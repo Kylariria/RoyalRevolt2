@@ -1,0 +1,8 @@
+# = Grass
+' ' = Path
+F = Fence
+T = Tree
+R = Rock
+P = Player
+C = Casern
+E = Castle
