@@ -43,3 +43,8 @@ static void Normalize(Vector2f& _vector, Vector2i& _intVector)
 	_intVector = Vector2i(_x, _y);
 }
 
+static void SetOriginAtMiddle(Shape* _shape)
+{
+	_shape->setOrigin(_shape->getGlobalBounds().width / 2, _shape->getGlobalBounds().height / 2);
+}
+
