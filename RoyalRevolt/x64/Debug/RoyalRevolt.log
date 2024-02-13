@@ -1,2 +1,7 @@
-﻿  Path.cpp
-  RoyalRevolt.vcxproj -> D:\Projet1VS\SFML\RoyalRevolt2\x64\Debug\RoyalRevolt.exe
+﻿  FileManager.cpp
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\FileManager.h(21,3): error C3861: 'allElements': identifier not found
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\FileManager.h(17,7): message : This diagnostic occurred in the compiler generated function 'void FileManager::CreateAndAddEntity(const std::string &,const sf::Vector2f &,const std::string &,const sf::Vector2f &,Args...)'
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\FileManager.h(21,3): error C2065: 'allElements': undeclared identifier
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\FileManager.h(17,7): message : This diagnostic occurred in the compiler generated function 'void FileManager::CreateAndAddEntity(const std::string &,const sf::Vector2f &,const std::string &,const sf::Vector2f &,Args...)'
+  Village.cpp
+  Generating Code...
