@@ -37,11 +37,11 @@ void GameInstance::LaunchVillage()
 
 void GameInstance::LaunchGestion()
 {
-	for (Map* _map : GetAllValues())
+	/*for (Map* _map : GetAllValues())
 	{
 		if (MapCreator* _gestion = dynamic_cast<MapCreator*>(_map))
 		{
 			_gestion->Launch();
 		}
-	}
+	}*/
 }

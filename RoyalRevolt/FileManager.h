@@ -18,7 +18,7 @@ public:
 	{
 		T* _newElement = new T(_name, _position, _path, _size, Args(_args)...);
 
-		allElements.push_back(_newElement);
+		//allElements.push_back(_newElement);
 	}
 
 };

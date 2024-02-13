@@ -1,8 +1,8 @@
 #pragma once
-
 #include "IManagable.h"
 #include "EntityType.h"
 #include "IManagable.h"
+#include "EntityType.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -18,16 +18,35 @@ struct EntityData
 	Vector2f position;
 	Vector2f size;
 	string path;
+	EntityType type;
+	int tileAround;
+
+	EntityData()
+	{
+		name = "";
+		position = Vector2f();
+		size = Vector2f();
+		path = "";
+		type = ENTITY_NONE;
+		tileAround = 0;
+	}
 
 	EntityData(const string& _name, const EntityType& _type, const Vector2f& _position,
-		const Vector2f& _size, const string& _path = "")
-	EntityData(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path = "")
+		const Vector2f& _size,const int _tileAround = 0, const string& _path = "")
 	{
 		name = _name;
+		type = _type;
 		position = _position;
 		size = _size;
 		path = _path;
+		tileAround = _tileAround;
 	}
+
+	EntityType GetType() const
+	{
+		return type;
+	}
+
 };
 
 class Entity : public IManagable<string>
@@ -35,6 +54,7 @@ class Entity : public IManagable<string>
 protected:
 	Shape* shape;
 	vector<Component*> components;
+	EntityData* data;
 
 public:
 	template<typename T>
@@ -59,6 +79,10 @@ public:
 	{
 		if (!shape) return Vector2f();
 		return shape->getPosition();
+	}
+	EntityData* GetEntityData() const
+	{
+		return data;
 	}
 
 public:
