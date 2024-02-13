@@ -3,6 +3,7 @@
 enum EntityType
 {
     ENTITY_NONE,
+    ENTITY_HERO,
     ENTITY_TROOP,
     ENTITY_BARBARE,
     ENTITY_ARCHER,
