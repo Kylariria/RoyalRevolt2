@@ -5,14 +5,11 @@
 
 using namespace sf;
 
-class Map : IManagable<string>
+class Map : public IManagable<string>
 {
-	RenderWindow window;
-	Vector2f windowSize;
-	string name;
 
 public:
-	Map(const RenderWindow& _window,const string& _name);
+	Map(const string& _name);
 
 };
 

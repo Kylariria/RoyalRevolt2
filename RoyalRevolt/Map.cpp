@@ -1,9 +1,7 @@
 #include "Map.h"
+#include "GameInstance.h"
 
-Map::Map(const RenderWindow& _window,const string& _name) : IManagable(S_ID(_name))
+Map::Map(const string& _name) : IManagable(S_ID(_name))
 {
-	windowSize = Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT);
-	name = _name;
-	window.create(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), name);
-
+	GameInstance::GetInstance().Add(id, this);
 }

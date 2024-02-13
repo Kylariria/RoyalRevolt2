@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 ﻿  Main.cpp
   RoyalRevolt.vcxproj -> D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\x64\Debug\RoyalRevolt.exe
+=======
+﻿  CollisionComponent.cpp
+D:\Nicolas\1.cours\Prog 1\cours\SFML\Projet\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp(23,15): error C2040: '_entityType' : les niveaux d'indirection de 'EntityType' et de 'const EntityType &' sont différents
+>>>>>>> main
