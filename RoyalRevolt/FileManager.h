@@ -8,7 +8,7 @@ using namespace std;
 class FileManager : public Singleton<FileManager>, public IManager<string,string>
 {
 public:
-	vector<Entity*> CreateEntityFromChar( const string& _path);
+	vector<vector<Entity*>> CreateEntityFromChar( const string& _path);
 	template <typename T, typename... Args>
 	void CreateAndAddEntity(vector<Entity*>& _allElements, const string& _name, const Vector2f& _position, const string& _path, const Vector2f& _size, Args... _args)
 	{

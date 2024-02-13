@@ -41,9 +41,12 @@ void TowerDefense::Display()
 		WINDOW.draw(*_drawable);
 	}
 
-	for (Entity* _partOfMap: map)
+	for (vector<Entity*> _vectroEntity: map)
 	{
-		WINDOW.draw(*_partOfMap->GetShape());
+		for (Entity* _partOfMap : _vectroEntity)
+		{
+			WINDOW.draw(*_partOfMap->GetShape());
+		}
 	}
 
 	WINDOW.display();
