@@ -4,6 +4,7 @@
 #include "TowerDefense.h"
 #include "GameInstance.h"
 #include "Macro.h"
+#include "EntityManager.h"
 
 Game::Game()
 {
@@ -49,8 +50,10 @@ void Game::UpdateEvent()
 void Game::UpdateWindow()
 {
 	window.clear(Color::Green);
-
-	//window.draw();
+	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
+	{
+		window.draw(*_entity->GetShape());
+	}
 	window.display();
 }
 
