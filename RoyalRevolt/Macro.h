@@ -10,6 +10,7 @@ using namespace sf;
 #define SCREEN_HEIGHT 800
 
 #define S_ID(name) name + to_string(GetUniqueID())
+
 static void Normalize(Vector2f& _vector)
 {
 	// length = x * x + y * y
@@ -24,7 +25,8 @@ static int GetUniqueID()
 	return _id++;
 }
 
-static int Random(const int _max, const int _min = 0)
+template <typename Type>
+static Type Random(const Type _max, const Type _min = 0)
 {
 	return rand() % _max + _min;
 }
@@ -48,3 +50,7 @@ static void SetOriginAtMiddle(Shape* _shape)
 	_shape->setOrigin(_shape->getGlobalBounds().width / 2, _shape->getGlobalBounds().height / 2);
 }
 
+static Vector2f GetRandomPosition()
+{
+	return Vector2f(Random(SCREEN_WIDTH), Random(SCREEN_HEIGHT));
+}

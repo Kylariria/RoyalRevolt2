@@ -2,7 +2,9 @@
 #include "SFML/Graphics.hpp"
 #include <string>
 #include "Interface.h"
+#include "Spawner.h"
 #include "Player.h"
+#include "EntityManager.h"
 
 using namespace std;
 using namespace sf;
@@ -14,6 +16,7 @@ class Game
 	string name;
 	Player* player;
 
+	Spawner* spawner;
 public:
 	Game();
 
