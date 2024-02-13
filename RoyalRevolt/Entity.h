@@ -1,8 +1,8 @@
 #pragma once
-
 #include "IManagable.h"
 #include "EntityType.h"
 #include "IManagable.h"
+#include "EntityType.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -14,60 +14,84 @@ using namespace sf;
 
 struct EntityData
 {
-	string name;
-	Vector2f position;
-	Vector2f size;
-	string path;
+    string name;
+    Vector2f position;
+    Vector2f size;
+    string path;
+    EntityType type;
+    int tileAround;
 
-	EntityData(const string& _name, const EntityType& _type, const Vector2f& _position,
-		const Vector2f& _size, const string& _path = "")
-	EntityData(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path = "")
-	{
-		name = _name;
-		position = _position;
-		size = _size;
-		path = _path;
-	}
+    EntityData()
+    {
+        name = "";
+        position = Vector2f();
+        size = Vector2f();
+        path = "";
+        type = ENTITY_NONE;
+        tileAround = 0;
+    }
+
+    EntityData(const string& _name, const EntityType& _type, const Vector2f& _position,
+        const Vector2f& _size,const int _tileAround = 0, const string& _path = "")
+    {
+        name = _name;
+        type = _type;
+        position = _position;
+        size = _size;
+        path = _path;
+        tileAround = _tileAround;
+    }
+
+    EntityType GetType() const
+    {
+        return type;
+    }
+
 };
 
 class Entity : public IManagable<string>
 {
 protected:
-	Shape* shape;
-	vector<Component*> components;
+    Shape* shape;
+    vector<Component*> components;
+    EntityData* data;
 
 public:
-	template<typename T>
-	T* GetComponent()const
-	{
-		for (Component* _component : components)
-		{
-			if (T* _components = dynamic_cast<T*>(_component))
-			{
-				return _components;
-			}
-		}
+    template<typename T>
+    T* GetComponent()const
+    {
+        for (Component* _component : components)
+        {
+            if (T* _components = dynamic_cast<T*>(_component))
+            {
+                return _components;
+            }
+        }
 
-		return nullptr;
-	}
+        return nullptr;
+    }
 
-	Shape* GetShape() const
-	{
-		return shape;
-	}
-	Vector2f GetShapePosition() const
-	{
-		if (!shape) return Vector2f();
-		return shape->getPosition();
-	}
+    Shape* GetShape() const
+    {
+        return shape;
+    }
+    Vector2f GetShapePosition() const
+    {
+        if (!shape) return Vector2f();
+        return shape->getPosition();
+    }
+    EntityData* GetEntityData() const
+    {
+        return data;
+    }
 
 public:
-	Entity(const EntityData& _data);
-	~Entity();
+    Entity(const EntityData& _data);
+    ~Entity();
 
 private:
-	virtual void Register() override;
+    virtual void Register() override;
 
 public:
-	virtual void Update()=0;
+    virtual void Update()=0;
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include "Troop.h"
+#include "EntityType.h"
 
 class Barbarian : public Troop
 {

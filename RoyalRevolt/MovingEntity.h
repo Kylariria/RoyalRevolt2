@@ -17,8 +17,7 @@ public:
 		return movement;
 	}
 public:
-	MovingEntity(const string& _name, const EntityType& _type, const Vector2f& _position,
-		const Vector2f& _size, const string& _path, const int _tileAround,
+	MovingEntity(const EntityData& _data,
 		const int _speed = 0, const int _cooldown = 0);
 	~MovingEntity();
 
