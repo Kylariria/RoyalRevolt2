@@ -48,7 +48,7 @@
     <ClCompile Include="GameInstance.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Gestion.cpp">
+    <ClCompile Include="MapCreator.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
@@ -125,7 +125,7 @@
     <ClInclude Include="GameInstance.h">
       <Filter>Fichiers de ressources</Filter>
     </ClInclude>
-    <ClInclude Include="Gestion.h">
+    <ClInclude Include="MapCreator.h">
       <Filter>Fichiers de ressources</Filter>
     </ClInclude>
     <ClInclude Include="IManager.h">

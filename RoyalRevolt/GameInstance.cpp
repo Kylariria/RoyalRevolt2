@@ -1,6 +1,6 @@
 #include "GameInstance.h"
 #include "TowerDefense.h"
-#include "Gestion.h"
+#include "MapCreator.h"
 #include "Village.h"
 
 GameInstance::GameInstance()
@@ -34,7 +34,7 @@ void GameInstance::LaunchGestion()
 {
 	for (Map* _map : GetAllValues())
 	{
-		if (Gestion* _gestion = dynamic_cast<Gestion*>(_map))
+		if (MapCreator* _gestion = dynamic_cast<MapCreator*>(_map))
 		{
 			_gestion->Launch();
 		}
