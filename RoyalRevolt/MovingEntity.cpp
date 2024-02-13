@@ -8,11 +8,13 @@ MovingEntity::MovingEntity(const string& _name, const EntityType& _type, const V
 {
 
 	movement = new MovementComponent(this, shape, _speed, _cooldown);
+	collision = new CollisionComponent(_type,);
 }
 
 MovingEntity::~MovingEntity()
 {
 	delete movement;
+	delete collision;
 }
 
 void MovingEntity::Update()

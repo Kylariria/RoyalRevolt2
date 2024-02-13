@@ -95,6 +95,7 @@
       <Filter>.cpp</Filter>
     </ClCompile>
     <ClCompile Include="MovingEntity.cpp" />
+    <ClCompile Include="FileManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -205,6 +206,7 @@
     <ClInclude Include="MovingEntity.h">
       <Filter>.h</Filter>
     </ClInclude>
+    <ClInclude Include="FileManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include=".h">
