@@ -2,118 +2,130 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Archer.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Barbarian.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Building.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="CameraData.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="CameraManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="CollisionComponent.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="EntityManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Farm.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="FontData.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="FontManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="GameInstance.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="GameWindow.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="MovementComponent.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Tavern.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="TextureData.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="TimerManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Tour.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="TowerDefense.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Trap.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Troop.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Village.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Removable.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Grass.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="MovingEntity.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Path.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Rock.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Tree.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="FileManager.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Hero.cpp">
-      <Filter>.cpp</Filter>
+      <Filter>.h\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Fence.cpp">
+      <Filter>.h\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>.h\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Casern.cpp">
+      <Filter>.h\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Castle.cpp">
+      <Filter>.h\.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -243,12 +255,24 @@
     <ClInclude Include="Hero.h">
       <Filter>.h</Filter>
     </ClInclude>
+    <ClInclude Include="Fence.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Casern.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Castle.h">
+      <Filter>.h</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include=".h">
       <UniqueIdentifier>{45270434-4888-47a7-9cc4-13377905963f}</UniqueIdentifier>
     </Filter>
-    <Filter Include=".cpp">
+    <Filter Include=".h\.cpp">
       <UniqueIdentifier>{fa0e9819-0f5f-43d8-a905-424f688ff824}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

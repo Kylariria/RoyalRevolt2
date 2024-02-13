@@ -6,7 +6,7 @@ class TowerDefense : public Map
 {
 
 	vector<string> allLevel;
-	vector<Entity*> map;
+	vector<vector<Entity*>> map;
 
 
 

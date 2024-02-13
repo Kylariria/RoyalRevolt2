@@ -6,12 +6,12 @@
 
 #include "Grass.h"
 #include "Path.h"
-//#include "Fence.h"
+#include "Fence.h"
 #include "Tree.h"
 #include "Rock.h"
 #include "Hero.h"
-//#include "Casern.h"
-//#include "Castle.h"
+#include "Casern.h"
+#include "Castle.h"
 
 
 //# = Grass
@@ -26,17 +26,17 @@
 
 
 
-
-vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
+vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 {
-	vector<Entity*> _allEntities;
+	vector<Entity*> _allEntitiesInLine;
+	vector<vector<Entity*>> _allEntities;
 
 	ifstream _stream(_path);
 	//char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
     if (!_stream)
     {
         cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
-        return vector<Entity*>();
+        return vector<vector<Entity*>>();
     }
 
 
@@ -56,34 +56,37 @@ vector<Entity*> FileManager::CreateEntityFromChar(const string& _path)
             switch (_line[_index])
             {
             case '#':
-                CreateAndAddEntity<Grass>(_allEntities,"Grass",Vector2f(_posX, _posY)* _size.x, "Grass.png", _size);
+                CreateAndAddEntity<Grass>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, "Grass.png", _size);
                 break;
             case ' ':
-                CreateAndAddEntity<Path>(_allEntities,"Path",Vector2f(_posX, _posY)* _size.x, "Path.png", _size);
+                CreateAndAddEntity<Path>(_allEntitiesInLine,"Path",Vector2f(_posX, _posY)* _size.x, "Path.png", _size);
                 break;
             case 'F':
-                //CreateAndAddEntity<Fence>(_allEntities,"Fence",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+                CreateAndAddEntity<Fence>(_allEntitiesInLine,"Fence",Vector2f(_posX, _posY)*50.0f, "Fence.png", Vector2f(50.0f, 50.0f));
                 break;
             case 'T':
-                CreateAndAddEntity<Tree>(_allEntities,"Tree",Vector2f(_posX, _posY)* _size.x, "Tree.png", _size);
+                CreateAndAddEntity<Tree>(_allEntitiesInLine,"Tree",Vector2f(_posX, _posY)* _size.x, "Tree.png", _size);
                 break;
             case 'R':
-                CreateAndAddEntity<Rock>(_allEntities,"Rock",Vector2f(_posX, _posY)* _size.x, "Rock.png", _size);
+                CreateAndAddEntity<Rock>(_allEntitiesInLine,"Rock",Vector2f(_posX, _posY)* _size.x, "Rock.png", _size);
                 break;
             case 'P':
-                CreateAndAddEntity<Hero>(_allEntities,"Hero",Vector2f(_posX, _posY)* _size.x, "Hero.png", _size, ENTITY_HERO);
+                CreateAndAddEntity<Hero>(_allEntitiesInLine,"Hero",Vector2f(_posX, _posY)* _size.x, "Hero.png", _size, ENTITY_HERO);
                 break;
             case 'C':
-                //CreateAndAddEntity<Casern>(_allEntities,"Casern",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+                CreateAndAddEntity<Casern>(_allEntitiesInLine,"Casern",Vector2f(_posX, _posY)*50.0f, "Tent.png", Vector2f(50.0f, 50.0f));
                 break;
             case 'E':
-                //CreateAndAddEntity<Castle>(_allEntities,"Castle",Vector2f(_posX, _posY)*50.0f, PATH, Vector2f(50.0f, 50.0f));
+                CreateAndAddEntity<Castle>(_allEntitiesInLine,"Castle",Vector2f(_posX, _posY)*50.0f, "Castle.png", Vector2f(50.0f, 50.0f));
                 break;
             default:
                 break;
             }
             _posX += 1;
         }
+
+        _allEntities.push_back(_allEntitiesInLine);
+        _allEntitiesInLine = vector<Entity*>();
         _posX = 0;
         _posY += 1;
     }
