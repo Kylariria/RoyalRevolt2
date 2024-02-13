@@ -13,7 +13,7 @@ public:
 	template <typename T, typename... Args>
 	void CreateAndAddEntity(const string& _name, const Vector2f& _position, const string& _path, const Vector2f& _size, Args... _args)
 	{
-		T* _newElement = new T(_name, _position, _path, _size, Args(_args)...);
+		//T* _newElement = new T(_name, _position, _path, _size, Args(_args)...);
 
 		//allElements.push_back(_newElement);
 	}

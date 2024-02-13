@@ -22,14 +22,14 @@ void Player::Actions()
 
 
 	// La shape se déplace à la position de la souris
-	Hero _hero;
-	_hero.GetShape().move(_mousePosition.x, _mousePosition.y);
+	//Hero _hero;
+	//_hero.GetShape().move(_mousePosition.x, _mousePosition.y);
 
-	// si HERO rencontre obstacle >> STOP
-	if (_hero)
-	{
+	//// si HERO rencontre obstacle >> STOP
+	//if (_hero)
+	//{
 
-	}
+	//}
 
 	//for (Button* _button : Menu::GetButtons())
 	//{
