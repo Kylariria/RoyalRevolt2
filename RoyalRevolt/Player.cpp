@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Hero.h"
 
 Player::Player()
 {
@@ -13,7 +14,19 @@ void Player::Init()
 
 void Player::Actions()
 {
+	// Si le player est dans TD :
+	// 
+	//
+	// On récup la position de la souris
 	const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
 
-	
+	// La shape se déplace à la position de la souris
+	Hero _hero;
+	_hero.GetShape().move(_mousePosition.x, _mousePosition.y);
+
+	// si HERO rencontre obstacle >> STOP
+	if (_hero)
+	{
+
+	}
 }
