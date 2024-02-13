@@ -111,6 +111,7 @@
     </ClCompile>
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="MapManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -235,6 +236,7 @@
     </ClInclude>
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="MapManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include=".h">

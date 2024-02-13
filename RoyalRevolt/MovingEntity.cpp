@@ -37,5 +37,5 @@ void MovingEntity::Update()
 
 
 
-	//movement->Move();
-};
+	movement->Move();
+}
