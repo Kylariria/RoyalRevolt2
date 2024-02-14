@@ -29,8 +29,6 @@ void Player::Init()
 #pragma endregion
 	//inputmanager click
 	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Right}, {Event::KeyPressed, Keyboard::Space}) });
-
-	new ActionMap("Interaction", { ActionData("Test", this, &Player::Test, {Event::MouseButtonPressed, Mouse::Left},{Event::KeyPressed, Keyboard::A}) });
 }
 
 void Player::Actions()
@@ -67,11 +65,4 @@ void Player::Actions()
 	//	}
 	//}
 
-}
-void Player::Test()
-{
-	upgradesCounts.money++;
-
-	function<void()> _addCoinCallback = [&]() {data.money += (upgradesCounts.money); };
-	TimerManager::GetInstance().Get("AddCoin")->ChangeCallback(_addCoinCallback);
 }

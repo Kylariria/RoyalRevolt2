@@ -46,7 +46,6 @@ struct EntityData
     {
         return type;
     }
-
 };
 
 class Entity : public IManagable<string>
