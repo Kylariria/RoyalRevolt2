@@ -1,6 +1,7 @@
 #include "TowerDefense.h"
 #include "Macro.h"
 #include "FileManager.h"
+#include "InputManager.h"
 
 #define PATH_LEVEL1 "LevelEditor/Level1.txt"
 
@@ -27,6 +28,7 @@ void TowerDefense::Update()
 		while (WINDOW.pollEvent(_event))
 		{
 			if (_event.type == Event::Closed) WINDOW.close();
+			InputManager::GetInstance().Update(WINDOW, _event);
 		}
 		Display();
 	}

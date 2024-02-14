@@ -44,12 +44,11 @@ void ActionMap::Update(const Event& _event)
     GarbageValues();
 }
 
-
 void InputManager::Update(RenderWindow& _window, const Event& _event)
 {
-    UpdateInputs(_event);
+    mousePosition = Vector2f(Mouse::getPosition(_window));
 
-	mousePosition = Vector2f(Mouse::getPosition(_window));
+    UpdateInputs(_event);
     GarbageValues();
 
 }
