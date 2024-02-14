@@ -45,6 +45,7 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapCreator.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="MovingEntity.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapCreator.h" />
     <ClInclude Include="MapManager.h" />
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="MovingEntity.h" />
