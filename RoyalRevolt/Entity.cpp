@@ -9,6 +9,7 @@ Entity::Entity(const EntityData& _data) : IManagable(S_ID(_data.name))
 {
 	Register();
 
+	data = new EntityData(_data);
 	shape = new RectangleShape(_data.size);
 	shape->setPosition(_data.position);
 	TextureManager::GetInstance().Load(shape, _data.path);

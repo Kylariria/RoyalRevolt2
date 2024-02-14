@@ -1,6 +1,7 @@
 #include "Building.h"
 
-Building::Building(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path, const int& _tileAround, const bool& _isBuildable)
+Building::Building(const string& _name, const Vector2f& _position, const function<void()>& _callback,
+	const Vector2f& _size, const string& _path, const int& _tileAround, const bool& _isBuildable)
 	: Entity(EntityData(_name, ENTITY_BUILDING, _position, _size))
 {
 

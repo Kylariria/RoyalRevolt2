@@ -6,9 +6,7 @@
 
 TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize) : Map(_name, _mapSize)
 {
-	allLevel.push_back(PATH_LEVEL1);
-
-	
+	allLevel.push_back(PATH_LEVEL1);	
 }
 
 void TowerDefense::Launch()

@@ -8,6 +8,10 @@
 #define DIAMOND_PATH "UI/Diamond_Texture.png"
 #define BREAD_PATH "UI/Bread_Texture.png"
 
+#define FARM_PATH "UI/Farm_Texture.png"
+#define TAVERN_PATH "UI/Tavern_Texture.png"
+#define MINE_PATH "UI/Mine_Texture.png"
+
 #define BATTLE_BUTTON_PATH "UI/Battle_Button.png"
 #define UPGRADE_BUTTON_PATH "UI/Upgrade_Button.png"
 
@@ -41,13 +45,31 @@ void Village::InitUI()
 
 
 	function<void()> _battleCallback = [&]() {cout << "Battle !"; };
-	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !"; };
+	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !";	OpenPurchasePanel(); };
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), BATTLE_BUTTON_PATH, elementsInformations.battleButtonPosition,
 		"", _battleCallback));
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), UPGRADE_BUTTON_PATH, elementsInformations.upgradeButtonPosition,
 		"", _upgradeCallback));
+
+
+	vector<PlayerRessources*> _ressourcesToPurchase;
+	function<int()> _tavernCallback = [&]() {cout << "Purchase Tavern"; return 0; };
+	function<int()> _farmCallback = [&]() {cout << "Purchase Farm"; return 0; };
+
+	vector<function<int()>> _allCallback;
+	_allCallback.push_back(_tavernCallback);
+	_allCallback.push_back(_farmCallback);
+
+	_ressourcesToPurchase.push_back(new PlayerRessources(new RectangleShape(Vector2f(100.0f, 100.0f)), TAVERN_PATH, elementsInformations.tavernInPurchasePanel,
+		new RectangleShape(Vector2f(100.f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernTextInPurchasePanel, "Tavern", _tavernCallback));
+
+	_ressourcesToPurchase.push_back(new PlayerRessources(new RectangleShape(Vector2f(100.0f, 100.0f)), FARM_PATH, elementsInformations.farmInPurchasePanel,
+		new RectangleShape(Vector2f(100.f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.farmTextInPurchasePanel, "Farm", _farmCallback));
+
+	activeElements.push_back(new SelectionPanel(new RectangleShape(Vector2f(600.0f, 400.0f)), "", elementsInformations.purchasePanelPosition,
+		_ressourcesToPurchase, _allCallback,new RectangleShape(Vector2f(100.0f,50.0f)),FONT_TEXTURE_PATH,elementsInformations.purchaseTitlePosition,"Achat",false));
 }
 
 void Village::Update()
@@ -87,6 +109,11 @@ void Village::UpdatePassiveElements()
 	{
 		if (_element->GetIsDraw()) _element->Update(Event());
 	}
+}
+
+void Village::OpenPurchasePanel()
+{
+	activeElements[2]->isDraw = !activeElements[2]->isDraw;
 }
 
 void Village::Display()

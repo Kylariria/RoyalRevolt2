@@ -4,12 +4,8 @@
 
 class TowerDefense : public Map
 {
-
 	vector<string> allLevel;
 	vector<vector<Entity*>> map;
-
-
-
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize);
 
@@ -24,7 +20,6 @@ public:
 				_drawables.push_back(_cell->cellShape);
 			}
 		}
-
 		return _drawables;
 	}
 

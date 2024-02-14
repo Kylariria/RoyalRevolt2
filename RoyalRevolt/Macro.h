@@ -52,5 +52,5 @@ static void SetOriginAtMiddle(Shape* _shape)
 
 static Vector2f GetRandomPosition()
 {
-	return Vector2f(Random(SCREEN_WIDTH), Random(SCREEN_HEIGHT));
+	return Vector2f(static_cast<float>(Random(SCREEN_WIDTH)), static_cast<float>(Random(SCREEN_HEIGHT)));
 }
