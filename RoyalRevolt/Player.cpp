@@ -2,6 +2,7 @@
 #include "Hero.h"
 #include "Map.h"
 #include "TimerManager.h"
+#include "EntityManager.h"
 
 #define PATH_HERO "Hero.png"
 
@@ -27,9 +28,9 @@ void Player::Init()
 
 #pragma endregion
 	//inputmanager click
-	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Left}, {Event::KeyPressed, Keyboard::Space}) });
+	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Right}, {Event::KeyPressed, Keyboard::Space}) });
 
-	new ActionMap("Interaction", { ActionData("Test", this, &Player::Test, {Event::MouseButtonPressed, Mouse::Right},{Event::KeyPressed, Keyboard::A}) });
+	new ActionMap("Interaction", { ActionData("Test", this, &Player::Test, {Event::MouseButtonPressed, Mouse::Left},{Event::KeyPressed, Keyboard::A}) });
 }
 
 void Player::Actions()
@@ -37,8 +38,19 @@ void Player::Actions()
 	// Si le player est dans TD :
 	// 
 	//
-	hero->GetMovementComponent()->Move();
-	cout << "bite" << endl;
+	if (true /*TODO : Etat Player*/)
+	{
+		for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
+		{
+			if (dynamic_cast<Hero*>(_entityHero))
+			{
+				Hero* _hero = dynamic_cast<Hero*>(_entityHero);
+				_hero->Update();
+			}
+		}
+	}
+
+
 	//// si HERO rencontre obstacle >> STOP
 	//if (_hero)
 	//{

@@ -17,6 +17,15 @@ struct ElementsInformations
 	Vector2f battleButtonPosition;
 	Vector2f upgradeButtonPosition;
 
+	Vector2f tavernInPurchasePanel;
+	Vector2f tavernTextInPurchasePanel;
+
+	Vector2f farmInPurchasePanel;
+	Vector2f farmTextInPurchasePanel;
+
+	Vector2f purchasePanelPosition;
+	Vector2f purchaseTitlePosition;
+
 	ElementsInformations()
 	{
 		goldIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.05f);
@@ -30,6 +39,16 @@ struct ElementsInformations
 
 		battleButtonPosition = Vector2f(SCREEN_WIDTH * 0.9f, SCREEN_HEIGHT * 0.9f);
 		upgradeButtonPosition = Vector2f(SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.9f);
+
+		purchasePanelPosition = Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f);
+		purchaseTitlePosition = Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.3f);
+
+		tavernInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.35f, SCREEN_HEIGHT * 0.5f);
+		tavernTextInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.35f, SCREEN_HEIGHT * 0.6f);
+
+		farmInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.65, SCREEN_HEIGHT * 0.5f);
+		farmTextInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.65f, SCREEN_HEIGHT * 0.6f);
+
 	}
 };
 
@@ -74,6 +93,7 @@ public:
 	void UpdateEvent();
 	void UpdateActiveElements(Event _event);
 	void UpdatePassiveElements();
+	void OpenPurchasePanel();
 
 	void Display();
 };

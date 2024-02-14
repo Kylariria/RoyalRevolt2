@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+<<<<<<< Updated upstream
     <ClCompile Include="Archer.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
@@ -116,6 +117,18 @@
       <Filter>.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Spawner.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Casern.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Castle.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Fence.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -249,6 +262,86 @@
     <ClInclude Include="Spawner.h">
       <Filter>.h</Filter>
     </ClInclude>
+    <ClInclude Include="Castle.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Casern.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Fence.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+=======
+    <ClCompile Include="Archer.cpp" />
+    <ClCompile Include="Barbarian.cpp" />
+    <ClCompile Include="Building.cpp" />
+    <ClCompile Include="CameraData.cpp" />
+    <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="CollisionComponent.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="Farm.cpp" />
+    <ClCompile Include="FontData.cpp" />
+    <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameInstance.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="Gestion.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Tavern.cpp" />
+    <ClCompile Include="TextureData.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TimerManager.cpp" />
+    <ClCompile Include="Tour.cpp" />
+    <ClCompile Include="TowerDefense.cpp" />
+    <ClCompile Include="Trap.cpp" />
+    <ClCompile Include="Troop.cpp" />
+    <ClCompile Include="Village.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Macro.h" />
+    <ClInclude Include="Archer.h" />
+    <ClInclude Include="Barbarian.h" />
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="CameraData.h" />
+    <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="CollisionComponent.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="EntityType.h" />
+    <ClInclude Include="Farm.h" />
+    <ClInclude Include="FontData.h" />
+    <ClInclude Include="FontManager.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameInstance.h" />
+    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="Gestion.h" />
+    <ClInclude Include="IManagable.h" />
+    <ClInclude Include="IManager.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Tavern.h" />
+    <ClInclude Include="TextureData.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="TimerManager.h" />
+    <ClInclude Include="Tour.h" />
+    <ClInclude Include="TowerDefense.h" />
+    <ClInclude Include="Trap.h" />
+    <ClInclude Include="Troop.h" />
+    <ClInclude Include="Village.h" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Filter Include=".h">

@@ -47,10 +47,11 @@ static void Normalize(Vector2f& _vector, Vector2i& _intVector)
 
 static void SetOriginAtMiddle(Shape* _shape)
 {
-	_shape->setOrigin(_shape->getGlobalBounds().width / 2, _shape->getGlobalBounds().height / 2);
+	const Vector2f& _origin = _shape->getLocalBounds().getSize();
+	_shape->setOrigin(_origin / 2.0f);
 }
 
 static Vector2f GetRandomPosition()
 {
-	return Vector2f(Random(SCREEN_WIDTH), Random(SCREEN_HEIGHT));
+	return Vector2f(static_cast<float>(Random(SCREEN_WIDTH)), static_cast<float>(Random(SCREEN_HEIGHT)));
 }
