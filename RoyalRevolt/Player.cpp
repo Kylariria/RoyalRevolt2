@@ -28,9 +28,9 @@ void Player::Init()
 
 #pragma endregion
 	//inputmanager click
-	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Left}, {Event::KeyPressed, Keyboard::Space}) });
+	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Right}, {Event::KeyPressed, Keyboard::Space}) });
 
-	new ActionMap("Interaction", { ActionData("Test", this, &Player::Test, {Event::MouseButtonPressed, Mouse::Right},{Event::KeyPressed, Keyboard::A}) });
+	new ActionMap("Interaction", { ActionData("Test", this, &Player::Test, {Event::MouseButtonPressed, Mouse::Left},{Event::KeyPressed, Keyboard::A}) });
 }
 
 void Player::Actions()
@@ -45,8 +45,7 @@ void Player::Actions()
 			if (dynamic_cast<Hero*>(_entityHero))
 			{
 				Hero* _hero = dynamic_cast<Hero*>(_entityHero);
-
-				_hero->GetMovementComponent()->Move();
+				_hero->Update();
 			}
 		}
 	}

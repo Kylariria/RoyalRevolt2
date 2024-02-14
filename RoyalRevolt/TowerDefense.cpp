@@ -2,6 +2,7 @@
 #include "Macro.h"
 #include "FileManager.h"
 #include "InputManager.h"
+#include "EntityManager.h"
 
 #define PATH_LEVEL1 "LevelEditor/Level1.txt"
 
@@ -30,6 +31,7 @@ void TowerDefense::Update()
 			if (_event.type == Event::Closed) WINDOW.close();
 			InputManager::GetInstance().Update(WINDOW, _event);
 		}
+		EntityManager::GetInstance().Update();
 		Display();
 	}
 }

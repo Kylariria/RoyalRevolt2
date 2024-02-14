@@ -1,2 +1,1 @@
 D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\x64\Debug\RoyalRevolt.exe
-C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\RoyalRevolt.exe
