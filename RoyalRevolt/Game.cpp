@@ -14,9 +14,9 @@ Game::Game()
 
 void Game::Launch()
 {
-	GameInstance::GetInstance().LaunchVillage();
-	//TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
-	//_yeepi.Launch();
+	//GameInstance::GetInstance().LaunchVillage();
+	GameInstance::GetInstance().LaunchTD();
+
 
 	Start();
 	Update();
@@ -24,12 +24,12 @@ void Game::Launch()
 
 void Game::Start()
 {
-	window.create(VideoMode(static_cast<unsigned>(windowSize.x), static_cast<unsigned>(windowSize.y)), name);
+	//window.create(VideoMode(static_cast<unsigned>(windowSize.x), static_cast<unsigned>(windowSize.y)), name);
 }
 
 void Game::Update()
 {
-	while (window.isOpen())
+	while (WINDOW.isOpen())
 	{
 		UpdateEvent();
 		EntityManager::GetInstance().Update();
@@ -40,7 +40,7 @@ void Game::UpdateEvent()
 {
 	Event _event;
 
-	while (window.pollEvent(_event))
+	while (WINDOW.pollEvent(_event))
 	{
 		if (_event.type == Event::Closed) Stop();
 	}
@@ -50,21 +50,21 @@ void Game::UpdateEvent()
 
 void Game::UpdateWindow()
 {
-	window.clear(Color::Black);
+	WINDOW.clear(Color::Black);
 	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
 	{
-		window.draw(*_entity->GetShape());
+		WINDOW.draw(*_entity->GetShape());
 	}
-	window.display();
+	WINDOW.display();
 }
 
 void Game::UpdateInputs(const Event& _event)
 {
-	InputManager::GetInstance().Update(window, _event);
+	InputManager::GetInstance().Update(WINDOW, _event);
 }
 
 void Game::Stop()
 {
 	cout << "End of " << name << endl;
-	window.close();
+	WINDOW.close();
 }

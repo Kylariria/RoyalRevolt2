@@ -2,6 +2,11 @@
 #include "TowerDefense.h"
 #include "MapCreator.h"
 #include "Village.h"
+#include "FileManager.h"
+
+#define PATH_LEVEL1 "LevelEditor/Level1.txt"
+#define PATH_LEVEL2 "LevelEditor/Level2.txt"
+
 
 GameInstance::GameInstance()
 {
@@ -15,13 +20,27 @@ GameInstance::~GameInstance()
 
 void GameInstance::LaunchTD()
 {
+	bool _hasLaunch = false;
 	for (Map* _map : mapManager.GetAllValues())
 	{
 		if (TowerDefense* _td = dynamic_cast<TowerDefense*>(_map))
 		{
+			_hasLaunch = true;
 			_td->Launch();
 		}
 	}
+	if (!_hasLaunch)
+	{
+		FileManager _fileManager;
+		Vector2f _mapSize = _fileManager.GetSizeFill(PATH_LEVEL2);
+		TowerDefense* _td = new TowerDefense("TowerDefence", _mapSize, 2);
+		_td->Launch();
+	}
+
+
+
+
+
 }
 
 void GameInstance::LaunchVillage()

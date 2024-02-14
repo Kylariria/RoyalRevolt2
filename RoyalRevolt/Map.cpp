@@ -28,10 +28,14 @@ Map::Map(const string& _name, const Vector2f& _mapSize) : IManagable(S_ID(_name)
 
 void Map::Init()
 {
-	const float _centerX = SCREEN_WIDTH / 2.0f - (cellSize.x * cellCount.x / 2.0f);
-	const float _centerY = SCREEN_HEIGHT / 2.0f - (cellSize.y * cellCount.y / 2.0f);
 
-	const Vector2f& _centerOfScreen = Vector2f(_centerX, _centerY);
+
+	float mapSizeX = cellSize.x * cellCount.x;
+	float mapSizeY = cellSize.y * cellCount.y;
+	const float _posX = (SCREEN_WIDTH - mapSizeX) / 2.0f;
+	const float _posY = (SCREEN_HEIGHT - mapSizeY) / 2.0f;
+
+
 	for (int _i = 0; _i < cellCount.x; _i++)
 	{
 		for (int _j = 0; _j < cellCount.y; _j++)
@@ -39,9 +43,9 @@ void Map::Init()
 			cells[_i].push_back(new Cell(cellSize));
 			Shape* _shape = cells[_i][_j]->cellShape;
 
-			const float _posX = _centerOfScreen.x + (cellSize.x * _j);
-			const float _posY = _centerOfScreen.y + (cellSize.y * _i);
-			_shape->setPosition(_posX, _posY);
+			const float _posShapeX = (cellSize.x * (_j + 1)) + _posX ;
+			const float _posShapeY = (cellSize.y * (_i + 1)) - _posY ;
+			_shape->setPosition(_posShapeX, _posShapeY);
 			_shape->setOutlineThickness(-1.0f);
 			_shape->setOutlineColor(Color::Black);
 			_shape->setOrigin(_shape->getGlobalBounds().getSize() / 2.0f);

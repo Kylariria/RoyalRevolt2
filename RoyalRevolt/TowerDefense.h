@@ -6,16 +6,21 @@ class TowerDefense : public Map
 {
 
 	vector<string> allLevel;
-	vector<vector<Entity*>> map;
-
-
+	Vector2f mapSize;
+	int level;
 
 public:
-	TowerDefense(const string& _name, const Vector2f& _mapSize);
+	TowerDefense(const string& _name, const Vector2f& _mapSize, int _level);
 
 	vector<Drawable*> GetDrawables()
 	{
 		vector<Drawable*> _drawables;
+
+		vector<Drawable*> _cellDrawables = GetCellsDrawables();
+
+		_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
+
+
 
 		for (vector<Cell*> _cells : cells)
 		{
@@ -24,6 +29,9 @@ public:
 				_drawables.push_back(_cell->cellShape);
 			}
 		}
+
+
+
 
 		return _drawables;
 	}
