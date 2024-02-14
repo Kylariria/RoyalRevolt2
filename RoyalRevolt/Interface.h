@@ -351,20 +351,20 @@ struct SelectionPanel : public BasicElement
 	}
 	virtual void Update(Event _event = Event()) override
 	{
+		int _index = 0;
 		const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
 		if (shape->getGlobalBounds().contains(_mousePosition))
 		{
-			for (PlayerRessources* _ressources : allElements)
-			{
-
-			}
-
-			if (_event.type == Event::MouseButtonPressed)
+			for (PlayerRessources* _ressource : allElements)
 			{
 				if (Mouse::isButtonPressed(Mouse::Left))
 				{
-					cout << "callback" << endl;
-				}
+					if (_ressource->shape->getGlobalBounds().contains(_mousePosition))
+					{
+						allCallbacks[_index]();
+					}
+				}				
+				_index++;
 			}
 		}
 	}

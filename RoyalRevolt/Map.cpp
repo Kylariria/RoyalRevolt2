@@ -28,13 +28,10 @@ Map::Map(const string& _name, const Vector2f& _mapSize) : IManagable(S_ID(_name)
 
 void Map::Init()
 {
-
-
 	float mapSizeX = cellSize.x * cellCount.x;
 	float mapSizeY = cellSize.y * cellCount.y;
 	const float _posX = (SCREEN_WIDTH - mapSizeX) / 2.0f;
 	const float _posY = (SCREEN_HEIGHT - mapSizeY) / 2.0f;
-
 
 	for (int _i = 0; _i < cellCount.x; _i++)
 	{
@@ -44,7 +41,7 @@ void Map::Init()
 			Shape* _shape = cells[_i][_j]->cellShape;
 
 			const float _posShapeX = (cellSize.x * (_j + 1)) + _posX ;
-			const float _posShapeY = (cellSize.y * (_i + 1)) - _posY ;
+			const float _posShapeY = (cellSize.y * (_i + 1)) + _posY ;
 			_shape->setPosition(_posShapeX, _posShapeY);
 			_shape->setOutlineThickness(-1.0f);
 			_shape->setOutlineColor(Color::Black);

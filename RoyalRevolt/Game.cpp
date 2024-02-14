@@ -22,10 +22,6 @@ void Game::Launch()
 	Update();
 }
 
-void Game::Start()
-{
-	//window.create(VideoMode(static_cast<unsigned>(windowSize.x), static_cast<unsigned>(windowSize.y)), name);
-}
 
 void Game::Update()
 {

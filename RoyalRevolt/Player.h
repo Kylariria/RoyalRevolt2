@@ -70,6 +70,4 @@ public:
 private:
 	void Init();
 	void Actions();
-
-	void Test();
 };
