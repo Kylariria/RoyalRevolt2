@@ -36,11 +36,6 @@ void GameInstance::LaunchTD()
 		TowerDefense* _td = new TowerDefense("TowerDefence", _mapSize, 2);
 		_td->Launch();
 	}
-
-
-
-
-
 }
 
 void GameInstance::LaunchVillage()

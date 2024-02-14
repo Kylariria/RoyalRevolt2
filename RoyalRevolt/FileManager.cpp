@@ -102,7 +102,6 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 Vector2f FileManager::GetSizeFill(const string& _path)
 {
     ifstream _stream(_path);
-    //char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
     if (!_stream)
     {
         cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
@@ -110,19 +109,19 @@ Vector2f FileManager::GetSizeFill(const string& _path)
     }
 
     string _line;
-    float _linesCount=0;
-    float _lineSizeMax=0;
+    float _lineX=0;
+    float _lineY=0;
 
     while (getline(_stream, _line))
     {
-        _linesCount++;
-        if (_lineSizeMax<= _line.size())
+        _lineY++;
+        if (_lineX < _line.size())
         {
-            _lineSizeMax =static_cast <float>( _line.size());
+            _lineX =static_cast<float>( _line.size());
         }
     }
 
-    return Vector2f(_linesCount, _lineSizeMax);
+    return Vector2f(_lineY, _lineX);
 }
 
 

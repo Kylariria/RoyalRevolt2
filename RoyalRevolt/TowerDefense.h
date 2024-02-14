@@ -1,6 +1,7 @@
 #pragma once
 #include "Map.h"
 #include "GameWindow.h"
+#include "Interface.h"
 
 class TowerDefense : public Map
 {
@@ -8,14 +9,18 @@ class TowerDefense : public Map
 	Vector2f mapSize;
 	int level;
 
+	vector<BasicElement*> activeElements;
 
-	vector<vector<Entity*>> map;
+	//vector<vector<Entity*>> map;
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level);
 
 	vector<Drawable*> GetDrawables()
 	{
 		vector<Drawable*> _drawables;
+
+		vector<Drawable*> _cellDrawables = GetCellsDrawables();
+		_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
 
 		for (vector<Cell*> _cells : cells)
 		{
@@ -24,11 +29,20 @@ public:
 				_drawables.push_back(_cell->cellShape);
 			}
 		}
+
+		for (BasicElement* _element : activeElements)
+		{
+			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
+		}
+
+
+
 		return _drawables;
 	}
 
 public:
 	void Launch();
+	void InitUI();
 	
 	void Update();
 
