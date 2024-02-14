@@ -42,6 +42,7 @@ public:
 		isDraw = _isDraw;
 
 		shape->setPosition(_position);
+		SetTexture();
 	}
 	BasicElement(Shape* _shape, const string& _path,
 		const Vector2f& _position, const bool _isDraw = true)
@@ -52,6 +53,7 @@ public:
 		isDraw = _isDraw;
 
 		shape->setPosition(_position);
+		SetTexture();
 	}
 
 public:
@@ -69,7 +71,8 @@ public:
 		isDraw = _isDraw;
 	}
 
-	virtual void Update(Event _event) = 0;
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) = 0;
+	virtual void Update(Event _event = Event()) = 0;
 };
 
 struct Button : public BasicElement
@@ -84,7 +87,7 @@ struct Button : public BasicElement
 		text = Text();
 		activateCallback = false;
 	}
-	Button(Shape* _shape, const vector<string> _paths, const Vector2f& _position,
+	Button(Shape* _shape, const string& _paths, const Vector2f& _position,
 		const string& _text, function<void()> _callback, Vector2f _textPosition = Vector2f(), const bool _isDraw = true)
 		: BasicElement(_shape,_paths,_position,_isDraw)
 	{
@@ -96,7 +99,7 @@ struct Button : public BasicElement
 		SetOrigin();
 	}
 	template <class Class, typename RType = void, typename... Args>
-	Button(Shape* _shape, const vector<string> _paths, const Vector2f& _position,
+	Button(Shape* _shape, const string& _paths, const Vector2f& _position,
 		const string& _text,
 		Class* _owner, RType(Class::* _callback)(Args...),Vector2f _textPosition = Vector2f(), const bool _isDraw = true, Args... _args)
 		: BasicElement(_shape, _paths, _position, _isDraw)
@@ -125,28 +128,30 @@ struct Button : public BasicElement
 		text.setOrigin(text.getGlobalBounds().getSize() / 2.0f);
 	}
 
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
+	{
+		_drawables.push_back(shape);
+		_drawables.push_back(&text);
+	}
+
 	virtual void Update(Event _event) override
 	{
 		const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
 		if (shape->getGlobalBounds().contains(_mousePosition))
 		{
-			shape->setOutlineColor(Color::Blue);
-			shape->setOutlineThickness(2.0f);
-
 			if (_event.type == Event::MouseButtonPressed)
 			{
 				if (Mouse::isButtonPressed(Mouse::Left))
 				{
-					shape->setFillColor(Color::Red);
+					shape->setFillColor(Color(255,255,255,100));
 					activateCallback = true;
 				}
 			}
 			if (_event.type == Event::MouseButtonReleased)
 			{
-				shape->setFillColor(Color::White);
-
 				if (activateCallback)
 				{
+					shape->setFillColor(Color::White);
 					callback();
 					activateCallback = false;
 				}
@@ -154,14 +159,9 @@ struct Button : public BasicElement
 		}
 		else
 		{
-			if (shape->getOutlineThickness() != 0.0f)
-				shape->setOutlineThickness(0.0f);
+			if (shape->getFillColor() != Color::White)
+				shape->setFillColor(Color::White);
 		}
-	}
-
-	void ChangeTexture()
-	{
-		//TODO
 	}
 };
 
@@ -188,8 +188,15 @@ struct SpecialText : public BasicElement
 	void InitSpecialText()
 	{
 		shape->setFillColor(Color(0, 0, 0, 100));
-		text.setOrigin(text.getGlobalBounds().getSize() / 2.0f);
 		text.setPosition(shape->getGlobalBounds().getPosition());
+		const Vector2f& _newOrigin = Vector2f(text.getGlobalBounds().getSize().x /2.0f, (text.getGlobalBounds().getSize().y / 2.0f) + shape->getGlobalBounds().getSize().y / 6.0f);
+		text.setOrigin(_newOrigin);
+	}
+
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
+	{
+		_drawables.push_back(shape);
+		_drawables.push_back(&text);
 	}
 
 	void Update(Event _event = Event())
@@ -239,6 +246,12 @@ struct MovingBar : public BasicElement
 		Update();
 	}
 
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
+	{
+		_drawables.push_back(shape);
+		_drawables.push_back(backgroundShape);
+	}
+
 	virtual void Update(Event _event = Event()) override
 	{
 		Vector2f _scale = Vector2f(1.0f, 1.0f);
@@ -250,5 +263,41 @@ struct MovingBar : public BasicElement
 			_scale.x /= _percent;
 		
 		shape->setScale(_scale);
+	}
+};
+
+struct PlayerRessources : public BasicElement
+{
+	SpecialText text;
+	int value;
+	function<int()> callback;
+
+	PlayerRessources() : BasicElement()
+	{
+		text = SpecialText();
+	}
+	PlayerRessources(Shape* _shape, const string& _paths,
+		const Vector2f& _position,
+		Shape* _specialShape, const string& _specialPaths,
+		const Vector2f& _specialPosition,const string& _text,const function<int()>& _callback, const bool _isDraw = true)
+		: BasicElement(_shape, _paths, _position, _isDraw)
+	{
+		text = SpecialText(_specialShape, _specialPaths, _specialPosition, _text, _isDraw);
+		callback = _callback;
+		value = 0;
+		SetOrigin();
+	}
+
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
+	{
+		text.PutInDrawables(_drawables);
+
+		_drawables.push_back(shape);
+	}
+
+	void Update(Event _event = Event())
+	{
+		//int _value = value + callback();
+		text.text.setString(to_string(callback()));
 	}
 };

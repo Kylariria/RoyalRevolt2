@@ -37,7 +37,7 @@ void GameInstance::LaunchVillage()
 	}
 	if (!_hasLaunch)
 	{
-		Village* _village = new Village("Village",Vector2f(10.0f,10.0f));
+		Village* _village = new Village("Village");
 		_village->Launch();
 	}
 }

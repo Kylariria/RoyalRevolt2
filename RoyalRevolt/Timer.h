@@ -20,6 +20,21 @@ public:
     {
         return isRunning;
     }
+    template <class Class, typename... Args>
+    void ChangeCallback(Class* _owner, void (Class::* _callback)(Args...), const Args&... _args)
+    {
+        function<void()> _newCallback = [_owner, _callback, _args...]()
+            {
+                (_owner->*_callback)(_args...);
+            };
+
+        callback = _newCallback;
+    }
+
+    void ChangeCallback(const function<void()>& _callback)
+    {
+        callback = _callback;
+    }
 
 public:
     template <class Class, typename... Args>
