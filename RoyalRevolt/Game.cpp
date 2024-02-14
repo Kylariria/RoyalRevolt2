@@ -16,7 +16,7 @@ Game::Game()
 void Game::Launch()
 {
 	//GameInstance::GetInstance().LaunchVillage();
-	TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
+	TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f), 1);
 	_yeepi.Launch();
  
 	Update();

@@ -6,8 +6,10 @@
 
 #define PATH_LEVEL1 "LevelEditor/Level1.txt"
 
-TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize) : Map(_name, _mapSize)
+TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const int _level) : Map(_name, _mapSize)
 {
+	mapSize = _mapSize;
+	level = _level;
 	allLevel.push_back(PATH_LEVEL1);
 
 	
@@ -16,7 +18,19 @@ TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize) : Map(_
 void TowerDefense::Launch()
 {
 	FileManager _fileManager;
-	map = _fileManager.CreateEntityFromChar(PATH_LEVEL1);
+	vector<vector<Entity*>> _mapFile = _fileManager.CreateEntityFromChar(allLevel[level - 1]);
+
+
+	for (int _index = 0; _index < mapSize.x; _index++)
+	{
+		for (int _i = 0; _i < mapSize.y; _i++)
+		{
+			cells[_index][_i]->entityOnCell = _mapFile[_index][_i];
+			_mapFile[_index][_i]->GetShape()->setPosition(cells[_index][_i]->cellShape->getPosition());
+			cells[_index][_i]->cellShape = _mapFile[_index][_i]->GetShape();
+		}
+	}
+
 
 	Update();
 }
@@ -43,14 +57,6 @@ void TowerDefense::Display()
 	for (Drawable* _drawable : GetDrawables())
 	{
 		WINDOW.draw(*_drawable);
-	}
-
-	for (vector<Entity*> _vectroEntity: map)
-	{
-		for (Entity* _partOfMap : _vectroEntity)
-		{
-			WINDOW.draw(*_partOfMap->GetShape());
-		}
 	}
 
 	WINDOW.display();

@@ -6,12 +6,12 @@ class TowerDefense : public Map
 {
 
 	vector<string> allLevel;
-	vector<vector<Entity*>> map;
-
+	Vector2f mapSize;
+	int level;
 
 
 public:
-	TowerDefense(const string& _name, const Vector2f& _mapSize);
+	TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level);
 
 	vector<Drawable*> GetDrawables()
 	{
