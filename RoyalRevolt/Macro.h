@@ -11,14 +11,16 @@ using namespace sf;
 
 #define S_ID(name) name + to_string(GetUniqueID())
 
-static void Normalize(Vector2f& _vector)
+static Vector2f Normalize(Vector2f& _vector)
 {
 	// length = x * x + y * y
 	const float _length = sqrtf(static_cast<float>(pow(_vector.x, 2) + pow(_vector.y, 2)));
 
 	// normVec = vec / length
 	_vector /= _length;
+	return _vector;
 }
+
 static int GetUniqueID()
 {
 	static int _id = 0;

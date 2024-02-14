@@ -20,8 +20,9 @@ void MovingEntity::Update()
 	// si c le Hero
 	if (Entity::GetEntityData()->type == ENTITY_HERO)
 	{
-		const Vector2f& _destination = InputManager::GetInstance().GetMousePosition();
-		shape->move(_destination);
+		if (!movement->CanMove() || !movement->HasDestination()) return;
+
+		movement->Move();
 	}
 
 	// si c  une autre entiter non controler pas le jouer
@@ -32,5 +33,5 @@ void MovingEntity::Update()
 		movement->SetDestination(_destination);
 	}*/
 
-	movement->Move();
+	
 }
