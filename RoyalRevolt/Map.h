@@ -25,8 +25,8 @@ struct Cell
 class Map : public IManagable<string>
 {
 	static Vector2f cellSize;
-	Shape* background;
 	Vector2f cellCount;
+	Shape* background;
 
 protected:
 	vector<vector<Cell*>> cells;

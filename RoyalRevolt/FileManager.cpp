@@ -42,8 +42,6 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 
     Vector2f _size = Map::GetCellSize();
 
-
-
     float _posX = 0.f, _posY = 0.f;
     string _line;
     char _letter = '0';
@@ -99,6 +97,32 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 
     return _allEntities;
 
+}
+
+Vector2f FileManager::GetSizeFill(const string& _path)
+{
+    ifstream _stream(_path);
+    //char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
+    if (!_stream)
+    {
+        cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
+        return Vector2f();
+    }
+
+    string _line;
+    float _linesCount=0;
+    float _lineSizeMax=0;
+
+    while (getline(_stream, _line))
+    {
+        _linesCount++;
+        if (_lineSizeMax<= _line.size())
+        {
+            _lineSizeMax =static_cast <float>( _line.size());
+        }
+    }
+
+    return Vector2f(_linesCount, _lineSizeMax);
 }
 
 

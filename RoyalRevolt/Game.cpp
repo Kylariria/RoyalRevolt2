@@ -4,11 +4,10 @@
 #include "TowerDefense.h"
 #include "GameInstance.h"
 #include "Macro.h"
-#include "GameWindow.h"
 
 Game::Game()
 {
-	windowSize = Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT);
+	windowSize = Vector2f(SCREEN_WIDTH,SCREEN_HEIGHT);
 	name = "Royal Revolt";
 	player = new Player();
 }
@@ -16,14 +15,16 @@ Game::Game()
 void Game::Launch()
 {
 	//GameInstance::GetInstance().LaunchVillage();
-	TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f), 1);
-	_yeepi.Launch();
- 
-	GameInstance::GetInstance().LaunchVillage();
-	/*TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
-	_yeepi.Launch();*/
+	GameInstance::GetInstance().LaunchTD();
 
+
+	Start();
 	Update();
+}
+
+void Game::Start()
+{
+	//window.create(VideoMode(static_cast<unsigned>(windowSize.x), static_cast<unsigned>(windowSize.y)), name);
 }
 
 void Game::Update()
@@ -42,8 +43,8 @@ void Game::UpdateEvent()
 	while (WINDOW.pollEvent(_event))
 	{
 		if (_event.type == Event::Closed) Stop();
-		UpdateInputs(_event);
 	}
+	UpdateInputs(_event);
 	UpdateWindow();
 }
 

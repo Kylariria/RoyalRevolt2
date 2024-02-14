@@ -1,0 +1,20 @@
+﻿  Map.cpp
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(55,46): warning C4244: 'argument': conversion from 'Type' to 'T', possible loss of data
+          with
+          [
+              Type=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(55,24): warning C4244: 'argument': conversion from 'Type' to 'T', possible loss of data
+          with
+          [
+              Type=int
+          ]
+          and
+          [
+              T=float
+          ]
+  RoyalRevolt.vcxproj -> C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\x64\Debug\RoyalRevolt.exe
