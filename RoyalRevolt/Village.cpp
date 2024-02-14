@@ -113,7 +113,9 @@ void Village::UpdatePassiveElements()
 
 void Village::OpenPurchasePanel()
 {
-	activeElements[2]->isDraw = !activeElements[2]->isDraw;
+	SelectionPanel* _panel = dynamic_cast<SelectionPanel*>(activeElements[2]);
+
+	_panel->SetDrawAllElements(!activeElements[2]->isDraw);
 }
 
 void Village::Display()

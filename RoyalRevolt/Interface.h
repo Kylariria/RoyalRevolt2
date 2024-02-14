@@ -330,6 +330,16 @@ struct SelectionPanel : public BasicElement
 		SetOrigin();
 	}
 
+	void SetDrawAllElements(const bool _status)
+	{
+		isDraw = _status;
+		for (PlayerRessources* _ressources : allElements)
+		{
+			_ressources->isDraw = _status;
+		}
+		title.isDraw = _status;
+	}
+
 	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
 	{
 		_drawables.push_back(shape);
@@ -341,6 +351,21 @@ struct SelectionPanel : public BasicElement
 	}
 	virtual void Update(Event _event = Event()) override
 	{
+		const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
+		if (shape->getGlobalBounds().contains(_mousePosition))
+		{
+			for (PlayerRessources* _ressources : allElements)
+			{
 
+			}
+
+			if (_event.type == Event::MouseButtonPressed)
+			{
+				if (Mouse::isButtonPressed(Mouse::Left))
+				{
+					cout << "callback" << endl;
+				}
+			}
+		}
 	}
 };
