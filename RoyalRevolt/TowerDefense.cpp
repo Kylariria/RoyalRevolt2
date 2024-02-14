@@ -12,7 +12,7 @@ TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const i
 	level = _level;
 	allLevel.push_back(PATH_LEVEL1);
 
-	
+	allLevel.push_back(PATH_LEVEL1);	
 }
 
 void TowerDefense::Launch()

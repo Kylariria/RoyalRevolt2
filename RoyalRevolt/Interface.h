@@ -275,11 +275,12 @@ struct PlayerRessources : public BasicElement
 	PlayerRessources() : BasicElement()
 	{
 		text = SpecialText();
+		value = 0;
+		callback = nullptr;
 	}
-	PlayerRessources(Shape* _shape, const string& _paths,
-		const Vector2f& _position,
-		Shape* _specialShape, const string& _specialPaths,
-		const Vector2f& _specialPosition,const string& _text,const function<int()>& _callback, const bool _isDraw = true)
+	PlayerRessources(Shape* _shape, const string& _paths,const Vector2f& _position,
+		Shape* _specialShape, const string& _specialPaths,const Vector2f& _specialPosition,
+		const string& _text,const function<int()>& _callback, const bool _isDraw = true)
 		: BasicElement(_shape, _paths, _position, _isDraw)
 	{
 		text = SpecialText(_specialShape, _specialPaths, _specialPosition, _text, _isDraw);
@@ -299,5 +300,47 @@ struct PlayerRessources : public BasicElement
 	{
 		//int _value = value + callback();
 		text.text.setString(to_string(callback()));
+	}
+};
+
+struct SelectionPanel : public BasicElement
+{
+	vector<PlayerRessources*>allElements;
+	vector<function<int()>> allCallbacks;
+	SpecialText title;
+
+	SelectionPanel() : BasicElement()
+	{
+		allElements = vector<PlayerRessources*>();
+		allCallbacks = vector <function<int()>>();
+		title = SpecialText();
+	}
+	SelectionPanel(Shape* _shape, const string& _paths,
+		const Vector2f& _position,
+		const vector<PlayerRessources*>& _allElements, const vector <function<int()>>& _allCallback,
+		Shape* _shapeText, const string& _pathText, const Vector2f& _positionText, const string& _text,
+		const bool _isDraw = true) : BasicElement(_shape, _paths, _position, _isDraw)
+	{
+		allElements = _allElements;
+		allCallbacks = _allCallback;
+		title = SpecialText(_shapeText, _pathText, _positionText, _text, _isDraw);
+
+		shape->setFillColor(Color::Blue);
+
+		SetOrigin();
+	}
+
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
+	{
+		_drawables.push_back(shape);
+		for (PlayerRessources* _ressources : allElements)
+		{
+			_ressources->PutInDrawables(_drawables);
+		}
+		title.PutInDrawables(_drawables);
+	}
+	virtual void Update(Event _event = Event()) override
+	{
+
 	}
 };
