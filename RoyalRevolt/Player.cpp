@@ -3,14 +3,15 @@
 #include "Map.h"
 #include "TimerManager.h"
 #include "EntityManager.h"
-
 #define PATH_HERO "Hero.png"
+
+Vector2f Player::savedMousePosition;
 
 Player::Player()
 {
 	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, ENTITY_PLAYER);
 	upgradesCounts = UpgradeCounts();
-
+	spawner = new Spawner();
 	Init();
 }
 
@@ -18,7 +19,7 @@ void Player::Init()
 {
 #pragma region Timer
 	function<void()> _addCoinCallback = [&]() {data.money += upgradesCounts.money; };
-	new Timer("AddCoin", _addCoinCallback,seconds(1.0f),true,true);
+	new Timer("AddCoin", _addCoinCallback, seconds(1.0f), true, true);
 
 	function<void()> _addDiamondCallback = [&]() {data.diamond += upgradesCounts.diamond; };
 	new Timer("AddDiamond", _addDiamondCallback, seconds(1.0f), true, true);
@@ -28,50 +29,28 @@ void Player::Init()
 
 #pragma endregion
 	//inputmanager click
-	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Right}, {Event::KeyPressed, Keyboard::Space}) });
-
-	new ActionMap("Interaction", { ActionData("Test", this, &Player::Test, {Event::MouseButtonPressed, Mouse::Left},{Event::KeyPressed, Keyboard::A}) });
+	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Left}, {Event::KeyPressed, Keyboard::Space}) });
 }
 
 void Player::Actions()
 {
-	// Si le player est dans TD :
-	// 
-	//
-	if (true /*TODO : Etat Player*/)
-	{
-		for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
+	spawner->Update();
+	savedMousePosition = InputManager::GetInstance().GetMousePosition();
+
+		// Si le player est dans TD :
+		if (true /*TODO : Etat Player*/)
 		{
-			if (dynamic_cast<Hero*>(_entityHero))
+			for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
 			{
-				Hero* _hero = dynamic_cast<Hero*>(_entityHero);
-				_hero->Update();
+				if (Hero* _hero = dynamic_cast<Hero*>(_entityHero))
+				{
+					_hero->GetMovementComponent()->SetDestination(savedMousePosition);
+				}
 			}
 		}
-	}
-
 
 	//// si HERO rencontre obstacle >> STOP
 	//if (_hero)
 	//{
-
 	//}
-
-	//for (Button* _button : Menu::GetButtons())
-	//{
-	//	//if contains mouse position
-	//	if (_button->GetShape()->getGlobalBounds().contains(_mousePosition))
-	//	{
-	//		//call action
-	//		_button->ExecuteCallback();
-	//	}
-	//}
-
-}
-void Player::Test()
-{
-	upgradesCounts.money++;
-
-	function<void()> _addCoinCallback = [&]() {data.money += (upgradesCounts.money); };
-	TimerManager::GetInstance().Get("AddCoin")->ChangeCallback(_addCoinCallback);
 }

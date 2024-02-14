@@ -5,6 +5,7 @@
 #include <functional>
 #include "InputManager.h"
 #include "Hero.h"
+#include "Spawner.h"
 
 using namespace sf;
 using namespace std;
@@ -35,9 +36,11 @@ struct UpgradeCounts
 
 class Player
 {
+	static Vector2f savedMousePosition;
 	UpgradeCounts upgradesCounts;
 	RessourcesData data;
 	Hero* hero;
+	Spawner* spawner;
 public:
 	int GetBread() const
 	{
@@ -63,6 +66,10 @@ public:
 	{
 		return data.experience;
 	}
+	static Vector2f GetSavedMousePosition()
+	{
+		return savedMousePosition;
+	}
 
 public:
 	Player();
@@ -70,6 +77,4 @@ public:
 private:
 	void Init();
 	void Actions();
-
-	void Test();
 };
