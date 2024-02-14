@@ -3,20 +3,27 @@ C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Barbarian.cpp;C:\Users\
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Building.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Building.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\CameraData.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\CameraData.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\CameraManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\CameraManager.obj
+<<<<<<< Updated upstream
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Casern.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Casern.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Castle.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Castle.obj
+=======
+>>>>>>> Stashed changes
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\CollisionComponent.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\CollisionComponent.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Component.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Component.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Entity.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Entity.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\EntityManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\EntityManager.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Farm.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Farm.obj
+<<<<<<< Updated upstream
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Fence.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Fence.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\FileManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\FileManager.obj
+=======
+>>>>>>> Stashed changes
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\FontData.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\FontData.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\FontManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\FontManager.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Game.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Game.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\GameInstance.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\GameInstance.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\GameWindow.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\GameWindow.obj
+<<<<<<< Updated upstream
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Grass.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Grass.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Hero.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Hero.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\InputManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\InputManager.obj
@@ -30,6 +37,13 @@ C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Player.cpp;C:\Users\vok
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Removable.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Removable.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Rock.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Rock.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Spawner.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Spawner.obj
+=======
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Gestion.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Gestion.obj
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\InputManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\InputManager.obj
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Main.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Main.obj
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Map.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Map.obj
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Player.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Player.obj
+>>>>>>> Stashed changes
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Tavern.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Tavern.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\TextureData.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\TextureData.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\TextureManager.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\TextureManager.obj
@@ -38,6 +52,9 @@ C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\TimerManager.cpp;C:\Use
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Tour.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Tour.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\TowerDefense.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\TowerDefense.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Trap.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Trap.obj
+<<<<<<< Updated upstream
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Tree.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Tree.obj
+=======
+>>>>>>> Stashed changes
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Troop.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Troop.obj
 C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Village.cpp;C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\x64\Debug\Village.obj
