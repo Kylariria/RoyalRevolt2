@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Barbarian.cpp" />
     <ClCompile Include="Building.cpp" />
@@ -64,6 +66,8 @@
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Barbarian.h" />
     <ClInclude Include="Building.h" />
