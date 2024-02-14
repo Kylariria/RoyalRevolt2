@@ -60,7 +60,7 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
                 CreateAndAddEntity<Path>(_allEntitiesInLine,"Path",Vector2f(_posX, _posY)* _size.x, "Path.png", _size);
                 break;
             case 'F':
-                CreateAndAddEntity<Fence>(_allEntitiesInLine,"Fence",Vector2f(_posX, _posY)*50.0f, "Fence.png", Vector2f(50.0f, 50.0f));
+                CreateAndAddEntity<Fence>(_allEntitiesInLine,"Fence",Vector2f(_posX, _posY)* _size.x, "Fence.png", _size);
                 break;
             case 'T':
                 CreateAndAddEntity<Tree>(_allEntitiesInLine,"Tree",Vector2f(_posX, _posY)* _size.x, "Tree.png", _size);
@@ -69,13 +69,13 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
                 CreateAndAddEntity<Rock>(_allEntitiesInLine,"Rock",Vector2f(_posX, _posY)* _size.x, "Rock.png", _size);
                 break;
             case 'P':
-                CreateAndAddEntity<Hero>(_allEntitiesInLine,"Hero",Vector2f(_posX, _posY)* _size.x, "Hero.png", _size, ENTITY_HERO);
+                CreateAndAddEntity<Hero>(_allEntitiesInLine,"Hero",Vector2f(_posX, _posY)* _size.x, "Hero.png", _size);
                 break;
             case 'C':
-                CreateAndAddEntity<Casern>(_allEntitiesInLine,"Casern",Vector2f(_posX, _posY)*50.0f, "Tent.png", Vector2f(50.0f, 50.0f));
+                CreateAndAddEntity<Casern>(_allEntitiesInLine,"Casern",Vector2f(_posX, _posY)* _size.x, "Casern.png", _size);
                 break;
             case 'E':
-                CreateAndAddEntity<Castle>(_allEntitiesInLine,"Castle",Vector2f(_posX, _posY)*50.0f, "Castle.png", Vector2f(50.0f, 50.0f));
+                CreateAndAddEntity<Castle>(_allEntitiesInLine,"Castle",Vector2f(_posX, _posY)* _size.x, "Castle.png", _size);
                 break;
             default:
                 break;

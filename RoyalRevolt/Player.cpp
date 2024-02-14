@@ -9,7 +9,7 @@ Vector2f Player::savedMousePosition;
 
 Player::Player()
 {
-	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, ENTITY_PLAYER);
+	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO);
 	upgradesCounts = UpgradeCounts();
 	spawner = new Spawner();
 	level = 1;
