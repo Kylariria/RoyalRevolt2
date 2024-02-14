@@ -1,5 +1,2 @@
-﻿  Animation.cpp
-  AnimationComponent.cpp
-  Génération de code en cours...
-D:\Projet1VS\SFML\RoyalRevolt2\RoyalRevolt\AnimationComponent.h(26): warning C4715: 'AnimationComponent::GetNextIndex' : les chemins de contrôle ne retournent pas tous une valeur
-  RoyalRevolt.vcxproj -> D:\Projet1VS\SFML\RoyalRevolt2\x64\Debug\RoyalRevolt.exe
+﻿  Game.cpp
+  RoyalRevolt.vcxproj -> C:\Users\damie\OneDrive\Documents\GitHub\RoyalRevolt2\x64\Debug\RoyalRevolt.exe

@@ -3,7 +3,7 @@
 #include "InputManager.h"
 #include "TowerDefense.h"
 #include "GameInstance.h"
-#include "Macro.h"
+#include "Macro.h"	
 
 Game::Game()
 {
@@ -14,7 +14,7 @@ Game::Game()
 
 void Game::Launch()
 {
-	GameInstance::GetInstance().LaunchVillage();
+	//GameInstance::GetInstance().LaunchVillage();
 	GameInstance::GetInstance().LaunchTD();
 
 
