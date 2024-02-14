@@ -23,7 +23,6 @@ void Game::Launch()
 	/*TowerDefense _yeepi = TowerDefense("starfoullah",Vector2f(10.0f,8.0f));
 	_yeepi.Launch();*/
 
-	Start();
 	Update();
 }
 
