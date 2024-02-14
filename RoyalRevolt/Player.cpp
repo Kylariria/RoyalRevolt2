@@ -12,6 +12,7 @@ Player::Player()
 	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, ENTITY_PLAYER);
 	upgradesCounts = UpgradeCounts();
 	spawner = new Spawner();
+	level = 1;
 	Init();
 }
 

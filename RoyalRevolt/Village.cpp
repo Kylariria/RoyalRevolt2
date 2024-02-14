@@ -19,6 +19,10 @@
 
 #define FONT_TEXTURE_PATH "UI/Text_Background.png"
 
+#define LEVEL_PATH "UI/Level.png"
+
+int Player::level = 1;
+
 Village::Village(const string& _name) : Map(_name, Vector2f(4.0f, 4.0f))
 {
 	buildings = VillageInformations();
@@ -47,13 +51,17 @@ void Village::InitUI()
 	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), BREAD_PATH, elementsInformations.breadIconPosition,
 		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.breadTextPosition, to_string(PLAYER->GetMoney()), _breadDisplayCallback));
 
+	function<int()> _levelDisplayCallback = [&]() {return PLAYER->GetLevel(); };
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), LEVEL_PATH, elementsInformations.LevelIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.LevelTextPosition,to_string(PLAYER->GetLevel()), _levelDisplayCallback));
+
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.farmPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
 
 
-	function<void()> _battleCallback = [&]() {cout << "Battle !"; };
+	function<void()> _battleCallback = [&]() {cout << "Battle !"; Battle(); };
 	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !";	TogglePurchasePanel(); };
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), BATTLE_BUTTON_PATH, elementsInformations.battleButtonPosition,
@@ -170,6 +178,11 @@ void Village::TogglePurchasePanel()
 	passiveElements[4]->isDraw = !passiveElements[4]->isDraw;
 	passiveElements[5]->isDraw = !passiveElements[5]->isDraw;
 
+}
+
+void Village::Battle()
+{
+	GameInstance::GetInstance().LaunchTD();
 }
 
 void Village::AddFarm()
