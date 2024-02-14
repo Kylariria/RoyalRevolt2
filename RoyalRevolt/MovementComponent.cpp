@@ -4,7 +4,7 @@
 #include "CollisionComponent.h"
 #include "Macro.h"
 #include "EntityManager.h"
-
+#include "Player.h"
 #include <vector>
 
 using namespace std;
@@ -23,17 +23,19 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 
 void MovementComponent::Move()
 {
-	SetDestination(InputManager::GetInstance().GetMousePosition());
-
-	if (!canMove || !destination) return;
 
 	// On récup la position de la souris
-	Vector2f _mousePosition = InputManager::GetInstance().GetMousePosition();
+	
+
 
 	// La shape se déplace à la position de la souris
-	Normalize(_mousePosition);
+	Vector2f _direction = *destination - shape->getPosition();
+	Normalize(_direction);
+	const float _x = _direction.x * speed;
+	const float _y = _direction.y * speed;
 
-	shape->move(_mousePosition);
+	shape->setPosition(_x, _y);
+
 	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
 
 	//si shape rencontre obstacle >> STOP

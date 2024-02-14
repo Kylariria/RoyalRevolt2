@@ -46,6 +46,11 @@ public:
 		return speed;
 	}
 
+	bool CanMove() const
+	{
+		return canMove;
+	}
+
 public:
 	MovementComponent(MovingEntity* _owner, Shape* _shape, const int _speed = 0, const int _cooldown = 0);
 

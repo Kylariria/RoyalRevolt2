@@ -20,7 +20,6 @@ void TowerDefense::Launch()
 	FileManager _fileManager;
 	vector<vector<Entity*>> _mapFile = _fileManager.CreateEntityFromChar(allLevel[level - 1]);
 
-
 	for (int _index = 0; _index < mapSize.x; _index++)
 	{
 		for (int _i = 0; _i < mapSize.y; _i++)
@@ -30,7 +29,6 @@ void TowerDefense::Launch()
 			cells[_index][_i]->cellShape = _mapFile[_index][_i]->GetShape();
 		}
 	}
-
 
 	Update();
 }
@@ -57,6 +55,11 @@ void TowerDefense::Display()
 	for (Drawable* _drawable : GetDrawables())
 	{
 		WINDOW.draw(*_drawable);
+	}
+
+	for (Entity* _entity : EntityManager::GetInstance().GetAllValues())
+	{
+		WINDOW.draw(*_entity->GetShape());
 	}
 
 	WINDOW.display();
