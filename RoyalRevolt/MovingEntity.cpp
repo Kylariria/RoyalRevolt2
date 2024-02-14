@@ -1,9 +1,7 @@
 #include "MovingEntity.h"
 #include "Macro.h"
 
-MovingEntity::MovingEntity(const EntityData& _data,
-							const int _speed, const int _cooldown)
-	                  : Entity(_data)
+MovingEntity::MovingEntity(const EntityData& _data, const int _speed, const int _cooldown) : Entity(_data)
 {
 
 	movement = new MovementComponent(this, shape, _speed, _cooldown);
@@ -32,10 +30,6 @@ void MovingEntity::Update()
 		RandomPositionAround(_destination, GetPosition(), movement->GetSpeed());
 		movement->SetDestination(_destination);
 	}*/
-
-
-
-
 
 	movement->Move();
 }

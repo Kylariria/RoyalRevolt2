@@ -1,12 +1,12 @@
 #include "Player.h"
 #include "Hero.h"
 #include "Map.h"
+#include "EntityManager.h"
 
 #define PATH_HERO "Hero.png"
 
 Player::Player()
 {
-	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, ENTITY_PLAYER);
 	Init();
 }
 
@@ -21,8 +21,20 @@ void Player::Actions()
 	// Si le player est dans TD :
 	// 
 	//
-	hero->GetMovementComponent()->Move();
-	cout << "bite" << endl;
+	if (true /*TODO : Etat Player*/)
+	{
+		for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
+		{
+			if (dynamic_cast<Hero*>(_entityHero))
+			{
+				Hero* _hero = dynamic_cast<Hero*>(_entityHero);
+
+				_hero->GetMovementComponent()->Move();
+			}
+		}
+	}
+
+
 	//// si HERO rencontre obstacle >> STOP
 	//if (_hero)
 	//{

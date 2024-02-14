@@ -118,6 +118,18 @@
     <ClCompile Include="Spawner.cpp">
       <Filter>.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Casern.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Castle.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Fence.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MapManager.cpp">
+      <Filter>.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h">
@@ -247,6 +259,18 @@
       <Filter>.h</Filter>
     </ClInclude>
     <ClInclude Include="Spawner.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Castle.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Casern.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Fence.h">
+      <Filter>.h</Filter>
+    </ClInclude>
+    <ClInclude Include="MapManager.h">
       <Filter>.h</Filter>
     </ClInclude>
   </ItemGroup>

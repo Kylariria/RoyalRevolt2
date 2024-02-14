@@ -23,18 +23,21 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 
 void MovementComponent::Move()
 {
+	SetDestination(InputManager::GetInstance().GetMousePosition());
+
 	if (!canMove || !destination) return;
 
 	// On récup la position de la souris
-	const Vector2f& _mousePosition = InputManager::GetInstance().GetMousePosition();
+	Vector2f _mousePosition = InputManager::GetInstance().GetMousePosition();
 
 	// La shape se déplace à la position de la souris
-	shape->move(_mousePosition);
+	Normalize(_mousePosition);
 
+	shape->move(_mousePosition);
 	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
 
 	//si shape rencontre obstacle >> STOP
-	CollisionReaction _reaction = CollisionReaction(ENTITY_GRASS, [&](Shape*) { /*TODO STOP*/; });
+	CollisionReaction _reaction = CollisionReaction(ENTITY_REMOVABLE, [&](Shape* _shape) { /*shape->getGlobalBounds().contains();*/ });
 	vector<CollisionReaction> _reactions;
 	_reactions.push_back(_reaction);
 	collision->CheckCollision(owner, _allEntities, _reactions);

@@ -24,7 +24,6 @@ public:
 	void Launch();
 
 private:
-	void Start();
 	void Update();
 	void UpdateEvent();
 	void UpdateWindow();
