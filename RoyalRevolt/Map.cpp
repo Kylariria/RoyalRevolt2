@@ -1,5 +1,8 @@
 #include "Map.h"
 #include "GameInstance.h"
+#include "TextureManager.h"
+
+#define GRASS_PATH "UI/Grass.png"
 
 Vector2f Map::cellSize;
 
@@ -10,6 +13,12 @@ Map::Map(const string& _name, const Vector2f& _mapSize) : IManagable(S_ID(_name)
 	cells = vector<vector<Cell*>>(static_cast<int>(_mapSize.x));
 
 	cellSize = Vector2f(50.0f, 50.0f);
+
+	background = new RectangleShape(Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT));
+	
+	TextureManager::GetInstance().Load(background, GRASS_PATH,true);
+
+	background->setTextureRect(IntRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
 	Register();
 

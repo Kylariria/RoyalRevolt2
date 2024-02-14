@@ -13,7 +13,7 @@ struct Cell
 	Shape* cellShape;
 	Entity* entityOnCell;
 	bool isRoad;
-
+	
 	Cell(const Vector2f& _cellSize)
 	{
 		cellShape = new RectangleShape(_cellSize);
@@ -25,6 +25,7 @@ struct Cell
 class Map : public IManagable<string>
 {
 	static Vector2f cellSize;
+	Shape* background;
 	Vector2f cellCount;
 
 protected:
@@ -35,9 +36,11 @@ public:
 	{
 		return cellSize;
 	}
-	vector<Drawable*> GetDrawables()
+	vector<Drawable*> GetCellsDrawables() const
 	{
 		vector<Drawable*> _drawables;
+
+		_drawables.push_back(background);
 
 		for (vector<Cell*> _cells : cells)
 		{
