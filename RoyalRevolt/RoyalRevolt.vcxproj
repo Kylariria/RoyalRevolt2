@@ -53,6 +53,7 @@
     <ClCompile Include="TowerDefenseBuilding.cpp" />
     <ClCompile Include="Troop.cpp" />
     <ClCompile Include="Village.cpp" />
+    <ClCompile Include="VillageBuilding.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -94,6 +95,7 @@
     <ClInclude Include="TowerDefenseBuilding.h" />
     <ClInclude Include="Troop.h" />
     <ClInclude Include="Village.h" />
+    <ClInclude Include="VillageBuilding.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

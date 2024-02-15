@@ -100,7 +100,12 @@
     <ClCompile Include="TowerDefenseBuilding.cpp">
       <Filter>RoyalRevolt2\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="Troop.cpp" />
+    <ClCompile Include="Troop.cpp">
+      <Filter>RoyalRevolt2\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="VillageBuilding.cpp">
+      <Filter>RoyalRevolt2\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Map.h">
@@ -218,6 +223,9 @@
       <Filter>RoyalRevolt2\H</Filter>
     </ClInclude>
     <ClInclude Include="Troop.h">
+      <Filter>RoyalRevolt2\H</Filter>
+    </ClInclude>
+    <ClInclude Include="VillageBuilding.h">
       <Filter>RoyalRevolt2\H</Filter>
     </ClInclude>
   </ItemGroup>
