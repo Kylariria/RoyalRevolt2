@@ -8,3 +8,7 @@ Casern::Casern(const string& _name, const Vector2f& _position, const Vector2f& _
 void Casern::Update()
 {
 }
+
+void Casern::Attack(const Entity& _entityDamaged)
+{
+}

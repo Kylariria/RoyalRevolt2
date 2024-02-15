@@ -7,7 +7,7 @@ bool CollisionComponent::CheckCollision(Entity* _currentEntity, const vector<Ent
 	const FloatRect& _rect = _currentShape->getGlobalBounds();
 	bool _hasCollide = false;
 
-	for (const Entity* _entity : _allEntities)
+	for (Entity* _entity : _allEntities)
 	{
 		Shape* shape = _entity->GetShape();
 
@@ -28,7 +28,7 @@ bool CollisionComponent::CheckCollision(Entity* _currentEntity, const vector<Ent
 				if (_entityType == _reaction.type)
 				{
 					//on effectue les réactions
-					_reaction.callbacks(shape);
+					_reaction.callbacks(_entity);
 					_hasCollide = true;
 				}
 

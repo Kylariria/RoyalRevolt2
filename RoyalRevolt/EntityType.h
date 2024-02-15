@@ -2,25 +2,14 @@
 
 enum EntityType
 {
-    ENTITY_NONE,
-	ENTITY_PLAYER,
-    ENTITY_HERO,
-    ENTITY_TROOP,
-    ENTITY_BARBARIAN,
-    ENTITY_ARCHER,
+    ENTITY_NONE = -1,
 
-    ENTITY_BUILDING,
-    ENTITY_FARM,
-    ENTITY_TAVERN,
-    ENTITY_TRAP,
-    ENTITY_TOWER,
-    ENTITY_CASERN,
-    ENTITY_CASTLE,
+    //enum entity player, health & damage
+    ENTITY_MOB,
 
-    ENTITY_REMOVABLE,
-    ENTITY_GRASS,
-    ENTITY_ROCK,
-    ENTITY_TREE,
-    ENTITY_PATH,
-    ENTITY_FENCE,
+    //unmoving
+    ENTITY_BUILDINGS,
+
+    //enum leveleditor placement et deplacement player
+	ENTITY_DESTROYABLE,
 };

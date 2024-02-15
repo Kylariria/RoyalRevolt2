@@ -15,9 +15,9 @@ struct CollisionReaction
 {
 	EntityType type;
 
-	function<void(Shape* _shape)> callbacks;
+	function<void(Entity* _entity)> callbacks;
 
-	CollisionReaction(const EntityType& _type, const function<void(Shape*)>& _callbacks)
+	CollisionReaction(const EntityType& _type, const function<void(Entity*)>& _callbacks)
 	{
 		type = _type;
 		callbacks = _callbacks;

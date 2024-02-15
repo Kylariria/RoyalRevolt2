@@ -1,8 +1,8 @@
 #pragma once
-#include "Troop.h"
+#include "MovingEntity.h"
 #include "EntityType.h"
 
-class Barbarian : public Troop
+class Barbarian : public MovingEntity
 {
 
 public:
@@ -10,5 +10,5 @@ public:
 
 public:
 	virtual void Update() override;
-
+	virtual void Attack(const Entity& _entityDamaged) override;
 };
