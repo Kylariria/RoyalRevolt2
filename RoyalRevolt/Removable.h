@@ -9,9 +9,12 @@ enum RemovableType
 class Removable : public Entity
 {
 	RemovableType type;
+	bool isRemovable;
 
 public :
 	Removable(const string& _name, const Vector2f& _position, const EntityType& _type, const Vector2f& _size = Vector2f(0.0f, 0.0f),
 		const string& _path = "", bool _isRemovable = false);
+
+	virtual void Update() override;
 };
 

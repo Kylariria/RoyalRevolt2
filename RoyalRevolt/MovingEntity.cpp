@@ -2,12 +2,13 @@
 #include "Macro.h"
 #include "InputManager.h"
 #include "EntityManager.h"
-MovingEntity::MovingEntity(const EntityData& _data, const int _speed, const int _cooldown) : Entity(_data), Stat(0,0)
+MovingEntity::MovingEntity(const EntityData& _data,const Stat& _stats, const int _speed, const int _cooldown) : Entity(_data), Stat(_stats)
 {
 
 	movement = new MovementComponent(this, shape, _speed, _cooldown);
 	collision = new CollisionComponent();
 	reactions = vector<CollisionReaction>();
+	stats = new Stat(_stats);
 }
 
 MovingEntity::~MovingEntity()

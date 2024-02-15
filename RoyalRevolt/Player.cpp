@@ -3,13 +3,14 @@
 #include "Map.h"
 #include "TimerManager.h"
 #include "EntityManager.h"
+
 #define PATH_HERO "Hero.png"
 
 Vector2f Player::savedMousePosition;
 
 Player::Player()
 {
-	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO);
+	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, 150, 40);
 	upgradesCounts = UpgradeCounts();
 	spawner = new Spawner();
 	level = 1;
@@ -29,40 +30,46 @@ void Player::Init()
 	new Timer("AddBread", _addBreadCallback, seconds(1.0f), true, true);
 
 #pragma endregion
+
 	//inputmanager click
 	new ActionMap("Interaction", { ActionData("Select", this, &Player::Actions, {Event::MouseButtonPressed, Mouse::Left}, {Event::KeyPressed, Keyboard::Space}) });
 }
 
 void Player::Actions()
 {
-	spawner->Update();
+	spawner->Spawn();
 	savedMousePosition = InputManager::GetInstance().GetMousePosition();
 
-		// Si le player est dans TD :
-		if (true /*TODO : Etat Player*/)
+	// Si le player est dans TD :
+	if (true /*GetEtat() == ETAT_TD*/)
+	{
+		for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
 		{
-			for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
+			if (Hero* _hero = dynamic_cast<Hero*>(_entityHero))
 			{
-				if (Hero* _hero = dynamic_cast<Hero*>(_entityHero))
-				{
-					_hero->GetMovementComponent()->SetDestination(savedMousePosition);
-				}
+				_hero->GetMovementComponent()->SetDestination(savedMousePosition);
 			}
 		}
+	}
 
-	//// si HERO rencontre obstacle >> STOP
-	//if (_hero)
-	//{
-	//}
+	//if (GetEtat() == ETAT_VILLAGE)
 
-	//for (Button* _button : Menu::GetButtons())
-	//{
-	//	//if contains mouse position
-	//	if (_button->GetShape()->getGlobalBounds().contains(_mousePosition))
-	//	{
-	//		//call action
-	//		_button->ExecuteCallback();
-	//	}
-	//}
+
+	//if (GetEtat() == ETAT_EDITOR)
+
+//// si HERO rencontre obstacle >> STOP
+//if (_hero)
+//{
+//}
+
+//for (Button* _button : Menu::GetButtons())
+//{
+//	//if contains mouse position
+//	if (_button->GetShape()->getGlobalBounds().contains(_mousePosition))
+//	{
+//		//call action
+//		_button->ExecuteCallback();
+//	}
+//}
 
 }

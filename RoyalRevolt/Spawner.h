@@ -5,12 +5,10 @@ using namespace sf;
 
 class Spawner
 {
-	int numberOfEntity;
 public:
 	Spawner();
 
 public:
 	void Spawn();
-	void Update();
 };
 

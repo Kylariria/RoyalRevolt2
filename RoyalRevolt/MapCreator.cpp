@@ -96,32 +96,6 @@ void MapCreator::InitUI()
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.tavernPriceTextInPurchasePanel, to_string(10) + " Coins", false));
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.farmPriceTextInPurchasePanel, to_string(10) + " Coins", false));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	/*vector<PlayerRessources*> _ressourcesToPurchase;
 	function<int()> _tavernCallback = [&]() {cout << "Purchase Tavern" << endl; AddTavern(); return 0; };
 	function<int()> _farmCallback = [&]() {cout << "Purchase Farm" << endl; AddFarm(); return 0; };
@@ -161,8 +135,5 @@ Cell* MapCreator::CellWhoContainsMouss()
 void MapCreator::PlaceEntityOnTheCell()
 {
 	Cell* _cell = CellWhoContainsMouss();
-
-
-
 
 }
