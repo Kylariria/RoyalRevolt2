@@ -16,7 +16,7 @@ public:
 
 public :
     template <class Class, typename RType = void, typename... Args>
-    Building(const string& _name, const Vector2f& _position, 
+    Building(const string& _name, const Vector2f& _position, const EntityType& _type,
     Class* _owner, RType(Class::* _callback)(Args...),
     const Vector2f& _size = Vector2f(0.0f, 0.0f),const string& _path = "", const int& _tileAround = 0, const bool& _isBuildable = false, Args... _args)
         : Entity(EntityData(_name, ENTITY_BUILDING, _position, _size))
@@ -25,7 +25,7 @@ public :
             return (_owner->*_callback)(_args...);
             };
     }
-    Building(const string& _name, const Vector2f& _position, const function<void()>& _callback,
+    Building(const string& _name, const Vector2f& _position, const EntityType& _type, const function<void()>& _callback,
         const Vector2f& _size = Vector2f(0.0f, 0.0f), const string& _path = "", const int& _tileAround = 0, const bool& _isBuildable = false);
 
     virtual void Update() = 0;

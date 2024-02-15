@@ -23,6 +23,7 @@ Entity::~Entity()
 	{
 		delete _component;
 	}
+	delete data;
 }
 
 void Entity::Register()
