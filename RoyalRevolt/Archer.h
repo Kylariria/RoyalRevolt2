@@ -1,6 +1,6 @@
 #pragma once
-#include "Troop.h"
-class Archer : public Troop
+#include "MovingEntity.h"
+class Archer : public MovingEntity
 {
 
 public: 
@@ -8,5 +8,6 @@ public:
 
 public:
 	virtual void Update() override;
+	virtual void Attack(const Entity& _entityDamaged) override;
 };
 

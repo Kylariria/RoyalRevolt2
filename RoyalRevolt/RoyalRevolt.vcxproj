@@ -63,7 +63,6 @@
     <ClCompile Include="TowerDefense.cpp" />
     <ClCompile Include="Trap.cpp" />
     <ClCompile Include="Tree.cpp" />
-    <ClCompile Include="Troop.cpp" />
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +79,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="Stat.h" />
     <ClInclude Include="EntityType.h" />
     <ClInclude Include="Farm.h" />
     <ClInclude Include="Fence.h" />
@@ -115,7 +115,6 @@
     <ClInclude Include="TowerDefense.h" />
     <ClInclude Include="Trap.h" />
     <ClInclude Include="Tree.h" />
-    <ClInclude Include="Troop.h" />
     <ClInclude Include="Village.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -3,24 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\MovingEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Stat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Stat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\EntityType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\EntityType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Hero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Castle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Castle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Farm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Farm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Castle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Castle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\FileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\FileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Casern.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Casern.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Casern.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Casern.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Barbarian.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Barbarian.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Hero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Archer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Barbarian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Barbarian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Hero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,57 +87,187 @@
           ]
         },
         {
-          "DockedWidth": 186,
+          "DockedWidth": 181,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MovingEntity.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\MovingEntity.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.h",
+              "RelativeToolTip": "RoyalRevolt\\MovingEntity.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T13:01:02.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Stat.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Stat.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Stat.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Stat.h",
+              "RelativeToolTip": "RoyalRevolt\\Stat.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T12:45:29.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FileManager.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\FileManager.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\FileManager.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\FileManager.h",
+              "RelativeToolTip": "RoyalRevolt\\FileManager.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T11:11:12.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Farm.cpp",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Farm.cpp",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Farm.cpp",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Farm.cpp",
+              "RelativeToolTip": "RoyalRevolt\\Farm.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-15T11:10:09.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Castle.cpp",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Castle.cpp",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Castle.cpp",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Castle.cpp",
+              "RelativeToolTip": "RoyalRevolt\\Castle.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-15T11:09:49.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Castle.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Castle.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Castle.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Castle.h",
+              "RelativeToolTip": "RoyalRevolt\\Castle.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T11:09:41.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Casern.cpp",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Casern.cpp",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Casern.cpp",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Casern.cpp",
+              "RelativeToolTip": "RoyalRevolt\\Casern.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-15T11:09:27.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Casern.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Casern.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Casern.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Casern.h",
+              "RelativeToolTip": "RoyalRevolt\\Casern.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T11:09:22.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Barbarian.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Barbarian.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Barbarian.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Barbarian.h",
+              "RelativeToolTip": "RoyalRevolt\\Barbarian.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T10:48:36.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Entity.h",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Entity.h",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Entity.h",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Entity.h",
+              "RelativeToolTip": "RoyalRevolt\\Entity.h",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAcwA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-02-15T10:21:58.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Archer.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Archer.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Archer.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Archer.cpp",
               "RelativeToolTip": "RoyalRevolt\\Archer.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABUAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T09:55:32.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "Barbarian.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Barbarian.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Barbarian.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Barbarian.cpp",
               "RelativeToolTip": "RoyalRevolt\\Barbarian.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T09:30:28.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Hero.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Hero.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp",
               "RelativeToolTip": "RoyalRevolt\\Hero.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T09:28:11.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "Hero.h",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.h",
               "RelativeDocumentMoniker": "RoyalRevolt\\Hero.h",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.h",
               "RelativeToolTip": "RoyalRevolt\\Hero.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-02-15T08:38:24.347Z",
               "EditorCaption": ""
@@ -105,18 +275,18 @@
           ]
         },
         {
-          "DockedWidth": 130,
+          "DockedWidth": 135,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EntityType.h",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\EntityType.h",
               "RelativeDocumentMoniker": "RoyalRevolt\\EntityType.h",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\EntityType.h",
               "RelativeToolTip": "RoyalRevolt\\EntityType.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-02-15T08:24:06.975Z",
               "EditorCaption": ""

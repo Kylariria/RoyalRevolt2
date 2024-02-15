@@ -10,7 +10,6 @@ protected:
 	CollisionComponent* collision;
 	vector<CollisionReaction> reactions;
 	Vector2f destination;
-
 public:
 	MovementComponent* GetMovementComponent()const
 	{

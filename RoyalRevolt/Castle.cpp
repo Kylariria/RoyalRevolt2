@@ -8,3 +8,8 @@ Castle::Castle(const string& _name, const Vector2f& _position, const Vector2f& _
 void Castle::Update()
 {
 }
+
+void Castle::Attack(const Entity& _entityDamaged)
+{
+
+}

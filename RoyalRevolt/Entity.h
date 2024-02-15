@@ -2,7 +2,6 @@
 #include "IManagable.h"
 #include "EntityType.h"
 #include "IManagable.h"
-#include "EntityType.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -20,6 +19,8 @@ struct EntityData
     string path;
     EntityType type;
     int tileAround;
+    int health;
+    int damage;
 
     EntityData()
     {
@@ -29,10 +30,12 @@ struct EntityData
         path = "";
         type = ENTITY_NONE;
         tileAround = 0;
+        health = 0;
+        damage = 0;
     }
 
     EntityData(const string& _name, const EntityType& _type, const Vector2f& _position,
-        const Vector2f& _size,const int _tileAround = 0, const string& _path = "")
+        const Vector2f& _size,const int _tileAround = 0, const string& _path = "", const int _health = 0, const int _damage = 0)
     {
         name = _name;
         type = _type;
@@ -40,6 +43,8 @@ struct EntityData
         size = _size;
         path = _path;
         tileAround = _tileAround;
+        health = _health;
+        damage = _damage;
     }
 
     EntityType GetType() const
@@ -54,7 +59,7 @@ protected:
     Shape* shape;
     vector<Component*> components;
     EntityData* data;
-
+    
 public:
     template<typename T>
     T* GetComponent()const
@@ -93,4 +98,5 @@ private:
 
 public:
     virtual void Update() = 0;
+    virtual void Attack(const Entity& _entityDamaged) = 0;
 };

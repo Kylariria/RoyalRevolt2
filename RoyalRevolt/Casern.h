@@ -7,5 +7,6 @@ public:
 
 public:
 	virtual void Update() override;
+	virtual void Attack(const Entity& _entityDamaged) override;
 };
 
