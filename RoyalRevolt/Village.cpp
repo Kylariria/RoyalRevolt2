@@ -3,8 +3,6 @@
 #include "InputManager.h"
 #include "GameInstance.h"
 #include "TimerManager.h"
-#include "Farm.h"
-#include "Tavern.h"
 
 #define GOLD_PATH "UI/Gold_Texture.png"
 #define DIAMOND_PATH "UI/Diamond_Texture.png"
@@ -58,8 +56,8 @@ void Village::InitUI()
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
 
-	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
-	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.farmPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
+	//passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
+	//passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.farmPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
 
 
 	function<void()> _battleCallback = [&]() {cout << "Battle !"; Battle(); };
@@ -90,6 +88,11 @@ void Village::InitUI()
 		_ressourcesToPurchase, _allCallback, new RectangleShape(Vector2f(100.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.purchaseTitlePosition, "Achat", false));
 }
 
+void Village::AddBuilding()
+{
+	//Farm* _farm = new Farm("Farm", Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f), Vector2f(100.0f, 100.0f), FARM_PATH, 0, [&]() {; });
+}
+
 void Village::Update()
 {
 	while (WINDOW.isOpen())
@@ -115,51 +118,9 @@ void Village::UpdateEvent()
 
 void Village::UpdateActiveElements(Event _event)
 {
-	bool _status = false;
-	if (Mouse::isButtonPressed(Mouse::Left))
-	{
-		if (buildings.addFarm || buildings.addTavern)
-		{
-			_status = true;
-			for (vector<Cell*> _cells : cells)
-			{
-				for (Cell* _cell : _cells)
-				{
-					if (_cell->cellShape->getGlobalBounds().contains(InputManager::GetInstance().GetMousePosition()))
-					{
-						AddBuilding(_cell);
-					}
-				}
-			}
-		}		
-		if (_status)
-		{
-			passiveElements[3]->isDraw = false;
-			buildings.addFarm = false;
-			buildings.addTavern = false;
-		}
-	}
-
 	for (BasicElement* _element : activeElements)
 	{
 		if (_element->GetIsDraw()) _element->Update(_event);
-	}
-}
-
-
-void Village::AddBuilding(Cell* _cell)
-{
-	if (buildings.addFarm)
-	{
-		_cell->entityOnCell = new Farm("Farm", _cell->cellShape->getPosition(), GetCellSize(), FARM_PATH, 0, function<void()>());
-		buildings.farm.isBuild = true;
-		buildings.farm.level = 1;
-	}
-	else if (buildings.addTavern)
-	{
-		_cell->entityOnCell = new Tavern("Tavern", _cell->cellShape->getPosition(), GetCellSize(), TAVERN_PATH, 0, function<void()>());
-		buildings.tavern.isBuild = true;
-		buildings.tavern.level = 1;
 	}
 }
 
@@ -191,14 +152,12 @@ void Village::AddFarm()
 {
 	TogglePurchasePanel();
 	passiveElements[3]->isDraw = true;
-	buildings.addFarm = true;
 }
 
 void Village::AddTavern()
 {
 	TogglePurchasePanel();
 	passiveElements[3]->isDraw = true;
-	buildings.addTavern = true;
 }
 
 void Village::Display()

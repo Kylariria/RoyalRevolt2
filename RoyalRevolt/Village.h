@@ -3,46 +3,8 @@
 #include "Interface.h"
 #include "EntityManager.h"
 
-struct BuildingInformations
-{
-	Vector2f position;
-	bool isBuild;
-	int level;
-	function<void()> callback;
-
-	BuildingInformations()
-	{
-		position = Vector2f();
-		isBuild = false;
-		level = 0;
-		callback = nullptr;
-	}
-	BuildingInformations(const Vector2f& _position,const bool _isBuild,
-		const int _level,const function<void()>& _callback)
-	{
-		position = _position;
-		isBuild = _isBuild;
-		level = _level;
-		callback = _callback;
-	}
-};
-
 struct VillageInformations
 {
-	BuildingInformations farm;
-	bool addFarm;
-
-	BuildingInformations tavern;
-	bool addTavern;
-
-	VillageInformations()
-	{
-		farm = BuildingInformations();
-		addFarm = false;
-
-		tavern = BuildingInformations();
-		addTavern = false;
-	}
 };
 
 struct ElementsInformations
@@ -118,11 +80,11 @@ public:
 	{
 		vector<Drawable*> _drawables;
 
-		vector<Drawable*> _cellDrawables = GetCellsDrawables();
+		_drawables.push_back(background);
+
 		vector<Drawable*> _entityDrawables = EntityManager::GetInstance().GetDrawables();
 
 		_drawables.insert(_drawables.begin(), _entityDrawables.begin(), _entityDrawables.end());
-		_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
 
 		for (BasicElement* _element : activeElements)
 		{
@@ -142,11 +104,11 @@ public:
 public:
 	void Launch();
 	void InitUI();
+	void AddBuilding();
 
 	void Update();
 	void UpdateEvent();
 	void UpdateActiveElements(Event _event);
-	void AddBuilding(Cell* _cell);
 	void UpdatePassiveElements();
 	void TogglePurchasePanel();
 	void Battle();
