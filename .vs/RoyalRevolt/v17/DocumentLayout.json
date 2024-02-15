@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Spawner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\MovingEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,12 +15,8 @@
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\MovingEntity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Troop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Troop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Hero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\GameInstance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\GameInstance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\TowerDefense.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -35,20 +27,24 @@
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Building.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Building.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Building.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Building.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Spawner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Hero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Troop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Troop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\FileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\FileManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C84D736E-025B-46FD-B5AF-DA85CFD869E5}|RoyalRevolt\\RoyalRevolt.vcxproj|solutionrelative:RoyalRevolt\\Spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,21 +54,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 307,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Player.cpp",
-              "RelativeDocumentMoniker": "RoyalRevolt\\Player.cpp",
-              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Player.cpp",
-              "RelativeToolTip": "RoyalRevolt\\Player.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-02-15T14:28:38.561Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -87,20 +70,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "GameInstance.cpp",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\GameInstance.cpp",
+              "RelativeDocumentMoniker": "RoyalRevolt\\GameInstance.cpp",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\GameInstance.cpp",
+              "RelativeToolTip": "RoyalRevolt\\GameInstance.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-15T20:22:16.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Player.cpp",
+              "RelativeDocumentMoniker": "RoyalRevolt\\Player.cpp",
+              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Player.cpp",
+              "RelativeToolTip": "RoyalRevolt\\Player.cpp",
+              "ViewState": "AQIAABwAAAAAAAAAAAAuwCYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-15T14:28:38.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MovingEntity.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\MovingEntity.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.cpp",
               "RelativeToolTip": "RoyalRevolt\\MovingEntity.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABDAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T15:24:54.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Troop.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Troop.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Troop.cpp",
@@ -113,59 +122,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Building.cpp",
-              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Building.cpp",
-              "RelativeDocumentMoniker": "RoyalRevolt\\Building.cpp",
-              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Building.cpp",
-              "RelativeToolTip": "RoyalRevolt\\Building.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-02-15T15:04:31.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Building.h",
-              "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Building.h",
-              "RelativeDocumentMoniker": "RoyalRevolt\\Building.h",
-              "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Building.h",
-              "RelativeToolTip": "RoyalRevolt\\Building.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-02-15T15:03:18.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "TowerDefense.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\TowerDefense.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\TowerDefense.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\TowerDefense.cpp",
               "RelativeToolTip": "RoyalRevolt\\TowerDefense.cpp",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB4AAAAbAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAFEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T15:02:35.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Hero.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Hero.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Hero.cpp",
               "RelativeToolTip": "RoyalRevolt\\Hero.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAACAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T14:44:19.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Spawner.h",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.h",
               "RelativeDocumentMoniker": "RoyalRevolt\\Spawner.h",
@@ -178,26 +161,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Spawner.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Spawner.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Spawner.cpp",
               "RelativeToolTip": "RoyalRevolt\\Spawner.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T14:07:31.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Game.cpp",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Game.cpp",
               "RelativeDocumentMoniker": "RoyalRevolt\\Game.cpp",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\Game.cpp",
               "RelativeToolTip": "RoyalRevolt\\Game.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-02-15T14:07:08.529Z",
               "EditorCaption": ""
@@ -218,18 +201,17 @@
               "RelativeToolTip": "RoyalRevolt\\FileManager.h",
               "ViewState": "AQIAAAwAAAAAAAAAAAAewCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-02-15T14:51:40.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-15T14:51:40.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MovingEntity.h",
               "DocumentMoniker": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.h",
               "RelativeDocumentMoniker": "RoyalRevolt\\MovingEntity.h",
               "ToolTip": "C:\\Users\\vokin\\Documents\\GitHub\\RoyalRevolt2\\RoyalRevolt\\MovingEntity.h",
               "RelativeToolTip": "RoyalRevolt\\MovingEntity.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-02-15T15:25:44.37Z",
               "EditorCaption": ""
