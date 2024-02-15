@@ -2,6 +2,7 @@
 #include "Singleton.h"
 #include "IManager.h"
 #include "Entity.h"
+#include "Map.h"
 #include <fstream>
 
 using namespace std;
@@ -32,7 +33,7 @@ class FileManager : public Singleton<FileManager>
 public:
 	vector<vector<Entity*>> CreateEntityFromChar( const string& _path);
 	Vector2f GetSizeFill( const string& _path);
-	void SaveMap(const vector<vector<Entity*>> _map, const string& _path);
+	void SaveMap(const vector<vector<Cell*>> _map, const string& _path);
 
 
 	template <typename T, typename... Args>

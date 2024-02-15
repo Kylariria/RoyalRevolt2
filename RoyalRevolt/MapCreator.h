@@ -2,30 +2,44 @@
 #include "Map.h"
 #include "GameWindow.h"
 #include "Interface.h"
+#include "FileManager.h"
 
 
 struct MapCreatorInformations
 {
-	Vector2f goldIconPosition;
-	Vector2f goldTextPosition;
+	Vector2f pathIconPosition;
+	Vector2f pathTextPosition;
+	int pathSize;
+	int pathSizeMax;
 
-	Vector2f diamondIconPosition;
-	Vector2f diamondTextPosition;
+	Vector2f towerIconPosition;
+	Vector2f towerTextPosition;
+	int towerCount;
+	int towerCountMax;
 
-	Vector2f breadIconPosition;
-	Vector2f breadTextPosition;
+	Vector2f trapIconPosition;
+	Vector2f trapTextPosition;
+	int trapCount;
+	int trapCountMax;
 
 
 	MapCreatorInformations()
 	{
-		goldIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.05f);
-		goldTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.05f);
+		pathIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.05f);
+		pathTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.05f);
+		pathSize = 0;
+		pathSizeMax = 15;
 
-		diamondIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.15f);
-		diamondTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.15f);
+		towerIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.15f);
+		towerTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.15f);
+		towerCount = 0;
+		towerCountMax = 5;
 
-		breadIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.25f);
-		breadTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.25f);
+
+		trapIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.25f);
+		trapTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.25f);
+		trapCount = 0;
+		trapCountMax = 5;
 
 	}
 };
@@ -34,6 +48,7 @@ struct MapCreatorInformations
 
 class MapCreator : public Map
 {
+	FileManager _fileManager;
 	Entity* _currentEntity;
 	vector<BasicElement*> passiveElements;
 	MapCreatorInformations mapCreatorInformations;
@@ -49,10 +64,15 @@ public:
 		{
 			for (Cell* _cell : _cells)
 			{
-				_cell->cellShape->setFillColor(Color::White);
+				_cell->cellShape->setFillColor(Color::Transparent);
 				_cell->cellShape->setOutlineThickness(1.0f);
 				_cell->cellShape->setOutlineColor(Color::Black);
 				_drawables.push_back(_cell->cellShape);
+				//TODO voir pour modifier
+				if (_cell->entityOnCell != nullptr)
+				{
+					_drawables.push_back(_cell->entityOnCell->GetShape());
+				}
 			}
 		}
 
@@ -71,6 +91,7 @@ public:
 	void Launch();
 	void Update();
 	void UpdateEvent();
+	void UpdatePassiveElements();
 	void Display();
 	void InitUI();
 

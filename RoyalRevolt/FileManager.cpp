@@ -20,14 +20,6 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 {
 	vector<Entity*> _allEntitiesInLine;
 	vector<vector<Entity*>> _allEntities;
-
-
-   /* map<EntityType, string> _mapChar = {
-    {"#",R_GRASS}, {" ",ENTITY_NONE},{"F",TDB_FENCE},
-    {"T",R_TREE},{"R",R_ROCK},{"P",ENTITY_NONE},
-    {"C",ENTITY_NONE},{"E",TDB_CASTLE} };*/
-
-
 	ifstream _stream(_path);
 
 	//char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
@@ -117,7 +109,7 @@ Vector2f FileManager::GetSizeFill(const string& _path)
     return Vector2f(_lineY, _lineX);
 }
 
-void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _path)
+void FileManager::SaveMap(const vector<vector<Cell*>> _map, const string& _path)
 {
     ResetFill(_path);
 
@@ -135,9 +127,9 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
 	// voir si possible d utiliset un vector de char
     // Probleme les enum d'EntityType sont pas dans lordre
 
-    for (vector<Entity*> _entityInLine: _map)
+    for (vector<Cell*> _entityInLine: _map)
     {
-        for (Entity* _entity : _entityInLine)
+        for (Cell* _entity : _entityInLine)
         {
             //_stream << _mapChar[_entity->GetEntityData()->type];
         }

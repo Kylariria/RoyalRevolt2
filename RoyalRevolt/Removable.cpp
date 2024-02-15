@@ -5,6 +5,10 @@ Removable::Removable(const string& _name, const Vector2f& _position, const Entit
 	: Entity(EntityData(_name, ENTITY_DESTROYABLE, _position, _size,0, _path))
 {
 	type = _RType;
+	if (type== R_GRASS)
+	{
+		shape->setFillColor(Color::Transparent);
+	}
 }
 
 void Removable::Update()
