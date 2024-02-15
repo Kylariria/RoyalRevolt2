@@ -26,9 +26,9 @@ class Map : public IManagable<string>
 {
 	static Vector2f cellSize;
 	Vector2f cellCount;
-	Shape* background;
 
 protected:
+	Shape* background;
 	vector<vector<Cell*>> cells;
 
 public:

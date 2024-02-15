@@ -222,7 +222,7 @@ struct MovingBar : public BasicElement
 		const float _actualValue = 0, const bool _isDraw = true)
 		: BasicElement(_shape,_paths,_position,isDraw)
 	{
-		backgroundShape = _shape;
+		backgroundShape = new RectangleShape(_shape->getGlobalBounds().getSize());
 		initialValue = _initialValue;
 		actualValue = _actualValue;
 
