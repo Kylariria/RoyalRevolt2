@@ -4,14 +4,8 @@
 #include <fstream>
 #include "Map.h"
 
-#include "Grass.h"
 #include "Path.h"
-#include "Fence.h"
-#include "Tree.h"
-#include "Rock.h"
 #include "Hero.h"
-#include "Casern.h"
-#include "Castle.h"
 
 
 //# = Grass
@@ -51,7 +45,7 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
         for (int _index = 0; _index < _line.size(); _index++)
         {
 
-            switch (_line[_index])
+            /*switch (_line[_index])
             {
             case '#':
                 CreateAndAddEntity<Grass>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, "Grass.png", _size);
@@ -79,7 +73,7 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
                 break;
             default:
                 break;
-            }
+            }*/
             _posX += 1;
         }
 

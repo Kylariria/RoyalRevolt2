@@ -21,19 +21,13 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
-    <ClCompile Include="Archer.cpp" />
-    <ClCompile Include="Barbarian.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="CameraData.cpp" />
     <ClCompile Include="CameraManager.cpp" />
-    <ClCompile Include="Casern.cpp" />
-    <ClCompile Include="Castle.cpp" />
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
-    <ClCompile Include="Farm.cpp" />
-    <ClCompile Include="Fence.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="FontData.cpp" />
     <ClCompile Include="FontManager.cpp" />
@@ -52,37 +46,28 @@
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Removable.cpp" />
-    <ClCompile Include="Rock.cpp" />
     <ClCompile Include="Spawner.cpp" />
-    <ClCompile Include="Tavern.cpp" />
     <ClCompile Include="TextureData.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
-    <ClCompile Include="Tower.cpp" />
     <ClCompile Include="TowerDefense.cpp" />
-    <ClCompile Include="Trap.cpp" />
-    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="TowerDefenseBuilding.cpp" />
     <ClCompile Include="Troop.cpp" />
     <ClCompile Include="Village.cpp" />
+    <ClCompile Include="VillageBuilding.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationComponent.h" />
-    <ClInclude Include="Archer.h" />
-    <ClInclude Include="Barbarian.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="CameraData.h" />
     <ClInclude Include="CameraManager.h" />
-    <ClInclude Include="Casern.h" />
-    <ClInclude Include="Castle.h" />
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="EntityType.h" />
-    <ClInclude Include="Farm.h" />
-    <ClInclude Include="Fence.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FontData.h" />
     <ClInclude Include="FontManager.h" />
@@ -103,20 +88,17 @@
     <ClInclude Include="Path.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Removable.h" />
-    <ClInclude Include="Rock.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Spawner.h" />
-    <ClInclude Include="Tavern.h" />
     <ClInclude Include="TextureData.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
-    <ClInclude Include="Tower.h" />
     <ClInclude Include="TowerDefense.h" />
-    <ClInclude Include="Trap.h" />
-    <ClInclude Include="Tree.h" />
+    <ClInclude Include="TowerDefenseBuilding.h" />
     <ClInclude Include="Troop.h" />
     <ClInclude Include="Village.h" />
+    <ClInclude Include="VillageBuilding.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

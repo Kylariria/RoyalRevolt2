@@ -3,19 +3,8 @@
 #include "Interface.h"
 #include "EntityManager.h"
 
-
 struct VillageInformations
 {
-	Farm* farm;
-
-	Tavern* tavern;
-
-	VillageInformations()
-	{
-		farm = nullptr;
-
-		tavern = nullptr;
-	}
 };
 
 struct ElementsInformations
@@ -105,8 +94,6 @@ public:
 		{
 			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
 		}
-
-		_drawables.push_back(buildings.farm.)
 
 		return _drawables;
 	}
