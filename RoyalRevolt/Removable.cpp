@@ -9,10 +9,5 @@ Removable::Removable(const string& _name, const Vector2f& _position, const Entit
 
 void Removable::Update()
 {
-	isRemovable = _isRemovable;
-}
-
-void Removable::Update()
-{
 
 }
