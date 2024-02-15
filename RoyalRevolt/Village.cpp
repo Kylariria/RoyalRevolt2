@@ -28,6 +28,7 @@ Village::Village(const string& _name) : Map(_name, Vector2f(4.0f, 4.0f))
 	buildings = VillageInformations();
 
 	activeElements = vector<BasicElement*>();
+	passiveElements = vector<BasicElement*>();
 	elementsInformations = ElementsInformations();
 }
 

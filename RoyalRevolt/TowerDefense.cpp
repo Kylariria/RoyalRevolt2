@@ -23,6 +23,9 @@ TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const i
 	allLevel.push_back(PATH_LEVEL1);
 	allLevel.push_back(PATH_LEVEL2);	
 	movingBar = nullptr;
+
+	activeElements = vector<BasicElement*>();
+	passiveElements = vector<BasicElement*>();
 }
 
 void TowerDefense::Launch()
