@@ -23,9 +23,9 @@ MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_nam
 			cells[_index][_i]->cellShape = _grass->GetShape();
 		}
 
-	}
+	}*/
 	mapCreatorInformations = MapCreatorInformations();
-	InitUI();*/
+	InitUI();
 }
 
 void MapCreator::Launch()
@@ -55,6 +55,8 @@ void MapCreator::UpdateEvent()
 	{
 		if (_event.type == Event::Closed) WINDOW.close();
 		InputManager::GetInstance().Update(WINDOW, _event);
+
+		PlaceEntityOnTheCell();
 
 	}
 }
@@ -93,8 +95,7 @@ void MapCreator::InitUI()
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
 
-	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.tavernPriceTextInPurchasePanel, to_string(10) + " Coins", false));
-	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.farmPriceTextInPurchasePanel, to_string(10) + " Coins", false));
+	
 
 	/*vector<PlayerRessources*> _ressourcesToPurchase;
 	function<int()> _tavernCallback = [&]() {cout << "Purchase Tavern" << endl; AddTavern(); return 0; };
@@ -136,4 +137,11 @@ void MapCreator::PlaceEntityOnTheCell()
 {
 	Cell* _cell = CellWhoContainsMouss();
 
+	if (Mouse::isButtonPressed(Mouse::Left))
+	{
+		if (_cell!= nullptr)
+		{
+			cout << _cell->cellShape->getPosition().x << _cell->cellShape->getPosition().y << endl;
+		}
+	}
 }
