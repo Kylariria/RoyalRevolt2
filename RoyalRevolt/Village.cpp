@@ -145,6 +145,7 @@ void Village::UpdateActiveElements(Event _event)
 	}
 }
 
+
 void Village::AddBuilding(Cell* _cell)
 {
 	if (buildings.addFarm)

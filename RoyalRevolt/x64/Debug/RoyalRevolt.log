@@ -1,2 +1,10 @@
-﻿  Game.cpp
+﻿  GameInstance.cpp
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\MapCreator.h(87,57): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\MapCreator.h(87,51): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\MapCreator.h(87,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  MapCreator.cpp
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\MapCreator.h(87,57): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\MapCreator.h(87,51): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\MapCreator.h(87,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  Generating Code...
   RoyalRevolt.vcxproj -> C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\x64\Debug\RoyalRevolt.exe
