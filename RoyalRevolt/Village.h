@@ -2,10 +2,14 @@
 #include "Map.h"
 #include "Interface.h"
 #include "EntityManager.h"
+#include "VillageBuilding.h"
+#include "TowerDefenseBuilding.h"
 
 struct VillageInformations
 {
-
+	VillageBuilding* farm;
+	VillageBuilding* tavern;
+	VillageBuilding* casern;
 };
 
 struct ElementsInformations
@@ -22,19 +26,10 @@ struct ElementsInformations
 	Vector2f battleButtonPosition;
 	Vector2f upgradeButtonPosition;
 
-	Vector2f tavernInPurchasePanel;
-	Vector2f tavernTextInPurchasePanel;
-	Vector2f tavernPriceTextInPurchasePanel;
-
-	Vector2f farmInPurchasePanel;
-	Vector2f farmTextInPurchasePanel;
-	Vector2f farmPriceTextInPurchasePanel;
-
-	Vector2f purchasePanelPosition;
-	Vector2f purchaseTitlePosition;
-
 	Vector2f LevelTextPosition;
 	Vector2f LevelIconPosition;
+
+	Vector2f TavernPosition;
 
 	ElementsInformations()
 	{
@@ -53,16 +48,6 @@ struct ElementsInformations
 		battleButtonPosition = Vector2f(SCREEN_WIDTH * 0.9f, SCREEN_HEIGHT * 0.9f);
 		upgradeButtonPosition = Vector2f(SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.9f);
 
-		purchasePanelPosition = Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f);
-		purchaseTitlePosition = Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.3f);
-
-		tavernInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.35f, SCREEN_HEIGHT * 0.5f);
-		tavernTextInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.35f, SCREEN_HEIGHT * 0.6f);
-		tavernPriceTextInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.35f, SCREEN_HEIGHT * 0.4f);
-
-		farmInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.65, SCREEN_HEIGHT * 0.5f);
-		farmTextInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.65f, SCREEN_HEIGHT * 0.6f);
-		farmPriceTextInPurchasePanel = Vector2f(SCREEN_WIDTH * 0.65f, SCREEN_HEIGHT * 0.4f);
 
 	}
 };

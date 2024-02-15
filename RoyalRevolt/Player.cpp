@@ -13,6 +13,7 @@ Player::Player()
 	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, 150, 40);
 	upgradesCounts = UpgradeCounts();
 	spawner = new Spawner();
+	data = RessourcesData();
 	level = 1;
 	Init();
 }
@@ -20,14 +21,14 @@ Player::Player()
 void Player::Init()
 {
 #pragma region Timer
-	function<void()> _addCoinCallback = [&]() {data.money += upgradesCounts.money; };
+	/*function<void()> _addCoinCallback = [&]() {data.money += upgradesCounts.money; };
 	new Timer("AddCoin", _addCoinCallback, seconds(1.0f), true, true);
 
 	function<void()> _addDiamondCallback = [&]() {data.diamond += upgradesCounts.diamond; };
 	new Timer("AddDiamond", _addDiamondCallback, seconds(1.0f), true, true);
 
 	function<void()> _addBreadCallback = [&]() {data.bread += upgradesCounts.bread; };
-	new Timer("AddBread", _addBreadCallback, seconds(1.0f), true, true);
+	new Timer("AddBread", _addBreadCallback, seconds(1.0f), true, true);*/
 
 #pragma endregion
 

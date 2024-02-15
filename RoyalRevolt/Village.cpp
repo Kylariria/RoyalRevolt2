@@ -10,7 +10,7 @@
 
 #define FARM_PATH "UI/Farm_Texture.png"
 #define TAVERN_PATH "UI/Tavern_Texture.png"
-#define MINE_PATH "UI/Mine_Texture.png"
+#define CASERN_PATH "UI/Casern_Texture.png"
 
 #define BATTLE_BUTTON_PATH "UI/Battle_Button.png"
 #define UPGRADE_BUTTON_PATH "UI/Upgrade_Button.png"
@@ -34,6 +34,7 @@ void Village::Launch()
 {
 	InitUI();
 	Update();
+	AddBuilding();
 }
 
 void Village::InitUI()
@@ -54,14 +55,12 @@ void Village::InitUI()
 	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), LEVEL_PATH, elementsInformations.LevelIconPosition,
 		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.LevelTextPosition,to_string(PLAYER->GetLevel()), _levelDisplayCallback));
 
-	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
-
 	//passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
 	//passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(150.0f, 60.0f)), FONT_TEXTURE_PATH, elementsInformations.farmPriceTextInPurchasePanel, to_string(10 + (buildings.farm.level * 30)) + " Coins", false));
 
 
 	function<void()> _battleCallback = [&]() {cout << "Battle !"; Battle(); };
-	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !";	TogglePurchasePanel(); };
+	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !";	};
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), BATTLE_BUTTON_PATH, elementsInformations.battleButtonPosition,
 		"", _battleCallback));
@@ -69,28 +68,21 @@ void Village::InitUI()
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), UPGRADE_BUTTON_PATH, elementsInformations.upgradeButtonPosition,
 		"", _upgradeCallback));
 
-
-	vector<PlayerRessources*> _ressourcesToPurchase;
-	function<int()> _tavernCallback = [&]() {cout << "Purchase Tavern" << endl; AddTavern(); return 0; };
-	function<int()> _farmCallback = [&]() {cout << "Purchase Farm" << endl; AddFarm(); return 0; };
-
-	vector<function<int()>> _allCallback;
-	_allCallback.push_back(_tavernCallback);
-	_allCallback.push_back(_farmCallback);
-
-	_ressourcesToPurchase.push_back(new PlayerRessources(new RectangleShape(Vector2f(100.0f, 100.0f)), TAVERN_PATH, elementsInformations.tavernInPurchasePanel,
-		new RectangleShape(Vector2f(100.f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernTextInPurchasePanel, "Tavern", _tavernCallback));
-
-	_ressourcesToPurchase.push_back(new PlayerRessources(new RectangleShape(Vector2f(100.0f, 100.0f)), FARM_PATH, elementsInformations.farmInPurchasePanel,
-		new RectangleShape(Vector2f(100.f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.farmTextInPurchasePanel, "Farm", _farmCallback));
-
-	activeElements.push_back(new SelectionPanel(new RectangleShape(Vector2f(600.0f, 400.0f)), "", elementsInformations.purchasePanelPosition,
-		_ressourcesToPurchase, _allCallback, new RectangleShape(Vector2f(100.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.purchaseTitlePosition, "Achat", false));
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(100.0f, 100.f)), TAVERN_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.4f), "", [&]() {; }));
+	activeElements[2]->shape->setFillColor(Color(255, 255, 255, 100));
+	
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(100.0f, 100.f)), FARM_PATH, Vector2f(SCREEN_WIDTH * 0.6f, SCREEN_HEIGHT * 0.6f), "", [&]() {; }));
+	activeElements[3]->shape->setFillColor(Color(255, 255, 255, 100));
+	
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(100.0f, 100.f)), CASERN_PATH, Vector2f(SCREEN_WIDTH * 0.4f, SCREEN_HEIGHT * 0.6f), "", [&]() {; }));
+	activeElements[4]->shape->setFillColor(Color(255, 255, 255, 100));
 }
 
 void Village::AddBuilding()
 {
-	//Farm* _farm = new Farm("Farm", Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f), Vector2f(100.0f, 100.0f), FARM_PATH, 0, [&]() {; });
+	buildings.farm = new VillageBuilding("Farm", Vector2f(), ENTITY_BUILDINGS, nullptr, VB_FARM, Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
+	buildings.tavern = new VillageBuilding("Tavern", Vector2f(), ENTITY_BUILDINGS, nullptr, VB_TAVERN, Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
+	buildings.casern = new VillageBuilding("Casern", Vector2f(), ENTITY_BUILDINGS, nullptr, VB_CASERN, Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
 }
 
 void Village::Update()

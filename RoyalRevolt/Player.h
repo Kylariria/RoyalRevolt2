@@ -18,6 +18,13 @@ struct RessourcesData
 	int trophee;
 	int hammer;
 	int experience;
+
+	RessourcesData()
+	{
+		bread = 200;
+		diamond = 50;
+		money = 0;
+	}
 };
 
 struct UpgradeCounts
