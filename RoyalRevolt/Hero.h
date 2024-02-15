@@ -7,5 +7,5 @@ class Hero : public MovingEntity
 	CollisionComponent* collision;
 public:
 	Hero(const string& _name, const Vector2f& _position, const Vector2f& _size, const string& _path);
-	virtual void Attack(const Entity& _entityDamaged) override;
+	virtual void Attack(const Entity& _entityDamaged);
 };
