@@ -3,8 +3,6 @@
 #include <iostream>
 #include <fstream>
 #include "Map.h"
-
-#include "Path.h"
 #include "Hero.h"
 
 
@@ -124,9 +122,9 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
     }
 
 	map<EntityType, string> _mapChar = { 
-        { ENTITY_GRASS, "#"}, {ENTITY_PATH, " "},{ENTITY_FENCE, "F"},
-        {ENTITY_TREE, "T"},{ENTITY_ROCK, "R"},{ENTITY_HERO, "P"},
-        {ENTITY_CASERN, "C"},{ENTITY_CASTLE, "E"} };
+        { ENTITY_NONE, "#"}, {ENTITY_NONE, " "},{ENTITY_NONE, "F"},
+        {ENTITY_NONE, "T"},{ENTITY_NONE, "R"},{ENTITY_NONE, "P"},
+        {ENTITY_NONE, "C"},{ENTITY_NONE, "E"} };
 	// voir si possible d utiliset un vector de char
     // Probleme les enum d'EntityType sont pas dans lordre
 

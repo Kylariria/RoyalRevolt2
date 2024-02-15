@@ -1,7 +1,6 @@
 #include "Game.h"
 #include "TowerDefense.h"
 #include "FileManager.h"
-#include "Grass.h"
 #include "Hero.h"
 
 int main()

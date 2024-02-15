@@ -2,7 +2,7 @@
 #include "Macro.h"
 #include "InputManager.h"
 #include "EntityManager.h"
-MovingEntity::MovingEntity(const EntityData& _data, const int _speed, const int _cooldown) : Entity(_data)
+MovingEntity::MovingEntity(const EntityData& _data, const int _speed, const int _cooldown) : Entity(_data), Stat(0,0)
 {
 
 	movement = new MovementComponent(this, shape, _speed, _cooldown);
@@ -21,7 +21,7 @@ void MovingEntity::Update()
 	Entity::Update();
 	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
 	// si c le Hero
-	if (Entity::GetEntityData()->type == ENTITY_HERO)
+	if (Entity::GetEntityData()->type == ENTITY_NONE)
 	{
 		if (!movement->CanMove() || !movement->HasDestination()) return;
 

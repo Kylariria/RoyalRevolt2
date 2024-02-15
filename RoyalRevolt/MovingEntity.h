@@ -2,8 +2,9 @@
 #include "Entity.h"
 #include "MovementComponent.h"
 #include "CollisionComponent.h"
+#include "Stat.h"
 
-class MovingEntity : public Entity
+class MovingEntity : public Entity, public Stat
 {
 protected:
 	MovementComponent* movement;

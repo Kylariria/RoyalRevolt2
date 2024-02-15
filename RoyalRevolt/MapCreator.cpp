@@ -2,7 +2,6 @@
 #include "EntityManager.h"
 #include "InputManager.h"
 #include "GameInstance.h"
-#include "Grass.h"
 
 #define FONT_TEXTURE_PATH "UI/Text_Background.png"
 #define PATH_BUTTON_OBSTACLES "UI/ButtonObstacles.png"
@@ -11,7 +10,7 @@
 
 MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_name, _mapSize)
 {
-	_currentEntity = new Grass("Grass", Vector2f(100.0f, 20.0f), Vector2f(50.0f, 50.0f), "Grass.png");
+	/*_currentEntity = new Grass("Grass", Vector2f(100.0f, 20.0f), Vector2f(50.0f, 50.0f), "Grass.png");
 
 	for (int _index = 0; _index < _mapSize.x; _index++)
 	{
@@ -26,7 +25,7 @@ MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_nam
 
 	}
 	mapCreatorInformations = MapCreatorInformations();
-	InitUI();
+	InitUI();*/
 }
 
 void MapCreator::Launch()
