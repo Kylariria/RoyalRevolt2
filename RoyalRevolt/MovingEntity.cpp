@@ -2,6 +2,7 @@
 #include "Macro.h"
 #include "InputManager.h"
 #include "EntityManager.h"
+
 MovingEntity::MovingEntity(const EntityData& _data,const Stat& _stats, const int _speed, const int _cooldown) : Entity(_data), Stat(_stats)
 {
 

@@ -12,6 +12,7 @@ protected:
 	vector<CollisionReaction> reactions;
 	Vector2f destination;
 	Stat* stats;
+	
 public:
 	MovementComponent* GetMovementComponent()const
 	{

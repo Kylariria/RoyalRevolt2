@@ -12,4 +12,10 @@ TowerDefenseBuilding::TowerDefenseBuilding(const string& _name, const Vector2f& 
     , Stat(_health, _attack)
 {
     type = _typeBuilding;
+
 }
+
+void TowerDefenseBuilding::Update()
+{
+}
+

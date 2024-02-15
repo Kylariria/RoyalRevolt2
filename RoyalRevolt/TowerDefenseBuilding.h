@@ -13,8 +13,14 @@ class TowerDefenseBuilding : public Building, public Stat
 
 public:
     TowerDefenseBuilding();
-    TowerDefenseBuilding(const string& _name, const Vector2f& _position, const EntityType& _type,
-        const function<void()> _callback, const int _health, const int _attack, const TowerDefenseBuildingType& _typeBuilding,
+
+    TowerDefenseBuilding(const string& _name, const Vector2f& _position, 
+        const EntityType& _type,
+        const function<void()> _callback, const int _health, const int _attack,
+        const TowerDefenseBuildingType& _typeBuilding,
         const Vector2f& _size = Vector2f(), const string& _path = "",
         const int _tileAround = 0, const bool _isBuildable = false);
+
+public :
+	virtual void Update() override;
 };

@@ -14,11 +14,7 @@
 //T = Tree  ok
 //R = Rock  ok
 //P = Player  ok
-//C = Casern
 //E = Castle
-
-
-
 
 vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 {
@@ -33,7 +29,9 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
 
 
 	ifstream _stream(_path);
+
 	//char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
+
     if (!_stream)
     {
         cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
@@ -52,12 +50,34 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
         for (int _index = 0; _index < _line.size(); _index++)
         {
 
-
-            //CreateAndAddEntity<Removable>(_allEntitiesInLine, "Hero", Vector2f(_posX, _posY) * _size.x, "Hero.png", _size);
-
-            if (_line[_index]== 'P')
+            switch (_line[_index])
             {
-                //CreateAndAddEntity<Hero>(_allEntitiesInLine,"Hero",Vector2f(_posX, _posY)* _size.x, "Hero.png", _size);
+            case '#':
+                CreateAndAddEntity<Removable>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, ENTITY_DESTROYABLE, R_GRASS, _size, "Grass.png");
+                break;
+            case ' ':
+                CreateAndAddEntity<Removable>(_allEntitiesInLine, "Path", Vector2f(_posX, _posY) * _size.x, ENTITY_DESTROYABLE, R_PATH, _size, "Path.png");
+                break;
+            case 'F':
+                CreateAndAddEntity<TowerDefenseBuilding>(_allEntitiesInLine, "Fence", Vector2f(_posX, _posY) * _size.x, ENTITY_BUILDINGS, nullptr, 50, 0, TDB_FENCE, _size, "Fence.png");
+                break;
+            case 'T':
+                CreateAndAddEntity<Removable>(_allEntitiesInLine, "Tree", Vector2f(_posX, _posY) * _size.x, ENTITY_DESTROYABLE, R_TREE, _size, "Tree.png");
+                break;
+            case 'R':
+                CreateAndAddEntity<Removable>(_allEntitiesInLine, "Rock", Vector2f(_posX, _posY) * _size.x, ENTITY_DESTROYABLE, R_ROCK, _size, "Rock.png");
+                break;
+            case 'P':
+                CreateAndAddEntity<Hero>(_allEntitiesInLine,"Hero",Vector2f(_posX, _posY)* _size.x, _size, "Hero.png", 150, 40);
+                break;
+            case 'C':
+                CreateAndAddEntity<TowerDefenseBuilding>(_allEntitiesInLine, "Casern", Vector2f(_posX, _posY) * _size.x, ENTITY_BUILDINGS, nullptr, 200, 0, TDB_CASERN, _size, "Casern.png");
+                break;
+            case 'E':
+                CreateAndAddEntity<TowerDefenseBuilding>(_allEntitiesInLine, "Castle", Vector2f(_posX, _posY) * _size.x, ENTITY_BUILDINGS, nullptr, 200, 0, TDB_CASTLE, _size, "Castle.png");
+                break;
+            default:
+                break;
             }
             _posX += 1;
         }
@@ -108,10 +128,10 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
         return;
     }
 
-	map<EntityType, string> _mapChar = { 
-        { ENTITY_NONE, "#"}, {ENTITY_NONE, " "},{ENTITY_NONE, "F"},
-        {ENTITY_NONE, "T"},{ENTITY_NONE, "R"},{ENTITY_NONE, "P"},
-        {ENTITY_NONE, "C"},{ENTITY_NONE, "E"} };
+	/*map<EntType, char> _mapChar = { 
+        { GRASS, '#'}, {PATH, " "},{FENCE, "F"},
+        {TREE, "T"},{ROCK, "R"},{PLAYER, "P"},
+        {CASERN, "C"},{CASTLE, "E"} };*/
 	// voir si possible d utiliset un vector de char
     // Probleme les enum d'EntityType sont pas dans lordre
 
@@ -119,7 +139,7 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
     {
         for (Entity* _entity : _entityInLine)
         {
-            _stream << _mapChar[_entity->GetEntityData()->type];
+            //_stream << _mapChar[_entity->GetEntityData()->type];
         }
         _stream << endl;
     }
