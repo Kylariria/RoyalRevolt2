@@ -20,4 +20,3 @@ public :
 public :
 	virtual void Update() override;
 };
-

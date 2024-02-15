@@ -5,6 +5,7 @@
 
 struct VillageInformations
 {
+
 };
 
 struct ElementsInformations

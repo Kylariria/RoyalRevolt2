@@ -7,8 +7,10 @@ Troop::Troop(const string& _name, const EntityType& _type, const TroopType _troo
 
 void Troop::Update()
 {
+
 }
 
 void Troop::Attack(const Entity& _entityDamaged)
 {
+
 }

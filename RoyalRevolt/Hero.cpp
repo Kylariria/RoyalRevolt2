@@ -14,10 +14,4 @@ Hero::Hero(const string& _name, const Vector2f& _position, const Vector2f& _size
 
     reactions = _reactions;
     collision = new CollisionComponent();
-
-}
-
-void Hero::Attack(const Entity& _entityDamaged)
-{
-    //MovingEntity::Attack(_entityDamaged);
 }
