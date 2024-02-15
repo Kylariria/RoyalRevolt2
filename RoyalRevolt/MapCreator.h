@@ -19,7 +19,7 @@ public:
 		{
 			for (Cell* _cell : _cells)
 			{
-				_cell->cellShape->setFillColor(Color(255, 255, 255, 0));
+				//_cell->cellShape->setFillColor(Color(255, 255, 255, 0));
 				_cell->cellShape->setOutlineThickness(1.0f);
 				_drawables.push_back(_cell->cellShape);
 			}

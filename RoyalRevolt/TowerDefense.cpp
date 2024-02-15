@@ -29,9 +29,10 @@ void TowerDefense::Launch()
 	{
 		for (int _index = 0; _index < mapSize.y; _index++)
 		{
-			cells[_i][_index]->entityOnCell = _mapFile[_i][_index];
 			_mapFile[_i][_index]->GetShape()->setPosition(cells[_i][_index]->cellShape->getPosition());
-			cells[_i][_index]->cellShape = _mapFile[_i][_index]->GetShape();
+			cells[_i][_index]->entityOnCell = _mapFile[_i][_index];
+			cells[_i][_index]->cellShape->setFillColor(Color(255, 255, 255, 0));
+			//cells[_i][_index]->cellShape = _mapFile[_i][_index]->GetShape();
 		}
 	}
 

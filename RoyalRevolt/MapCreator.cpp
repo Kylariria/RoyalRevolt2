@@ -1,20 +1,23 @@
 #include "MapCreator.h"
 #include "EntityManager.h"
+#include "Grass.h"
 
 MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_name, _mapSize)
 {
-	map = vector<vector<Entity*>>();
-	vector<Entity*> _line;
 
-	for (int _i = 0; _i < _mapSize.x; _i++)
+	for (int _index = 0; _index < _mapSize.x; _index++)
 	{
-		_line.push_back(nullptr);
+		for (int _i = 0; _i < _mapSize.y; _i++)
+		{
+			Grass* _grass= new Grass("Grass", Vector2f(100.0f, 20.0f), Vector2f(50.0f, 50.0f), "Grass.png");
+			cells[_index][_i]->entityOnCell = _grass;
+			_grass->GetShape()->setPosition(cells[_index][_i]->cellShape->getPosition());
+			_grass->GetShape()->setScale(cells[_index][_i]->cellShape->getScale());
+			cells[_index][_i]->cellShape = _grass->GetShape();
+		}
 
 	}
-	for (int _i = 0; _i < _mapSize.y; _i++)
-	{
-		map.push_back(_line);
-	}
+	
 }
 
 void MapCreator::Launch()
@@ -31,11 +34,14 @@ void MapCreator::Update()
 
 	while (WINDOW.isOpen())
 	{
+		Event _event;
+		while (WINDOW.pollEvent(_event))
+		{
+
+		}
+
 		Display();
 	}
-
-	cout << map.size();
-	cout << map[0].size();
 
 }
 
