@@ -18,14 +18,14 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 	currentCooldown = 0;
 	destination = nullptr;
 	shape = _shape;
-	collision = new CollisionComponent();
+	reactions = vector<CollisionReaction>();
 }
 
 void MovementComponent::Move()
 {
 
 	// On récup la position de la souris
-	
+
 
 
 	// La shape se déplace à la position de la souris
@@ -36,13 +36,10 @@ void MovementComponent::Move()
 
 	shape->setPosition(_x, _y);
 
-	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
 
 	//si shape rencontre obstacle >> STOP
-	CollisionReaction _reaction = CollisionReaction(ENTITY_REMOVABLE, [&](Shape* _shape) { /*shape->getGlobalBounds().contains();*/ });
-	vector<CollisionReaction> _reactions;
-	_reactions.push_back(_reaction);
-	collision->CheckCollision(owner, _allEntities, _reactions);
+	
+	
 
 
 	/*if (currentCooldown < cooldown)

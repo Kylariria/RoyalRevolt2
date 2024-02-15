@@ -31,11 +31,17 @@ void MapCreator::Update()
 
 	while (WINDOW.isOpen())
 	{
+		Event _event;
+		while (WINDOW.pollEvent(_event))
+		{
+			if (_event.type == Event::Closed) WINDOW.close();
+		}
 		Display();
+
 	}
 
-	cout << map.size();
-	cout << map[0].size();
+	cout << map.size() << endl;
+	cout << map[0].size() << endl;
 
 }
 

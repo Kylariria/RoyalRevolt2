@@ -8,7 +8,7 @@ class MovingEntity : public Entity
 protected:
 	MovementComponent* movement;
 	CollisionComponent* collision;
-
+	vector<CollisionReaction> reactions;
 	Vector2f destination;
 
 public:

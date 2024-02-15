@@ -38,7 +38,7 @@
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimerManager.cpp" />
-    <ClCompile Include="Tour.cpp" />
+    <ClCompile Include="Tower.cpp" />
     <ClCompile Include="TowerDefense.cpp" />
     <ClCompile Include="Trap.cpp" />
     <ClCompile Include="Tree.cpp" />
@@ -46,6 +46,7 @@
     <ClCompile Include="Village.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
+    <ClCompile Include="MapCreator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h" />
@@ -89,7 +90,7 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimerManager.h" />
-    <ClInclude Include="Tour.h" />
+    <ClInclude Include="Tower.h" />
     <ClInclude Include="TowerDefense.h" />
     <ClInclude Include="Trap.h" />
     <ClInclude Include="Tree.h" />
@@ -97,5 +98,6 @@
     <ClInclude Include="Village.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationComponent.h" />
+    <ClInclude Include="MapCreator.h" />
   </ItemGroup>
 </Project>
