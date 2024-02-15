@@ -130,7 +130,7 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
     }
 
 
-    //char _sign[] = { ' ', '0', 'F', 'T' , 'R', 'P', 'C', 'E' };
+    char _sign[] = {'#',' ', 'F', 'T' , 'R', 'P', 'C', 'E' };
 	// voir si possible d utiliset un vector de char
     // Probleme les enum d'EntityType sont pas dans lordre
 
