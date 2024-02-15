@@ -5,6 +5,8 @@
 #include "Grass.h"
 
 #define FONT_TEXTURE_PATH "UI/Text_Background.png"
+#define PATH_BUTTON_OBSTACLES "UI/ButtonObstacles.png"
+#define PATH_BUTTON_TOWERS "UI/ButtonTowers.png"
 
 
 MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_name, _mapSize)
@@ -79,15 +81,15 @@ void MapCreator::InitUI()
 {
 
 	function<int()> _goldDisplayCallback = [&]() {return PLAYER->GetMoney(); };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), "", mapCreatorInformations.goldIconPosition,
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.goldIconPosition,
 		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.goldTextPosition, to_string(PLAYER->GetMoney()), _goldDisplayCallback));
 
 	function<int()> _diamondDisplayCallback = [&]() {return PLAYER->GetDiamond(); };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), "", mapCreatorInformations.diamondIconPosition,
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_TOWERS, mapCreatorInformations.diamondIconPosition,
 		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.diamondTextPosition, to_string(PLAYER->GetMoney()), _diamondDisplayCallback));
 
 	function<int()> _breadDisplayCallback = [&]() {return PLAYER->GetBread(); };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), "", mapCreatorInformations.breadIconPosition,
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), "UI/ButtonObstacles.png", mapCreatorInformations.breadIconPosition,
 		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.breadTextPosition, to_string(PLAYER->GetMoney()), _breadDisplayCallback));
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
