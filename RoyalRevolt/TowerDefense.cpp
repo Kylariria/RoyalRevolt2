@@ -3,12 +3,18 @@
 #include "FileManager.h"
 #include "InputManager.h"
 #include "EntityManager.h"
+#include "Interface.h"
+#include "Spawner.h"
 
 #define PATH_LEVEL1 "LevelEditor/Level1.txt"
 #define PATH_LEVEL2 "LevelEditor/Level2.txt"
 
-#define BATTLE_BUTTON_PATH "UI/Battle_Button.png"
-#define UPGRADE_BUTTON_PATH "UI/Upgrade_Button.png"
+#define ATTACK_BUTTON_PATH "UI/Button_Attack.png"
+#define SPELL_BUTTON_PATH "UI/Button_spell1.png"
+#define PAUSE_BUTTON_PATH "UI/Button_pause.png"
+
+#define BAR_FULL "UI/BarFull.png"
+#define BAR_EMPTY "UI/EmptyBar.png"
 
 TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const int _level) : Map(_name, _mapSize)
 {
@@ -16,8 +22,7 @@ TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const i
 	level = _level;
 	allLevel.push_back(PATH_LEVEL1);
 	allLevel.push_back(PATH_LEVEL2);	
-
-	
+	movingBar = nullptr;
 }
 
 void TowerDefense::Launch()
@@ -35,23 +40,30 @@ void TowerDefense::Launch()
 		}
 	}
 
-
 	InitUI();
 	Update();
 }
 
 void TowerDefense::InitUI()
 {
-	function<void()> _battleCallback = [&]() {cout << "Battle !"; };
-	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !"; };
+	function<void()> _attackCallback = [&]() {cout << "Tsing !"; Spawn(); };
+	function<void()> _spellCallback = [&]() {cout << "KABOUM !"; Spell();  };
+	function<void()> _pauseCallback = [&]() {cout << "Freeze !"; Pause();  };
 
-	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), BATTLE_BUTTON_PATH, Vector2f(150.0f,650.0f),
-		"", _battleCallback));
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(110.0f, 110.0f)), PAUSE_BUTTON_PATH, Vector2f(240.0f, 60.0f),
+		"", _pauseCallback));
 
-	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), UPGRADE_BUTTON_PATH, Vector2f(1050.0f, 650.0f),
-		"", _upgradeCallback));
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), ATTACK_BUTTON_PATH, Vector2f(150.0f,650.0f),
+		"", _attackCallback));
 
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), SPELL_BUTTON_PATH, Vector2f(1050.0f, 650.0f),
+		"", _spellCallback));
 
+	RectangleShape* _shape = new RectangleShape(Vector2f(450.0f, 50.0f));
+	Vector2f _position = Vector2f(25.0f, 730.0f);
+	vector<string> _paths = { BAR_FULL, BAR_EMPTY };
+	movingBar = new MovingBar(_shape, _paths, _position, 100, 100);
+	activeElements.push_back(movingBar);
 }
 
 void TowerDefense::Update()
@@ -63,10 +75,36 @@ void TowerDefense::Update()
 		{
 			if (_event.type == Event::Closed) WINDOW.close();
 			InputManager::GetInstance().Update(WINDOW, _event);
+			UpdateActiveElements(_event);
 		}
 		EntityManager::GetInstance().Update();
 		Display();
 	}
+}
+
+void TowerDefense::UpdateActiveElements(Event _event)
+{
+	for (BasicElement* _element : activeElements)
+	{
+		if (_element->GetIsDraw()) _element->Update(_event);
+	}
+}
+
+void TowerDefense::Spawn()
+{
+	Spawner _spawn;
+	_spawn.Spawn();
+	movingBar->actualValue -= 9; //A REVOIR
+}
+
+void TowerDefense::Spell()
+{
+	//TODO
+}
+
+void TowerDefense::Pause()
+{
+	//TODO
 }
 
 void TowerDefense::Display()
