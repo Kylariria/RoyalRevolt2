@@ -32,8 +32,8 @@ void GameInstance::LaunchTD()
 	if (!_hasLaunch)
 	{
 		FileManager _fileManager;
-		Vector2f _mapSize = _fileManager.GetSizeFill(PATH_LEVEL2);
-		TowerDefense* _td = new TowerDefense("TowerDefence", _mapSize, 2);
+		Vector2f _mapSize = _fileManager.GetSizeFill(PATH_LEVEL1);
+		TowerDefense* _td = new TowerDefense("TowerDefence", _mapSize, 1);
 		_td->Launch();
 	}
 }

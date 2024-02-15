@@ -6,3 +6,8 @@ Building::Building(const string& _name, const Vector2f& _position, const EntityT
 {
 	
 }
+
+void Building::Update()
+{
+
+}
