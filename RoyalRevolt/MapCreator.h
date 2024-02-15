@@ -82,9 +82,9 @@ public:
 		{
 			for (Cell* _cell : _cells)
 			{
-				_cell->cellShape->setFillColor(Color(255, 255, 255, 0));
+				_cell->cellShape->setFillColor(Color::White);
 				_cell->cellShape->setOutlineThickness(1.0f);
-				_cell->cellShape->setOutlineColor(Color(0.0f, 0.0f, 0.0f));
+				_cell->cellShape->setOutlineColor(Color::Black);
 				_drawables.push_back(_cell->cellShape);
 			}
 		}

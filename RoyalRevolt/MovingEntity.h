@@ -11,13 +11,15 @@ protected:
 	CollisionComponent* collision;
 	vector<CollisionReaction> reactions;
 	Vector2f destination;
+	Stat* stats;
+
 public:
 	MovementComponent* GetMovementComponent()const
 	{
 		return movement;
 	}
 public:
-	MovingEntity(const EntityData& _data,
+	MovingEntity(const EntityData& _data, const Stat& _stats,
 		const int _speed = 0, const int _cooldown = 0);
 	~MovingEntity();
 

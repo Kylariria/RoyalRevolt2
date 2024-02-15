@@ -98,5 +98,4 @@ private:
 
 public:
     virtual void Update() = 0;
-    virtual void Attack(const Entity& _entityDamaged) = 0;
 };
