@@ -12,7 +12,7 @@ class TowerDefense : public Map
 	MovingBar* movingBar;
 
 	vector<BasicElement*> activeElements;
-	vector<BasicElement*> passiveElements;
+	Shape* character;
 
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level);
@@ -23,14 +23,6 @@ public:
 
 		vector<Drawable*> _cellDrawables = GetCellsDrawables();
 		_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
-
-		for (vector<Cell*> _cells : cells)
-		{
-			for (Cell* _cell : _cells)
-			{
-				_drawables.push_back(_cell->cellShape);
-			}
-		}
 
 		for (BasicElement* _element : activeElements)
 		{

@@ -11,6 +11,12 @@ class Removable : public Entity
 	RemovableType type;
 
 public :
+	RemovableType GetType() const
+	{
+		return type;
+	}
+
+public :
 	Removable(const string& _name, const Vector2f& _position,
 		const EntityType& _type, RemovableType _RType,
 		const Vector2f& _size = Vector2f(0.0f, 0.0f),
