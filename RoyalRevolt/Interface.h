@@ -228,8 +228,8 @@ struct MovingBar : public BasicElement
 
 		backgroundShape->setPosition(_position);
 
-		//InitMovingBarTexture();
-		backgroundShape->setFillColor(Color::Red);
+		InitMovingBarTexture();
+		//backgroundShape->setFillColor(Color::Red);
 
 		Update();
 	}

@@ -15,7 +15,7 @@ class MovementComponent
 	int currentCooldown;
 	Vector2f* destination;
 	Shape* shape;
-	CollisionComponent* collision;
+	vector<CollisionReaction> reactions;
 
 public:
 	void SetCanMove(const bool _status)

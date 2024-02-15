@@ -41,6 +41,9 @@ class Player
 	RessourcesData data;
 	Hero* hero;
 	Spawner* spawner;
+protected :
+	static int level; 
+
 public:
 	int GetBread() const
 	{
@@ -65,6 +68,10 @@ public:
 	int GetExperience() const
 	{
 		return data.experience;
+	}
+	static int GetLevel()
+	{
+		return level;
 	}
 	static Vector2f GetSavedMousePosition()
 	{

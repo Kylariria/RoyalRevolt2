@@ -9,9 +9,10 @@ class TowerDefense : public Map
 	Vector2f mapSize;
 	int level;
 
+	MovingBar* movingBar;
+
 	vector<BasicElement*> activeElements;
 
-	//vector<vector<Entity*>> map;
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level);
 
@@ -35,16 +36,29 @@ public:
 			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
 		}
 
-
-
 		return _drawables;
 	}
+
+	~TowerDefense()
+	{
+		delete movingBar;
+
+		/*for (BasicElement* _element : activeElements)
+		{
+			delete _element;
+		}*/
+	};
 
 public:
 	void Launch();
 	void InitUI();
 	
 	void Update();
+	void UpdateActiveElements(Event _event);
+
+	void Spawn();
+	void Spell();
+	void Pause();
 
 	void Display();
 };

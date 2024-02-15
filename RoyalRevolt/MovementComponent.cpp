@@ -18,15 +18,15 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 	currentCooldown = 0;
 	destination = nullptr;
 	shape = _shape;
-	collision = new CollisionComponent();
+	reactions = vector<CollisionReaction>();
 }
 
 void MovementComponent::Move()
 {
+
 	Vector2f _direction = *destination - shape->getPosition();
 	Normalize(_direction);
 	const float _x = (_direction.x * speed) * 0.5f;
 	const float _y = (_direction.y * speed) * 0.5f;
-
 	shape->move(_x, _y);
 }

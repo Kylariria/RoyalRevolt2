@@ -32,8 +32,8 @@ void GameInstance::LaunchTD()
 	if (!_hasLaunch)
 	{
 		FileManager _fileManager;
-		Vector2f _mapSize = _fileManager.GetSizeFill(PATH_LEVEL1);
-		TowerDefense* _td = new TowerDefense("TowerDefence", _mapSize, 1);
+		Vector2f _mapSize = _fileManager.GetSizeFill(PATH_LEVEL2);
+		TowerDefense* _td = new TowerDefense("TowerDefence", _mapSize, 2);
 		_td->Launch();
 	}
 }
@@ -55,13 +55,31 @@ void GameInstance::LaunchVillage()
 		_village->Launch();
 	}
 }
-void GameInstance::LaunchMapManger()
+void GameInstance::LaunchMapCreator()
 {
-	/*for (Map* _map : mapManager.GetAllValues())
+	bool _hasLaunch = false;
+	for (Map* _map : mapManager.GetAllValues())
 	{
 		if (MapCreator* _mapCreator = dynamic_cast<MapCreator*>(_map))
 		{
+			_hasLaunch = true;
 			_mapCreator->Launch();
 		}
-	}*/
+	}
+	if (!_hasLaunch)
+	{
+		MapCreator* _mapCreator = new MapCreator("TowerDefence", Vector2f(15.0f,20.0f));
+		_mapCreator->Launch();
+	}
+}
+
+void GameInstance::LaunchMapManger()
+{
+	/*for (Map* _map : mapManager.GetAllValues())
+{
+	if (MapCreator* _mapCreator = dynamic_cast<MapCreator*>(_map))
+	{
+		_mapCreator->Launch();
+	}
+}*/
 }

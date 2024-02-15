@@ -43,6 +43,9 @@ struct ElementsInformations
 	Vector2f purchasePanelPosition;
 	Vector2f purchaseTitlePosition;
 
+	Vector2f LevelTextPosition;
+	Vector2f LevelIconPosition;
+
 	ElementsInformations()
 	{
 		goldIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.05f);
@@ -53,6 +56,9 @@ struct ElementsInformations
 
 		breadIconPosition = Vector2f(SCREEN_WIDTH * 0.05f, SCREEN_HEIGHT * 0.25f);
 		breadTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.25f);
+
+		LevelTextPosition = Vector2f(SCREEN_WIDTH * 0.9f, SCREEN_HEIGHT * 0.05f);
+		LevelIconPosition = Vector2f(SCREEN_WIDTH * 0.83f, SCREEN_HEIGHT * 0.045f);
 
 		battleButtonPosition = Vector2f(SCREEN_WIDTH * 0.9f, SCREEN_HEIGHT * 0.9f);
 		upgradeButtonPosition = Vector2f(SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.9f);
@@ -118,6 +124,7 @@ public:
 	void UpdateActiveElements(Event _event);
 	void UpdatePassiveElements();
 	void TogglePurchasePanel();
+	void Battle();
 	void AddFarm();
 	void AddTavern();
 
