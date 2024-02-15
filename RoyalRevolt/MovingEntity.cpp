@@ -23,6 +23,7 @@ void MovingEntity::Update()
 		if (!movement->CanMove() || !movement->HasDestination()) return;
 
 		movement->Move();
+
 	}
 
 	// si c  une autre entiter non controler pas le jouer
@@ -33,5 +34,5 @@ void MovingEntity::Update()
 		movement->SetDestination(_destination);
 	}*/
 
-	
+
 }
