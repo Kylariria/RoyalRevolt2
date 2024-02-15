@@ -129,8 +129,10 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
         return;
     }
 
-
-    char _sign[] = {'#',' ', 'F', 'T' , 'R', 'P', 'C', 'E' };
+	map<EntityType, string> _mapChar = { 
+        { ENTITY_GRASS, "#"}, {ENTITY_PATH, " "},{ENTITY_FENCE, "F"},
+        {ENTITY_TREE, "T"},{ENTITY_ROCK, "R"},{ENTITY_HERO, "P"},
+        {ENTITY_CASERN, "C"},{ENTITY_CASTLE, "E"} };
 	// voir si possible d utiliset un vector de char
     // Probleme les enum d'EntityType sont pas dans lordre
 
@@ -138,37 +140,7 @@ void FileManager::SaveMap(const vector<vector<Entity*>> _map, const string& _pat
     {
         for (Entity* _entity : _entityInLine)
         {
-
-            switch (_entity->GetEntityData()->type)
-            {
-            case ENTITY_GRASS:
-                _stream << '#';
-                break;
-            case ENTITY_PATH:
-                _stream << ' ';
-                break;
-            case ENTITY_FENCE:
-                _stream << 'F';
-                break;
-            case ENTITY_TREE:
-                _stream << 'T';
-                break;
-            case ENTITY_ROCK:
-                _stream << 'R';
-                break;
-            case ENTITY_HERO:
-                _stream << 'P';
-                break;
-            case ENTITY_CASERN:
-                _stream << 'C';
-                break;
-            case ENTITY_CASTLE:
-                _stream << 'E';
-                break;
-            default:
-                break;
-            }
-
+            _stream << _mapChar[_entity->GetEntityData()->type];
         }
         _stream << endl;
     }

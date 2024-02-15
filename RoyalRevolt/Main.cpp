@@ -11,7 +11,7 @@ int main()
 
 
 	/*vector<Entity*> _entities;
-	_entities.push_back(new Hero("Hero", Vector2f(0.0f, 0.0f), Vector2f(0.0f, 0.0f), "Hero.png",  ENTITY_HERO));
+	_entities.push_back(new Hero("Hero", Vector2f(0.0f, 0.0f), Vector2f(0.0f, 0.0f), "Hero.png"));
 	_entities.push_back(new Grass("Grass", Vector2f(0.0f, 0.0f), Vector2f(0.0f, 0.0f), "Grass.png"));
 
 	vector<vector<Entity*>> _entities2;
