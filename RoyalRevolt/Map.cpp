@@ -20,6 +20,9 @@ Map::Map(const string& _name, const Vector2f& _mapSize) : IManagable(S_ID(_name)
 
 	background->setTextureRect(IntRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
 
+
+
+
 	Register();
 
 	Init();

@@ -28,6 +28,7 @@ public:
 		{
 			for (Cell* _cell : _cells)
 			{
+				_cell->cellShape->setFillColor(Color::Transparent);
 				_drawables.push_back(_cell->cellShape);
 			}
 		}
