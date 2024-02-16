@@ -177,11 +177,10 @@ void MapCreator::PlaceEntityOnTheCell()
 
 			//TODO recevoir se qu on veut placer
 
-			//if (_cell !=)
+			//if (_cell != )
 			//{
 			//	//_cell=
-			//
-			//
+
 			//	switch (/*type de se qu on veut placer*/)
 			//	{
 			//	case R_PATH:
