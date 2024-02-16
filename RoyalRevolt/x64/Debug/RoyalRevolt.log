@@ -1,14 +1,2 @@
-﻿  Game.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  GameInstance.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Main.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  TowerDefense.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
+﻿  FileManager.cpp
   RoyalRevolt.vcxproj -> C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\x64\Debug\RoyalRevolt.exe

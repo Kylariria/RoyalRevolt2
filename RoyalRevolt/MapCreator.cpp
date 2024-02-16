@@ -74,7 +74,11 @@ void MapCreator::UpdateEvent()
 	Event _event;
 	while (WINDOW.pollEvent(_event))
 	{
-		if (_event.type == Event::Closed) WINDOW.close();
+		if (_event.type == Event::Closed)
+		{
+			_fileManager.SaveMap(cells, "LevelEditor/MyLevel.txt");
+			WINDOW.close();
+		}
 		InputManager::GetInstance().Update(WINDOW, _event);
 
 		PlaceEntityOnTheCell();
