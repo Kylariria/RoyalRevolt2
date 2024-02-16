@@ -10,6 +10,11 @@ class Removable : public Entity
 {
 	RemovableType type;
 
+public:
+	RemovableType GetRemovableType() 
+	{ 
+		return type; 
+	}
 public :
 	RemovableType GetType() const
 	{

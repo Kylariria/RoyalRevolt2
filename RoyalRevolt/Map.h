@@ -47,11 +47,6 @@ public:
 		{
 			for (Cell* _cell : _cells)
 			{
-				if (Removable* _removable = dynamic_cast<Removable*>(_cell->entityOnCell))
-				{
-					if (_removable->GetType() == R_GRASS) continue;
-				}
-
 				_drawables.push_back(_cell->cellShape);
 			}
 		}

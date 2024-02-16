@@ -28,7 +28,6 @@ void Player::Init()
 
 	function<void()> _addBreadCallback = [&]() {data.bread += upgradesCounts.bread; };
 	new Timer("AddBread", _addBreadCallback, seconds(1.0f), true, true);
-
 #pragma endregion
 
 	//inputmanager click

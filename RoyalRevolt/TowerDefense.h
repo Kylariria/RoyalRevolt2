@@ -9,11 +9,10 @@ class TowerDefense : public Map
 	Vector2f mapSize;
 	int level;
 
-	MovingBar* spawnBar;
-	MovingBar* lifeBar;
+	MovingBar* movingBar;
 
 	vector<BasicElement*> activeElements;
-	Shape* character;
+	vector<BasicElement*> passiveElements;
 
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level);
@@ -25,15 +24,6 @@ public:
 		vector<Drawable*> _cellDrawables = GetCellsDrawables();
 		_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
 
-		for (vector<Cell*> _cells : cells)
-		{
-			for (Cell* _cell : _cells)
-			{
-				_cell->cellShape->setFillColor(Color::Transparent);
-				_drawables.push_back(_cell->cellShape);
-			}
-		}
-
 		for (BasicElement* _element : activeElements)
 		{
 			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
@@ -44,8 +34,7 @@ public:
 
 	~TowerDefense()
 	{
-		delete spawnBar;
-		delete lifeBar;
+		delete movingBar;
 
 		for (BasicElement* _element : activeElements)
 		{
