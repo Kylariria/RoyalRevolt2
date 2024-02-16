@@ -13,6 +13,8 @@
 #define SPELL_BUTTON_PATH "UI/Button_spell1.png"
 #define PAUSE_BUTTON_PATH "UI/Button_pause.png"
 
+#define CHARACTER_PATH "UI/Character.png"
+
 #define BAR_FULL "UI/BarFull.png"
 #define BAR_EMPTY "UI/EmptyBar.png"
 
@@ -25,7 +27,7 @@ TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const i
 	movingBar = nullptr;
 
 	activeElements = vector<BasicElement*>();
-	passiveElements = vector<BasicElement*>();
+	character = new RectangleShape(Vector2f(110.0f, 110.0f));
 }
 
 void TowerDefense::Launch()
@@ -54,6 +56,10 @@ void TowerDefense::InitUI()
 	function<void()> _attackCallback = [&]() {cout << "Tsing !"; Spawn(); };
 	function<void()> _spellCallback = [&]() {cout << "KABOUM !"; Spell();  };
 	function<void()> _pauseCallback = [&]() {cout << "Freeze !"; Pause();  };
+
+	Vector2f _characterPos = Vector2f(30.0f, 10.0f);
+	character->setPosition(_characterPos);
+	TextureManager::GetInstance().Load(character, CHARACTER_PATH);
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(110.0f, 110.0f)), PAUSE_BUTTON_PATH, Vector2f(240.0f, 60.0f),
 		"", _pauseCallback));
@@ -125,6 +131,8 @@ void TowerDefense::Display()
 	{
 		WINDOW.draw(*_entity->GetShape());
 	}
+
+	WINDOW.draw(*character);
 
 	WINDOW.display();
 }

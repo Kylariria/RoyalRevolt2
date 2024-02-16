@@ -12,7 +12,7 @@ class TowerDefense : public Map
 	MovingBar* movingBar;
 
 	vector<BasicElement*> activeElements;
-	vector<BasicElement*> passiveElements;
+	Shape* character;
 
 public:
 	TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level);
