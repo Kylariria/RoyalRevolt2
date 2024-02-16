@@ -12,6 +12,12 @@ class TowerDefenseBuilding : public Building, public Stat
 	TowerDefenseBuildingType type;
 
 public:
+TowerDefenseBuildingType GetType()
+	{
+		return type;
+	}
+
+public:
 	TowerDefenseBuilding();
 	TowerDefenseBuilding(const string& _name, const Vector2f& _position, const EntityType& _type,
 		const function<void()> _callback,const int _health, const int _attack,const TowerDefenseBuildingType& _typeBuilding,
