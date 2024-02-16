@@ -40,6 +40,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapCreator.cpp" />
     <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="MovingEntity.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -66,6 +67,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Interface.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Stat.h" />
     <ClInclude Include="EntityType.h" />
     <ClInclude Include="FileManager.h" />
