@@ -39,5 +39,20 @@ void TimerManager::Update()
     {
         renderCallback();
     }
-    
+}
+
+void TimerManager::Pause()
+{
+    for (auto& _pair : allValues)
+    {
+        _pair.second->Pause();
+    }
+}
+
+void TimerManager::Play()
+{
+    for (auto& _pair : allValues)
+    {
+        _pair.second->Start();
+    }
 }

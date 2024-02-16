@@ -5,7 +5,8 @@
 #include "EntityManager.h"
 #include "Interface.h"
 #include "Spawner.h"
-#include "Hero.h"
+#include "GameInstance.h"
+#include "TimerManager.h"
 
 #define PATH_LEVEL1 "LevelEditor/Level1.txt"
 #define PATH_LEVEL2 "LevelEditor/Level2.txt"
@@ -48,7 +49,6 @@ void TowerDefense::Launch()
 			cells[_i][_index]->entityOnCell = _mapFile[_i][_index];
 			cells[_i][_index]->cellShape->setFillColor(Color::Transparent);
 			cells[_i][_index]->cellShape->setOutlineThickness(0.0f);
-			//cells[_i][_index]->cellShape = _mapFile[_i][_index]->GetShape();
 		}
 	}
 
@@ -60,7 +60,7 @@ void TowerDefense::InitUI()
 {
 	function<void()> _attackCallback = [&]() { Spawn(); };
 	function<void()> _spellCallback = [&]() {cout << "KABOUM !"; Spell();  };
-	function<void()> _pauseCallback = [&]() {cout << "Freeze !"; Pause();  };
+	function<void()> _pauseCallback = [&]() { Pause(); };
 
 	Vector2f _characterPos = Vector2f(30.0f, 10.0f);
 	character->setPosition(_characterPos);
@@ -93,7 +93,8 @@ void TowerDefense::InitUI()
 	lifeBar = new MovingBar(_lifeBar, _pathsLife, _lifePos, 150, 150);
 	activeElements.push_back(lifeBar);
 
-	//TODO => A faire en sorte que health = actualValue
+	//TODO => A revoir
+	GameInstance::GetInstance().GetPlayer()->GetHero()->health = lifeBar->actualValue;
 	
 	#pragma endregion
 
@@ -143,7 +144,7 @@ void TowerDefense::Spell()
 
 void TowerDefense::Pause()
 {
-	//TODO
+	TimerManager::GetInstance().Pause();
 }
 
 void TowerDefense::Display()

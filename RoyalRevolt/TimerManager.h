@@ -91,4 +91,6 @@ private:
 
 public:
     void Update();
+    void Pause();
+    void Play();
 };

@@ -47,7 +47,12 @@ void Timer::Start()
 
 void Timer::Pause()
 {
-    isRunning = false;
+    if (isRunning = true)
+    {
+        isRunning = false;
+    }
+
+    isRunning = true;
 }
 
 void Timer::Reset()

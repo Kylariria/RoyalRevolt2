@@ -23,22 +23,22 @@ using namespace std;
 class FileManager : public Singleton<FileManager>
 {
 
-	void ResetFill(const string& _path)
-	{
+    void ResetFill(const string& _path)
+    {
 
-		ifstream _ifstream;
-		_ifstream = ifstream(_path);
+        ifstream _ifstream;
+        _ifstream = ifstream(_path);
 
-	}
+    }
 
 public:
-	vector<vector<Entity*>> CreateEntityFromChar( const string& _path);
-	Vector2f GetSizeFill( const string& _path);
+    vector<vector<Entity*>> CreateEntityFromChar(const string& _path);
+    Vector2f GetSizeFill(const string& _path);
 
 
 
-	template<typename T>
-	void SaveMap(const vector<vector<Cell*>> _map, const string& _path)
+    template<typename T>
+    void SaveMap(const vector<vector<Cell*>> _map, const string& _path)
     {
         ResetFill(_path);
 
@@ -52,22 +52,23 @@ public:
         map<string, char> _mapChar = {
             {"Grass", '#'}, {"Path", ' '},{"Fence", 'F'},
             { "Tree", 'T'},{ "Rock", 'R'},{"Hero", 'P'},
-            {"Casern", 'C'},{ "Castle", 'E'}};
-            // voir si possible d utiliset un vector de char
-            // Probleme les enum d'EntityType sont pas dans lordre
-		bool _IsSameName;
+            {"Casern", 'C'},{ "Castle", 'E'} };
+        // voir si possible d utiliset un vector de char
+        // Probleme les enum d'EntityType sont pas dans lordre
+        bool _isSameName;
 
         for (vector<Cell*> _entityInLine : _map)
         {
             for (Cell* _entity : _entityInLine)
             {
-                for (auto _pair: _mapChar)
+                for (auto _pair : _mapChar)
                 {
-					_IsSameName = IsSameName(_pair.first, _entity->entityOnCell->GetEntityData()->name);
+                    _isSameName = IsSameName(_pair.first, _entity->entityOnCell->GetEntityData()->name);
+                    if (_isSameName)
+                    {
+                        //_stream << _mapChar[_entity->entityOnCell];
+                    }
                 }
-
-
-                _stream << _mapChar[_entity->entityOnCell];
             }
             _stream << endl;
         }
@@ -75,12 +76,11 @@ public:
     }
 
 
-	template <typename T, typename... Args>
-	void CreateAndAddEntity(vector<Entity*>& _allElements, Args... _args)
-	{
-		T* _newElement = new T(Args(_args)...);
+    template <typename T, typename... Args>
+    void CreateAndAddEntity(vector<Entity*>& _allElements, Args... _args)
+    {
+        T* _newElement = new T(Args(_args)...);
 
-		_allElements.push_back(_newElement);
-	}
+        _allElements.push_back(_newElement);
+    }
 };
-

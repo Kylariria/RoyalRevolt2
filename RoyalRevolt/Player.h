@@ -76,6 +76,10 @@ public:
 	{
 		return data.experience;
 	}
+	Hero* GetHero() const
+	{
+		return hero;
+	}
 	static int GetLevel()
 	{
 		return level;

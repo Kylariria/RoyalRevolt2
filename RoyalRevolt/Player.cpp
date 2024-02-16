@@ -28,7 +28,6 @@ void Player::Init()
 
 void Player::Actions()
 {
-	spawner->Spawn();
 	savedMousePosition = InputManager::GetInstance().GetMousePosition();
 
 	// Si le player est dans TD :
