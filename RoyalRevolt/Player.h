@@ -24,6 +24,9 @@ struct RessourcesData
 		bread = 200;
 		diamond = 50;
 		money = 9999;
+		trophee = 0;
+		hammer = 0;
+		experience = 0;
 	}
 };
 

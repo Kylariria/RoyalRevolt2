@@ -25,7 +25,7 @@ public:
 	void UpgradeLevel()
 	{
 		++level;
-		InitTimer();
+		callback();
 	}
 public:
 	VillageBuilding();
@@ -34,7 +34,5 @@ public:
 		const Vector2f& _size = Vector2f(), const string& _path = "",
 		const int _tileAround = 0, const bool _isBuildable = false);
 
-public:
-	void InitTimer();
 };
 
