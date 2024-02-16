@@ -9,17 +9,14 @@ enum RemovableType
 class Removable : public Entity
 {
 	RemovableType type;
-
+	bool isRemovable;
+	
 public:
-	RemovableType GetRemovableType() 
-	{ 
+	RemovableType GetType() 
+	{
 		return type; 
 	}
-public :
-	RemovableType GetType() const
-	{
-		return type;
-	}
+
 
 public :
 	Removable(const string& _name, const Vector2f& _position,
