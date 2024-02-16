@@ -18,7 +18,7 @@ void Game::Launch()
 
 	//GameInstance::GetInstance().LaunchVillage();
 	
-	//GameInstance::GetInstance().LaunchTD();
+	GameInstance::GetInstance().LaunchTD();
 
 	Update();
 }

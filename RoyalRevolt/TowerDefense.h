@@ -37,9 +37,10 @@ public:
 
 	~TowerDefense()
 	{
-		delete spawnBar;
-		delete lifeBar;
 
+		delete lifeBar;
+		delete spawnBar;
+		
 		for (BasicElement* _element : activeElements)
 		{
 			delete _element;

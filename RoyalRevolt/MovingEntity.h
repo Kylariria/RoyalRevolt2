@@ -25,4 +25,5 @@ public:
 
 public:
 	virtual void Update() override;
+	void TryToMove();
 };
