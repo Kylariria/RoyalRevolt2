@@ -257,11 +257,26 @@ struct MovingBar : public BasicElement
 		Vector2f _scale = Vector2f(1.0f, 1.0f);
 		const float _percent = initialValue / actualValue;
 
-		if (actualValue <= 0.0f)
+		if (actualValue <= 0.0f) 
+		{
 			_scale = Vector2f();
+		}
+			
 		else
+		{
 			_scale.x /= _percent;
+		}
+
+		if (actualValue > 100)
+		{
+			return;
+		}
 		
+		if(actualValue < initialValue)
+		{
+			actualValue += 0.002f;
+		}
+
 		shape->setScale(_scale);
 	}
 };
