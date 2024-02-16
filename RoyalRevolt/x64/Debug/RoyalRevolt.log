@@ -1,14 +1,25 @@
-﻿  Game.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  FileManager.cpp
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\FileManager.h(82,36): warning C4244: 'argument' : conversion de 'int' en 'const float', perte possible de données
+  (compiler le fichier source 'FileManager.cpp')
+  C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\FileManager.h(82,36):
+  le contexte d’instanciation du modèle (le plus ancien) est
+  	C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\FileManager.cpp(63,17):
+  	voir la référence à l'instanciation de la fonction modèle 'void FileManager::CreateAndAddEntity<Hero,const char*,sf::Vector2<float>,sf::Vector2f,const char*,int,int>(std::vector<Entity *,std::allocator<Entity *>> &,const char *,sf::Vector2<float>,sf::Vector2f,const char *,int,int)' en cours de compilation
+  
+  Game.cpp
   GameInstance.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Hero.cpp
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Hero.cpp(6,100): warning C4244: 'argument' : conversion de 'const float' en 'int', perte possible de données
+C:\Users\vokin\Documents\GitHub\RoyalRevolt2\RoyalRevolt\Hero.cpp(6,91): warning C4244: 'argument' : conversion de 'const float' en 'int', perte possible de données
   Main.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Map.cpp
+  MapCreator.cpp
+  MovementComponent.cpp
+  MovingEntity.cpp
+  Player.cpp
+  Spawner.cpp
   TowerDefense.cpp
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(63,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\RoyalRevolt\Macro.h(64,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-  RoyalRevolt.vcxproj -> C:\Users\BOUQ2010\Desktop\Prog 1 Nicolas\Projet\Royal Revolt 2\RoyalRevolt2\x64\Debug\RoyalRevolt.exe
+  Troop.cpp
+  Village.cpp
+  Génération de code en cours...
+  RoyalRevolt.vcxproj -> C:\Users\vokin\Documents\GitHub\RoyalRevolt2\x64\Debug\RoyalRevolt.exe

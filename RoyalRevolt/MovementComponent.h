@@ -32,6 +32,11 @@ public:
 
 		destination = new Vector2f(_destination);
 	}
+	void SetDestAtNULL()
+	{
+		destination = nullptr;
+	}
+
 	MovingEntity* GetOwner() const
 	{
 		return owner;
@@ -62,5 +67,6 @@ public:
 
 public:
 	void Move();
+
 };
 

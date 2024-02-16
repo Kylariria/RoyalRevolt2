@@ -15,9 +15,8 @@ public:
 public:
     Hero(const string& _name, const Vector2f& _position,
         const Vector2f& _size, const string& _path,
-        const int _health, const int _damage);
+        const float _health, const float _damage);
 public:
     void Attack(const Entity& _entityDamaged);
 
-    void WallCollide(Shape* _shape);
 };

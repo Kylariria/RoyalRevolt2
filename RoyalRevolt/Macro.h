@@ -60,9 +60,9 @@ static Vector2f GetRandomPosition()
 
 static bool IsSameName(const string& _name1, const string& _name2)
 {
-	int _size1 = _name1.size();
-	int _size2 = _name2.size();
-	int _size = 0;
+	size_t _size1 = _name1.size();
+	size_t _size2 = _name2.size();
+	size_t _size = 0;
 	bool _isSame = true;
 
 	if (_size1< _size2)
@@ -74,7 +74,7 @@ static bool IsSameName(const string& _name1, const string& _name2)
 		_size = _size2;
 	}
 
-	for (int _i = 0; _i < _size; _i++)
+	for (size_t _i = 0; _i < _size; _i++)
 	{
 
 		if (!_isSame)
