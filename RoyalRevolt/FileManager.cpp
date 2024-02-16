@@ -109,3 +109,40 @@ Vector2f FileManager::GetSizeFill(const string& _path)
     return Vector2f(_lineY, _lineX);
 }
 
+void FileManager::SaveMap(const vector<vector<Cell*>> _map, const string& _path)
+{
+    //ResetFill(_path);
+
+    ofstream _stream(_path);
+    if (!_stream)
+    {
+        cerr << "Erreur lors de l'ouverture du fichier " << _path << endl;
+        return;
+    }
+
+    map<string, char> _mapChar = {
+        {"Grass", '#'}, {"Path", ' '},{"Fence", 'F'},
+        { "Tree", 'T'},{ "Rock", 'R'},{"Hero", 'P'},
+        {"Casern", 'C'},{ "Castle", 'E'} };
+    // voir si possible d utiliset un vector de char
+    // Probleme les enum d'EntityType sont pas dans lordre
+    bool _isSameName;
+
+    for (vector<Cell*> _entityInLine : _map)
+    {
+        for (Cell* _entity : _entityInLine)
+        {
+            for (auto _pair : _mapChar)
+            {
+                _isSameName = IsSameName(_pair.first, _entity->entityOnCell->GetID());
+                if (_isSameName)
+                {
+                    _stream << _mapChar[_pair.first];
+                }
+            }
+        }
+        _stream << endl;
+    }
+
+}
+
