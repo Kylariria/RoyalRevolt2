@@ -6,8 +6,9 @@
 #include "TowerDefenseBuilding.h"
 
 #define FONT_TEXTURE_PATH "UI/Text_Background.png"
-#define PATH_BUTTON_OBSTACLES "UI/ButtonObstacles.png"
-#define PATH_BUTTON_TOWERS "UI/ButtonTowers.png"
+#define PATH_BUTTON_OBSTACLES "UI/ButtonObstacle.png"
+#define PATH_BUTTON_TOWERS "UI/ButtonTower.png"
+#define PATH_BUTTON_PATH "UI/ButtonPath.png"
 
 
 MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_name, _mapSize)
@@ -115,36 +116,19 @@ void MapCreator::Display()
 void MapCreator::InitUI()
 {
 
-	function<int()> _goldDisplayCallback = [&]() {return (mapCreatorInformations.pathSize); };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathTextPosition, to_string(PLAYER->GetMoney()), _goldDisplayCallback));
+	function<int()> _pathDisplayCallback = [&]() {return (mapCreatorInformations.pathSize); };
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_PATH, mapCreatorInformations.pathIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathTextPosition, to_string(PLAYER->GetMoney()), _pathDisplayCallback));
 
-	function<int()> _diamondDisplayCallback = [&]() {return mapCreatorInformations.towerCount; };
+	function<int()> _towerDisplayCallback = [&]() {return mapCreatorInformations.towerCount; };
 	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_TOWERS, mapCreatorInformations.towerIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.towerTextPosition, to_string(PLAYER->GetMoney()), _diamondDisplayCallback));
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.towerTextPosition, to_string(PLAYER->GetMoney()), _towerDisplayCallback));
 
-	function<int()> _breadDisplayCallback = [&]() {return mapCreatorInformations.trapCount; };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), "UI/ButtonObstacles.png", mapCreatorInformations.trapIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.trapTextPosition, to_string(PLAYER->GetMoney()), _breadDisplayCallback));
+	function<int()> _trapDisplayCallback = [&]() {return mapCreatorInformations.trapCount; };
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_OBSTACLES, mapCreatorInformations.trapIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.trapTextPosition, to_string(PLAYER->GetMoney()), _trapDisplayCallback));
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
-
-	/*vector<PlayerRessources*> _ressourcesToPurchase;
-	function<int()> _tavernCallback = [&]() {cout << "Purchase Tavern" << endl; AddTavern(); return 0; };
-	function<int()> _farmCallback = [&]() {cout << "Purchase Farm" << endl; AddFarm(); return 0; };
-
-	vector<function<int()>> _allCallback;
-	_allCallback.push_back(_tavernCallback);
-	_allCallback.push_back(_farmCallback);
-
-	_ressourcesToPurchase.push_back(new PlayerRessources(new RectangleShape(Vector2f(100.0f, 100.0f)), TAVERN_PATH, elementsInformations.tavernInPurchasePanel,
-		new RectangleShape(Vector2f(100.f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.tavernTextInPurchasePanel, "Tavern", _tavernCallback));
-
-	_ressourcesToPurchase.push_back(new PlayerRessources(new RectangleShape(Vector2f(100.0f, 100.0f)), FARM_PATH, elementsInformations.farmInPurchasePanel,
-		new RectangleShape(Vector2f(100.f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.farmTextInPurchasePanel, "Farm", _farmCallback));
-
-	activeElements.push_back(new SelectionPanel(new RectangleShape(Vector2f(600.0f, 400.0f)), "", elementsInformations.purchasePanelPosition,
-		_ressourcesToPurchase, _allCallback, new RectangleShape(Vector2f(100.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.purchaseTitlePosition, "Achat", false));*/
 }
 
 Cell* MapCreator::CellWhoContainsMouss()
