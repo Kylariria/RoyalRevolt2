@@ -9,7 +9,7 @@ Game::Game()
 {
 	windowSize = Vector2f(SCREEN_WIDTH,SCREEN_HEIGHT);
 	name = "Royal Revolt";
-	player = new Player();
+	new Player();
 }
 
 void Game::Launch()

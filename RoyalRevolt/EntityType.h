@@ -9,5 +9,4 @@ enum EntityType
     ENTITY_BUILDINGS,
 
 	ENTITY_DESTROYABLE,
-    ENTITY_GRASS,
 };

@@ -5,6 +5,7 @@
 #include "Map.h"
 #include "Hero.h"
 #include "Removable.h"
+#include "GameInstance.h"
 #include "TowerDefenseBuilding.h"
 
 
@@ -45,7 +46,7 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
             switch (_line[_index])
             {
             case '#':
-                CreateAndAddEntity<Removable>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, ENTITY_GRASS, R_GRASS, _size, "Grass.png");
+                CreateAndAddEntity<Removable>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, ENTITY_DESTROYABLE, R_GRASS, _size, "Grass.png");
                 break;
             case ' ':
                 CreateAndAddEntity<Removable>(_allEntitiesInLine, "Path", Vector2f(_posX, _posY) * _size.x, ENTITY_DESTROYABLE, R_PATH, _size, "Path.png");
@@ -60,7 +61,7 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
                 CreateAndAddEntity<Removable>(_allEntitiesInLine, "Rock", Vector2f(_posX, _posY) * _size.x, ENTITY_DESTROYABLE, R_ROCK, _size, "Rock.png");
                 break;
             case 'P':
-                CreateAndAddEntity<Hero>(_allEntitiesInLine,"Hero",Vector2f(_posX, _posY)* _size.x, _size, "Hero.png", 150, 40);
+				GameInstance::GetInstance().GetPlayer()->SetHero(CreateAndAddEntity<Hero>(_allEntitiesInLine, "Hero", Vector2f(_posX, _posY) * _size.x, _size, "Hero.png", 150, 40));
                 break;
             case 'C':
                 CreateAndAddEntity<TowerDefenseBuilding>(_allEntitiesInLine, "Casern", Vector2f(_posX, _posY) * _size.x, ENTITY_BUILDINGS, nullptr, 200, 0, TDB_CASERN, _size, "Casern.png");

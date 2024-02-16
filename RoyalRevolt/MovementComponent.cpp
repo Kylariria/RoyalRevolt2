@@ -21,11 +21,19 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 	reactions = vector<CollisionReaction>();
 }
 
-void MovementComponent::Move()
+void MovementComponent::Move(bool _isForward)
 {
 	Vector2f _direction = *destination - shape->getPosition();
 	Normalize(_direction);
 	const float _x = (_direction.x * speed) * 0.5f;
 	const float _y = (_direction.y * speed) * 0.5f;
-	shape->move(_x, _y);
+	if (_isForward)
+	{
+		shape->move(_x, _y);
+	}
+	else
+	{
+		shape->move(-_x, -_y);
+
+	}
 }

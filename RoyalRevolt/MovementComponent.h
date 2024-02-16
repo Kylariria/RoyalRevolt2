@@ -66,7 +66,7 @@ public:
 	}
 
 public:
-	void Move();
+	void Move(bool _isForward);
 
 };
 

@@ -46,8 +46,5 @@ void MovingEntity::Update()
 void MovingEntity::TryToMove()
 {
 	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
-	if (!collision->CheckCollision(this, _allEntities, reactions))
-	{
-		movement->Move();
-	}
+	movement->Move(true);
 }

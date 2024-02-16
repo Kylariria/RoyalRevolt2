@@ -3,6 +3,7 @@
 #include "Map.h"
 #include "TimerManager.h"
 #include "EntityManager.h"
+#include "GameInstance.h"
 
 #define PATH_HERO "Hero.png"
 
@@ -10,7 +11,7 @@ Vector2f Player::savedMousePosition;
 
 Player::Player()
 {
-	hero = new Hero("Hero", Vector2f(), Map::GetCellSize(), PATH_HERO, 150, 40);
+	GameInstance::GetInstance().SetPlayer(this);
 	upgradesCounts = UpgradeCounts();
 	spawner = new Spawner();
 	data = RessourcesData();
@@ -31,15 +32,9 @@ void Player::Actions()
 	savedMousePosition = InputManager::GetInstance().GetMousePosition();
 
 	// Si le player est dans TD :
-	if (true /*GetEtat() == ETAT_TD*/)
+	if (hero)
 	{
-		for (Entity* _entityHero : EntityManager::GetInstance().GetAllValues())
-		{
-			if (Hero* _hero = dynamic_cast<Hero*>(_entityHero))
-			{
-				_hero->GetMovementComponent()->SetDestination(savedMousePosition);
-			}
-		}
+		hero->GetMovementComponent()->SetDestination(savedMousePosition);
 	}
 
 	//if (GetEtat() == ETAT_VILLAGE)

@@ -23,12 +23,12 @@
 #define LIFEBAR_FULL "UI/LifeBarFull.png"
 #define LIFEBAR_EMPTY "UI/LifeBarEmpty.png"
 
-TowerDefense::TowerDefense(const string& _name,const Vector2f& _mapSize, const int _level) : Map(_name, _mapSize)
+TowerDefense::TowerDefense(const string& _name, const Vector2f& _mapSize, const int _level) : Map(_name, _mapSize)
 {
 	mapSize = _mapSize;
 	level = _level;
 	allLevel.push_back(PATH_LEVEL1);
-	allLevel.push_back(PATH_LEVEL2);	
+	allLevel.push_back(PATH_LEVEL2);
 	spawnBar = nullptr;
 	lifeBar = nullptr;
 
@@ -69,13 +69,13 @@ void TowerDefense::InitUI()
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(110.0f, 110.0f)), PAUSE_BUTTON_PATH, Vector2f(240.0f, 60.0f),
 		"", _pauseCallback));
 
-		activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), ATTACK_BUTTON_PATH, Vector2f(150.0f, 650.0f),
-			"", _attackCallback));
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), ATTACK_BUTTON_PATH, Vector2f(150.0f, 650.0f),
+		"", _attackCallback));
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), SPELL_BUTTON_PATH, Vector2f(1050.0f, 650.0f),
 		"", _spellCallback));
 
-	#pragma region SpawnAllies
+#pragma region SpawnAllies
 
 	RectangleShape* _spawnBar = new RectangleShape(Vector2f(450.0f, 50.0f));
 	Vector2f _spawnPos = Vector2f(25.0f, 730.0f);
@@ -83,9 +83,9 @@ void TowerDefense::InitUI()
 	spawnBar = new MovingBar(_spawnBar, _pathsSpawn, _spawnPos, 100, 100);
 	activeElements.push_back(spawnBar);
 
-	#pragma endregion
+#pragma endregion
 
-	#pragma region LifeBar
+#pragma region LifeBar
 
 	RectangleShape* _lifeBar = new RectangleShape(Vector2f(140.0f, 80.0f));
 	Vector2f _lifePos = Vector2f(15.0f, 80.0f);
@@ -95,8 +95,8 @@ void TowerDefense::InitUI()
 
 	//TODO => A revoir
 	GameInstance::GetInstance().GetPlayer()->GetHero()->health = lifeBar->actualValue;
-	
-	#pragma endregion
+
+#pragma endregion
 
 }
 
@@ -161,6 +161,8 @@ void TowerDefense::Display()
 		WINDOW.draw(*_entity->GetShape());
 	}
 
+	WINDOW.draw(*GameInstance::GetInstance().GetPlayer()->GetHero()->GetShape());
+	
 	WINDOW.draw(*character);
 
 	WINDOW.display();

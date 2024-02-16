@@ -39,10 +39,12 @@ public:
 	void SaveMap(const vector<vector<Cell*>> _map, const string& _path);
 
     template <typename T, typename... Args>
-    void CreateAndAddEntity(vector<Entity*>& _allElements, Args... _args)
+    T* CreateAndAddEntity(vector<Entity*>& _allElements, Args... _args)
     {
         T* _newElement = new T(Args(_args)...);
 
         _allElements.push_back(_newElement);
+
+        return _newElement;
     }
 };

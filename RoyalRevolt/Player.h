@@ -105,6 +105,10 @@ public:
 	{
 		data.bread += 20;
 	}
+	void SetHero(Hero* _hero)
+	{
+		hero = _hero;
+	}
 public:
 	Player();
 
