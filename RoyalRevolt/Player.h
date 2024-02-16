@@ -23,7 +23,7 @@ struct RessourcesData
 	{
 		bread = 200;
 		diamond = 50;
-		money = 0;
+		money = 9999;
 	}
 };
 
@@ -89,6 +89,19 @@ public:
 		return savedMousePosition;
 	}
 
+	void RemoveGold(const int _value)
+	{
+		data.money -= _value;
+	}
+
+	void AddMoney(const int _value)
+	{
+		data.money += _value;
+	}
+	void UpdateBreadLimit()
+	{
+		data.bread += 20;
+	}
 public:
 	Player();
 

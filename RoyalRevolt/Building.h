@@ -6,6 +6,7 @@ using namespace std;
 
 class Building : public Entity
 {
+protected:
     function<void()> callback;
 
 public:

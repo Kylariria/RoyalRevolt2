@@ -63,6 +63,7 @@ static bool IsSameName(const string& _name1, const string& _name2)
 	size_t _size1 = _name1.size();
 	size_t _size2 = _name2.size();
 	size_t _size = 0;
+	
 	bool _isSame = true;
 
 	if (_size1< _size2)
