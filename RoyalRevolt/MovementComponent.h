@@ -21,7 +21,7 @@ public:
 	void SetCanMove(const bool _status)
 	{
 		canMove = _status;
-		//TODO : crash a certain moment
+
 	}
 	void SetDestination(const Vector2f& _destination)
 	{

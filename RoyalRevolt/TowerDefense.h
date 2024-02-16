@@ -55,7 +55,6 @@ public:
 	void UpdateActiveElements(Event _event);
 
 	void Spawn();
-	void Spell();
 	void Pause();
 
 	void Display();

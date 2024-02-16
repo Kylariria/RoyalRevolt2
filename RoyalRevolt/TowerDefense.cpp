@@ -59,7 +59,7 @@ void TowerDefense::Launch()
 void TowerDefense::InitUI()
 {
 	function<void()> _attackCallback = [&]() { Spawn(); };
-	function<void()> _spellCallback = [&]() {cout << "KABOUM !"; Spell();  };
+	function<void()> _spellCallback = [&]() {cout << "KABOUM !"; };
 	function<void()> _pauseCallback = [&]() { Pause(); };
 
 	Vector2f _characterPos = Vector2f(30.0f, 10.0f);
@@ -93,7 +93,7 @@ void TowerDefense::InitUI()
 	lifeBar = new MovingBar(_lifeBar, _pathsLife, _lifePos, 150, 150);
 	activeElements.push_back(lifeBar);
 
-	//TODO => A revoir
+
 	GameInstance::GetInstance().GetPlayer()->GetHero()->health = lifeBar->actualValue;
 
 #pragma endregion
@@ -135,11 +135,6 @@ void TowerDefense::Spawn()
 	_spawn.Spawn();
 
 	spawnBar->actualValue -= 10;
-}
-
-void TowerDefense::Spell()
-{
-	//TODO
 }
 
 void TowerDefense::Pause()

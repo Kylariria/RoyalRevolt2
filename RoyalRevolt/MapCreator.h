@@ -50,8 +50,8 @@ struct MapCreatorInformations
 
 class MapCreator : public Map
 {
-	FileManager _fileManager;
-	Entity* _currentEntity;
+	FileManager fileManager;
+	Entity* currentEntity;
 
 	vector<BasicElement*> passiveElements;
 	vector<BasicElement*> activeElements;
@@ -74,7 +74,7 @@ public:
 				_cell->cellShape->setOutlineThickness(1.0f);
 				_cell->cellShape->setOutlineColor(Color::Black);
 				_drawables.push_back(_cell->cellShape);
-				//TODO voir pour modifier
+
 				if (_cell->entityOnCell != nullptr)
 				{
 					_drawables.push_back(_cell->entityOnCell->GetShape());

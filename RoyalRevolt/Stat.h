@@ -2,10 +2,10 @@
 
 struct Stat
 {
-	float health;
-	float damage;
+	int health;
+	int damage;
 public :
-	Stat(float _health, float _damage)
+	Stat(const int _health, const int _damage)
 	{
 		health = _health;
 		damage = _damage;

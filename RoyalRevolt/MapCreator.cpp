@@ -19,7 +19,7 @@ MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_nam
 	ifstream _stream("LevelEditor/MyLevel.txt");
 	if (_stream)
 	{
-		vector<vector<Entity*>> _map = _fileManager.CreateEntityFromChar("LevelEditor/MyLevel.txt");
+		vector<vector<Entity*>> _map = fileManager.CreateEntityFromChar("LevelEditor/MyLevel.txt");
 		for (int _i = 0; _i < _map.size(); _i++)
 		{
 			for (int _index = 0; _index < _map[0].size(); _index++)
@@ -57,14 +57,11 @@ void MapCreator::Launch()
 
 void MapCreator::Update()
 {
-	// similaire au village sauf qu au lieu que se soit des ferme, etc ... c les REMOVABLE
-	//quand on depose sa enrgiste dans le map qui est constituer
 
 	while (WINDOW.isOpen())
 	{
 		UpdateEvent();
 		Display();
-		//_fileManager.SaveMap(cells, "LevelEditor/MyLevel.txt");
 	}
 
 }
@@ -76,7 +73,7 @@ void MapCreator::UpdateEvent()
 	{
 		if (_event.type == Event::Closed)
 		{
-			_fileManager.SaveMap(cells, "LevelEditor/MyLevel.txt");
+			fileManager.SaveMap(cells, "LevelEditor/MyLevel.txt");
 			WINDOW.close();
 		}
 		InputManager::GetInstance().Update(WINDOW, _event);
@@ -118,16 +115,16 @@ void MapCreator::Display()
 void MapCreator::InitUI()
 {
 	function<int()> _pathDisplayCallback = [&]() {return (mapCreatorInformations.pathSize); };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_PATH, mapCreatorInformations.pathIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathTextPosition, to_string(mapCreatorInformations.pathSize), _pathDisplayCallback));
+	passiveElements.push_back(new PlayerRessourceWithMaxValue(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_PATH, mapCreatorInformations.pathIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathTextPosition, to_string(mapCreatorInformations.pathSize), _pathDisplayCallback, mapCreatorInformations.pathSizeMax));
 
 	function<int()> _towerDisplayCallback = [&]() {return mapCreatorInformations.towerCount; };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_TOWERS, mapCreatorInformations.towerIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.towerTextPosition, to_string(mapCreatorInformations.towerCount), _towerDisplayCallback));
+	passiveElements.push_back(new PlayerRessourceWithMaxValue(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_TOWERS, mapCreatorInformations.towerIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.towerTextPosition, to_string(mapCreatorInformations.towerCount), _towerDisplayCallback, mapCreatorInformations.towerCountMax));
 
 	function<int()> _trapDisplayCallback = [&]() {return mapCreatorInformations.trapCount; };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_OBSTACLES, mapCreatorInformations.trapIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.trapTextPosition, to_string(mapCreatorInformations.trapCount), _trapDisplayCallback));
+	passiveElements.push_back(new PlayerRessourceWithMaxValue(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_OBSTACLES, mapCreatorInformations.trapIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.trapTextPosition, to_string(mapCreatorInformations.trapCount), _trapDisplayCallback, mapCreatorInformations.trapCountMax));
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
 	
@@ -173,32 +170,7 @@ void MapCreator::PlaceEntityOnTheCell()
 	{
 		if (_cell!= nullptr)
 		{
-			cout << _cell->cellShape->getPosition().x << _cell->cellShape->getPosition().y << endl;
-
-			//TODO recevoir se qu on veut placer
-
-			//if (_cell != )
-			//{
-			//	//_cell=
-
-			//	switch (/*type de se qu on veut placer*/)
-			//	{
-			//	case R_PATH:
-			//		mapCreatorInformations.pathSize += 1;
-			//		break;
-			//	case TDB_TOWER:
-			//		mapCreatorInformations.towerCount += 1;
-			//		break;
-			//	case TDB_FENCE:
-			//		mapCreatorInformations.trapCount += 1;
-			//		break;
-			//	case TDB_TRAP:
-			//		mapCreatorInformations.trapCount += 1;
-			//		break;
-			//	default:
-			//		break;
-			//	}
-			//}
+			cout << _cell->cellShape->getPosition().x << _cell->cellShape->getPosition().y << endl;			
 		}
 	}
 }
