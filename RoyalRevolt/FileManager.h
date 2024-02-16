@@ -23,26 +23,26 @@ using namespace std;
 class FileManager : public Singleton<FileManager>
 {
 
-	void ResetFill(const string& _path)
-	{
+    void ResetFill(const string& _path)
+    {
 
-		ifstream _ifstream;
-		_ifstream = ifstream(_path);
+        ifstream _ifstream;
+        _ifstream = ifstream(_path);
 
-	}
+    }
 
 public:
+
+
 	vector<vector<Entity*>> CreateEntityFromChar( const string& _path);
 	Vector2f GetSizeFill( const string& _path);
 	void SaveMap(const vector<vector<Cell*>> _map, const string& _path);
 
+    template <typename T, typename... Args>
+    void CreateAndAddEntity(vector<Entity*>& _allElements, Args... _args)
+    {
+        T* _newElement = new T(Args(_args)...);
 
-	template <typename T, typename... Args>
-	void CreateAndAddEntity(vector<Entity*>& _allElements, Args... _args)
-	{
-		T* _newElement = new T(Args(_args)...);
-
-		_allElements.push_back(_newElement);
-	}
+        _allElements.push_back(_newElement);
+    }
 };
-

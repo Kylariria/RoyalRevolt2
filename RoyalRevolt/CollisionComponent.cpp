@@ -29,7 +29,7 @@ bool CollisionComponent::CheckCollision(Entity* _currentEntity, const vector<Ent
 				{
 					//on effectue les réactions
 					_reaction.callbacks(_entity);
-					_hasCollide = true;
+					return true;
 				}
 
 			}

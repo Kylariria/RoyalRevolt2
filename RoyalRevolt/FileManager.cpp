@@ -45,7 +45,7 @@ vector<vector<Entity*>> FileManager::CreateEntityFromChar(const string& _path)
             switch (_line[_index])
             {
             case '#':
-                CreateAndAddEntity<Removable>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, ENTITY_DESTROYABLE, R_GRASS, _size, "Grass.png");
+                CreateAndAddEntity<Removable>(_allEntitiesInLine,"Grass",Vector2f(_posX, _posY)* _size.x, ENTITY_GRASS, R_GRASS, _size, "Grass.png");
                 break;
             case ' ':
                 CreateAndAddEntity<Removable>(_allEntitiesInLine, "Path", Vector2f(_posX, _posY) * _size.x, ENTITY_DESTROYABLE, R_PATH, _size, "Path.png");

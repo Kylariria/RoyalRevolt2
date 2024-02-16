@@ -100,8 +100,10 @@ public:
 	void UpdatePassiveElements();
 	void TogglePurchasePanel();
 	void Battle();
-	void AddFarm();
-	void AddTavern();
+	void UpgradeFarm();
+	void UpgradeSelectedElement();
+	void UpgradeCasern();
+	void NotEnoughGold();
 
 	void Display();
 };

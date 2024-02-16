@@ -73,7 +73,7 @@ void Village::InitUI()
 	vector<PlayerRessources*> _panelElements;
 	vector<function<int()>> _callbackElements;
 
-	_callbackElements.push_back([&]() {; return 0; });
+	_callbackElements.push_back([&]() {UpgradeSelectedElement(); return 0; });
 
 	_panelElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(50.0f, 50.0f)), GOLD_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f),
 		new RectangleShape(Vector2f(50.0f, 50.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.4f), "", [&]() { return 0; }));
@@ -81,14 +81,17 @@ void Village::InitUI()
 	activeElements.push_back(new SelectionPanel(new RectangleShape(Vector2f(400.0f, 400.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.5f),
 		_panelElements, _callbackElements,new RectangleShape(Vector2f(100.f,50.0f)),FONT_TEXTURE_PATH,Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.3f),"Purchase",false));
 
-	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(200.0f, 50.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.8f, SCREEN_HEIGHT * 0.8f), "", false));
+	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(200.0f, 50.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.45f, SCREEN_HEIGHT * 0.6f), "", false));
+
+	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(200.0f, 50.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "You don't have enough gold", false));
 }
 
 void Village::AddBuilding()
 {
-	buildings->farm = new VillageBuilding("Farm", Vector2f(), ENTITY_BUILDINGS, nullptr, VB_FARM,"Farm", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
-	buildings->tavern = new VillageBuilding("Tavern", Vector2f(), ENTITY_BUILDINGS, nullptr, VB_TAVERN, "Tavern", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
-	buildings->casern = new VillageBuilding("Casern", Vector2f(), ENTITY_BUILDINGS, nullptr, VB_CASERN, "Casern", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
+	new Timer("GoldTimer", [&]() {PLAYER->AddMoney(1); }, seconds(3.0f), false, true);
+	buildings->farm = new VillageBuilding("Farm", Vector2f(), ENTITY_BUILDINGS, [&]() {PLAYER->UpdateBreadLimit(); }, VB_FARM, "Farm", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
+	buildings->tavern = new VillageBuilding("Tavern", Vector2f(), ENTITY_BUILDINGS, [&]() {TimerManager::GetInstance().Get("GoldTimer")->Start(); }, VB_TAVERN, "Tavern", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
+	buildings->casern = new VillageBuilding("Casern", Vector2f(), ENTITY_BUILDINGS, [&]() {; }, VB_CASERN, "Casern", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
 }
 
 void Village::Update()
@@ -133,13 +136,13 @@ void Village::UpdatePassiveElements()
 void Village::TogglePurchasePanel()
 {
 	SelectionPanel* _panel = dynamic_cast<SelectionPanel*>(activeElements[5]);
-	_panel->title.text.setString(buildings->selectedBuilding->GetName());
+	_panel->title.text.setString(buildings->selectedBuilding->GetName() + " : " + to_string(buildings->selectedBuilding->GetLevel()));
 	
 	_panel->SetDrawAllElements(!activeElements[5]->isDraw);
 
 
 	SpecialText* _text = dynamic_cast<SpecialText*>(passiveElements[4]);
-	_text->text.setString("Price : " + (buildings->selectedBuilding->GetLevel() * 30) + 10);
+	_text->text.setString("Price : " + to_string(buildings->selectedBuilding->GetLevel() * 30 + 10));
 
 	_text->isDraw = !_text->isDraw;
 
@@ -150,17 +153,29 @@ void Village::Battle()
 	GameInstance::GetInstance().LaunchTD();
 }
 
-void Village::AddFarm()
+
+void Village::UpgradeSelectedElement()
 {
+	const int _value = buildings->selectedBuilding->GetLevel() * 30 + 10;
+	if (PLAYER->GetMoney() >= _value)
+	{
+		PLAYER->RemoveGold(_value);
+		buildings->selectedBuilding->UpgradeLevel();
+	}
+	else
+	{
+		NotEnoughGold();
+	}
+
 	TogglePurchasePanel();
-	passiveElements[3]->isDraw = true;
 }
 
-void Village::AddTavern()
+void Village::NotEnoughGold()
 {
-	TogglePurchasePanel();
-	passiveElements[3]->isDraw = true;
+	passiveElements[5]->isDraw = true;
+	new Timer("hideText", [&]() {passiveElements[5]->isDraw = false; }, seconds(3.0f));
 }
+
 
 void Village::Display()
 {

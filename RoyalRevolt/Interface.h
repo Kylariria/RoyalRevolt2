@@ -201,7 +201,7 @@ struct SpecialText : public BasicElement
 
 	void Update(Event _event = Event())
 	{
-
+		
 	}
 };
 
