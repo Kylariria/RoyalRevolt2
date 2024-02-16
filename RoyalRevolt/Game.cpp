@@ -16,7 +16,7 @@ void Game::Launch()
 {
 	//GameInstance::GetInstance().LaunchMapCreator();
 
-	//GameInstance::GetInstance().LaunchVillage();
+	GameInstance::GetInstance().LaunchVillage();
 	
 	//GameInstance::GetInstance().LaunchTD();
 

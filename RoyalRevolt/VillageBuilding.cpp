@@ -4,7 +4,6 @@ VillageBuilding::VillageBuilding() : Building("",Vector2f(),ENTITY_NONE,nullptr)
 {
 	name = "";
 	type = VB_TAVERN;
-	timer = nullptr;
 	level = 0;
 }
 
@@ -13,6 +12,13 @@ VillageBuilding::VillageBuilding(const string& _name, const Vector2f& _position,
 {
 	name = _structureName;
 	type = _typeBuilding;
-	timer = nullptr;
 	level = 0;
+}
+
+void VillageBuilding::InitTimer()
+{
+	if (level == 1)
+	{
+		callback();
+	}
 }
