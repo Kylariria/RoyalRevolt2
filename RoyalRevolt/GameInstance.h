@@ -26,10 +26,14 @@ public:
 	{
 		return player;
 	}
+	void SetPlayer(Player* _player)
+	{
+		player = _player;
+	}
+	
 
 public:
 	GameInstance();
-	~GameInstance();
 
 public:
 	void LaunchTD();

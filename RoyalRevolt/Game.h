@@ -14,7 +14,7 @@ class Game
 	RenderWindow window;
 	Vector2f windowSize;
 	string name;
-	Player* player;
+
 
 	Spawner* spawner;
 public:
