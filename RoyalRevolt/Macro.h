@@ -57,3 +57,31 @@ static Vector2f GetRandomPosition()
 {
 	return Vector2f(static_cast<float>(Random(SCREEN_WIDTH)), static_cast<float>(Random(SCREEN_HEIGHT)));
 }
+
+static bool IsSameName(const string& _name1, const string& _name2)
+{
+    size_t _size1 = _name1.size();
+	size_t _size2 = _name2.size();
+	size_t _size = 0;
+    bool _isSame = true;
+
+	_size1 < _size2 ? _size = _size1 : _size = _size2;
+
+	for (size_t _i = 0; _i < _size; _i++)
+	{
+
+		if (!_isSame)
+		{
+			return false;
+		}
+
+		else if (_name1[_i] == _name2[_i])
+		{
+			_isSame = true;
+		}
+	}
+	return _isSame;
+}
+
+
+    

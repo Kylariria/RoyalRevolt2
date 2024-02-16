@@ -12,4 +12,6 @@ public:
 
 public:
     void Attack(const Entity& _entityDamaged);
+
+    void WallCollide(Shape* _shape);
 };

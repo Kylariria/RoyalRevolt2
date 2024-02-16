@@ -21,6 +21,7 @@ MovingEntity::~MovingEntity()
 void MovingEntity::Update()
 {
 	Entity::Update();
+
 	const vector<Entity*> _allEntities = EntityManager::GetInstance().GetAllValues();
 	// si c le Hero
 	if (Entity::GetEntityData()->type == ENTITY_NONE)

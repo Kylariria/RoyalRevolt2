@@ -23,7 +23,6 @@ MovementComponent::MovementComponent(MovingEntity* _owner, Shape* _shape, const 
 
 void MovementComponent::Move()
 {
-
 	Vector2f _direction = *destination - shape->getPosition();
 	Normalize(_direction);
 	const float _x = (_direction.x * speed) * 0.5f;
