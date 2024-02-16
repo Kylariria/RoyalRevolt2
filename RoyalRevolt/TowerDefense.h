@@ -9,7 +9,8 @@ class TowerDefense : public Map
 	Vector2f mapSize;
 	int level;
 
-	MovingBar* movingBar;
+	MovingBar* spawnBar;
+	MovingBar* lifeBar;
 
 	vector<BasicElement*> activeElements;
 	Shape* character;
@@ -43,7 +44,8 @@ public:
 
 	~TowerDefense()
 	{
-		delete movingBar;
+		delete spawnBar;
+		delete lifeBar;
 
 		for (BasicElement* _element : activeElements)
 		{

@@ -4,7 +4,7 @@ struct Stat
 {
 	int health;
 	int damage;
-public:
+public :
 	Stat(int _health, int _damage)
 	{
 		health = _health;
