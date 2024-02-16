@@ -384,3 +384,33 @@ struct SelectionPanel : public BasicElement
 		}
 	}
 };
+
+
+struct PlayerRessourceWithMaxValue : public PlayerRessources
+{
+	int maxValue;
+
+	PlayerRessourceWithMaxValue() : PlayerRessources()
+	{
+		maxValue = 0;
+	}
+	PlayerRessourceWithMaxValue(Shape* _shape, const string& _paths, const Vector2f& _position,
+		Shape* _specialShape, const string& _specialPaths, const Vector2f& _specialPosition,
+		const string& _text, const function<int()>& _callback, const int _maxValue,
+		const bool _isDraw = true) : PlayerRessources(_shape, _paths,_position, _specialShape, _specialPaths, _specialPosition, _text,_callback,_isDraw)
+	{
+		maxValue = _maxValue;
+	}
+	virtual void PutInDrawables(vector<Drawable*>& _drawables) override
+	{
+		text.PutInDrawables(_drawables);
+
+		_drawables.push_back(shape);
+	}
+
+	void Update(Event _event = Event())
+	{
+		text.text.setString(to_string(callback()) + " / " + to_string(maxValue));
+	}
+
+};

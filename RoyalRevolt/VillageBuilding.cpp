@@ -14,11 +14,3 @@ VillageBuilding::VillageBuilding(const string& _name, const Vector2f& _position,
 	type = _typeBuilding;
 	level = 0;
 }
-
-void VillageBuilding::InitTimer()
-{
-	if (level == 1)
-	{
-		callback();
-	}
-}

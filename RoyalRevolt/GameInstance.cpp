@@ -72,14 +72,3 @@ void GameInstance::LaunchMapCreator()
 		_mapCreator->Launch();
 	}
 }
-
-void GameInstance::LaunchMapManger()
-{
-	/*for (Map* _map : mapManager.GetAllValues())
-{
-	if (MapCreator* _mapCreator = dynamic_cast<MapCreator*>(_map))
-	{
-		_mapCreator->Launch();
-	}
-}*/
-}

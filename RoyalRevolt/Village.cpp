@@ -56,7 +56,7 @@ void Village::InitUI()
 		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, elementsInformations.LevelTextPosition,to_string(PLAYER->GetLevel()), _levelDisplayCallback));
 
 	function<void()> _battleCallback = [&]() {cout << "Battle !"; Battle(); };
-	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !";	};
+	function<void()> _upgradeCallback = [&]() {cout << "Upgrade !"; MapCreator();	};
 
 	activeElements.push_back(new Button(new RectangleShape(Vector2f(150.0f, 150.0f)), BATTLE_BUTTON_PATH, elementsInformations.battleButtonPosition,
 		"", _battleCallback));
@@ -88,7 +88,7 @@ void Village::InitUI()
 
 void Village::AddBuilding()
 {
-	new Timer("GoldTimer", [&]() {PLAYER->AddMoney(1); }, seconds(3.0f), false, true);
+	new Timer("GoldTimer", [&]() {PLAYER->AddMoney(buildings->tavern->GetLevel() * 2); }, seconds(2.0f), false, true);
 	buildings->farm = new VillageBuilding("Farm", Vector2f(), ENTITY_BUILDINGS, [&]() {PLAYER->UpdateBreadLimit(); }, VB_FARM, "Farm", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
 	buildings->tavern = new VillageBuilding("Tavern", Vector2f(), ENTITY_BUILDINGS, [&]() {TimerManager::GetInstance().Get("GoldTimer")->Start(); }, VB_TAVERN, "Tavern", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
 	buildings->casern = new VillageBuilding("Casern", Vector2f(), ENTITY_BUILDINGS, [&]() {; }, VB_CASERN, "Casern", Vector2f(100.0f, 100.0f), FARM_PATH, 0, false);
@@ -153,6 +153,11 @@ void Village::Battle()
 	GameInstance::GetInstance().LaunchTD();
 }
 
+void Village::MapCreator()
+{
+	GameInstance::GetInstance().LaunchMapCreator();
+}
+
 
 void Village::UpgradeSelectedElement()
 {
@@ -164,13 +169,13 @@ void Village::UpgradeSelectedElement()
 	}
 	else
 	{
-		NotEnoughGold();
+		ShowInfoText();
 	}
 
 	TogglePurchasePanel();
 }
 
-void Village::NotEnoughGold()
+void Village::ShowInfoText()
 {
 	passiveElements[5]->isDraw = true;
 	new Timer("hideText", [&]() {passiveElements[5]->isDraw = false; }, seconds(3.0f));

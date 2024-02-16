@@ -224,6 +224,9 @@
       <Filter>RoyalRevolt2\H</Filter>
     </ClInclude>
     <ClInclude Include="VillageBuilding.h" />
+    <ClInclude Include="Interface.h">
+      <Filter>RoyalRevolt2\H</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="RoyalRevolt2">

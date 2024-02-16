@@ -35,6 +35,5 @@ public:
 	void LaunchTD();
 	void LaunchVillage();
 	void LaunchMapCreator();
-	void LaunchMapManger();
 };
 

@@ -65,6 +65,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="Interface.h" />
     <ClInclude Include="Stat.h" />
     <ClInclude Include="EntityType.h" />
     <ClInclude Include="FileManager.h" />
