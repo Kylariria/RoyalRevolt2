@@ -6,29 +6,16 @@
 #include "TowerDefenseBuilding.h"
 
 #define FONT_TEXTURE_PATH "UI/Text_Background.png"
+#define PATH_OBSTACLES "UI/Obstacle.png"
+#define PATH_TOWERS "UI/Tower.png"
+#define PATH_PATH "UI/Path.png"
+
 #define PATH_BUTTON_OBSTACLES "UI/ButtonObstacle.png"
 #define PATH_BUTTON_TOWERS "UI/ButtonTower.png"
 #define PATH_BUTTON_PATH "UI/ButtonPath.png"
 
-
 MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_name, _mapSize)
 {
-	/*_currentEntity = new Grass("Grass", Vector2f(100.0f, 20.0f), Vector2f(50.0f, 50.0f), "Grass.png");
-
-	for (int _index = 0; _index < _mapSize.x; _index++)
-	{
-		for (int _i = 0; _i < _mapSize.y; _i++)
-		{
-			Grass* _grass= new Grass("Grass", Vector2f(100.0f, 20.0f), Vector2f(50.0f, 50.0f), "Grass.png");
-			cells[_index][_i]->entityOnCell = _grass;
-			_grass->GetShape()->setPosition(cells[_index][_i]->cellShape->getPosition());
-			_grass->GetShape()->setScale(cells[_index][_i]->cellShape->getScale());
-			cells[_index][_i]->cellShape = _grass->GetShape();
-		}
-
-	}*/
-
-
 	ifstream _stream("LevelEditor/MyLevel.txt");
 	if (_stream)
 	{
@@ -45,13 +32,26 @@ MapCreator::MapCreator(const string& _name, const Vector2f& _mapSize) : Map(_nam
 	}
 
 	mapCreatorInformations = MapCreatorInformations();
+	passiveElements = vector<BasicElement*>();
+	activeElements = vector<BasicElement*>();
 	InitUI();
+}
+
+MapCreator::~MapCreator()
+{
+	for (BasicElement* _element : activeElements)
+	{
+		delete _element;
+	}
+
+	for (BasicElement* _element : passiveElements)
+	{
+		delete _element;
+	}
 }
 
 void MapCreator::Launch()
 {
-	
-
 	Update();
 }
 
@@ -63,7 +63,6 @@ void MapCreator::Update()
 	while (WINDOW.isOpen())
 	{
 		UpdateEvent();
-		UpdatePassiveElements();
 		Display();
 		//_fileManager.SaveMap(cells, "LevelEditor/MyLevel.txt");
 	}
@@ -81,18 +80,21 @@ void MapCreator::UpdateEvent()
 			WINDOW.close();
 		}
 		InputManager::GetInstance().Update(WINDOW, _event);
-
+		UpdateElements(_event);
 		PlaceEntityOnTheCell();
-		
-
 	}
 }
 
-void MapCreator::UpdatePassiveElements()
+void MapCreator::UpdateElements(const Event& _event)
 {
 	for (BasicElement* _element : passiveElements)
 	{
-		if (_element->GetIsDraw()) _element->Update(Event());
+		if (_element->GetIsDraw()) _element->Update(_event);
+	}
+
+	for (BasicElement* _element : activeElements)
+	{
+		if (_element->GetIsDraw()) _element->Update(_event);
 	}
 }
 
@@ -115,20 +117,36 @@ void MapCreator::Display()
 
 void MapCreator::InitUI()
 {
-
 	function<int()> _pathDisplayCallback = [&]() {return (mapCreatorInformations.pathSize); };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_PATH, mapCreatorInformations.pathIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathTextPosition, to_string(PLAYER->GetMoney()), _pathDisplayCallback));
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_PATH, mapCreatorInformations.pathIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.pathTextPosition, to_string(mapCreatorInformations.pathSize), _pathDisplayCallback));
 
 	function<int()> _towerDisplayCallback = [&]() {return mapCreatorInformations.towerCount; };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_TOWERS, mapCreatorInformations.towerIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.towerTextPosition, to_string(PLAYER->GetMoney()), _towerDisplayCallback));
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_TOWERS, mapCreatorInformations.towerIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.towerTextPosition, to_string(mapCreatorInformations.towerCount), _towerDisplayCallback));
 
 	function<int()> _trapDisplayCallback = [&]() {return mapCreatorInformations.trapCount; };
-	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_BUTTON_OBSTACLES, mapCreatorInformations.trapIconPosition,
-		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.trapTextPosition, to_string(PLAYER->GetMoney()), _trapDisplayCallback));
+	passiveElements.push_back(new PlayerRessources(new RectangleShape(Vector2f(60.0f, 60.0f)), PATH_OBSTACLES, mapCreatorInformations.trapIconPosition,
+		new RectangleShape(Vector2f(150.0f, 50.0f)), FONT_TEXTURE_PATH, mapCreatorInformations.trapTextPosition, to_string(mapCreatorInformations.trapCount), _trapDisplayCallback));
 
 	passiveElements.push_back(new SpecialText(new RectangleShape(Vector2f(350.0f, 60.0f)), FONT_TEXTURE_PATH, Vector2f(SCREEN_WIDTH * 0.5f, SCREEN_HEIGHT * 0.2f), "Add a bew Building", false));
+	
+
+	#pragma region Buttons
+
+	function<void()> _pathCallback = [&]() { cout << "Path" << endl; };
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(110.0f, 110.0f)), PATH_BUTTON_PATH, Vector2f(1050.0f, 200.0f),
+		"", _pathCallback));
+
+	function<void()> _towerCallback = [&]() { cout << "Tower" << endl; };
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(110.0f, 110.0f)), PATH_BUTTON_TOWERS, Vector2f(1050.0f, 350.0f),
+		"", _towerCallback));
+
+	function<void()> _obstacleCallback = [&]() { cout << "Obstacle" << endl; };
+	activeElements.push_back(new Button(new RectangleShape(Vector2f(110.0f, 110.0f)), PATH_BUTTON_OBSTACLES, Vector2f(1050.0f, 500.0f),
+		"", _obstacleCallback));
+
+	#pragma endregion
 }
 
 Cell* MapCreator::CellWhoContainsMouss()

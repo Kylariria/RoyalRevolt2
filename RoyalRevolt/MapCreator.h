@@ -22,6 +22,9 @@ struct MapCreatorInformations
 	int trapCount;
 	int trapCountMax;
 
+	Vector2f pathButtonPosition;
+	Vector2f towerButtonPosition;
+	Vector2f trapButtonPosition;
 
 	MapCreatorInformations()
 	{
@@ -40,7 +43,6 @@ struct MapCreatorInformations
 		trapTextPosition = Vector2f(SCREEN_WIDTH * 0.125f, SCREEN_HEIGHT * 0.25f);
 		trapCount = 0;
 		trapCountMax = 5;
-
 	}
 };
 
@@ -50,8 +52,12 @@ class MapCreator : public Map
 {
 	FileManager _fileManager;
 	Entity* _currentEntity;
+
 	vector<BasicElement*> passiveElements;
+	vector<BasicElement*> activeElements;
+
 	MapCreatorInformations mapCreatorInformations;
+
 public:
 	vector<Drawable*> GetDrawables()
 	{
@@ -76,22 +82,28 @@ public:
 			}
 		}
 
+		for (BasicElement* _element : activeElements)
+		{
+			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
+		}
 		for (BasicElement* _element : passiveElements)
 		{
 			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
 		}
+
 
 		return _drawables;
 	}
 
 public:
 	MapCreator(const string& _name, const Vector2f& _mapSize);
+	~MapCreator();
 
 public:
 	void Launch();
 	void Update();
 	void UpdateEvent();
-	void UpdatePassiveElements();
+	void UpdateElements(const Event& _event);
 	void Display();
 	void InitUI();
 

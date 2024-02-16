@@ -68,12 +68,9 @@ void GameInstance::LaunchMapCreator()
 	}
 	if (!_hasLaunch)
 	{
-		MapCreator* _mapCreator = new MapCreator("TowerDefence", Vector2f(15.0f,20.0f));
+		MapCreator* _mapCreator = new MapCreator("MapCreator", Vector2f(10.0f,10.0f));
 		_mapCreator->Launch();
 	}
-
-
-
 }
 
 void GameInstance::LaunchMapManger()
