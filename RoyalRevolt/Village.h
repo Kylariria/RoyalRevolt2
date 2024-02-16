@@ -7,6 +7,8 @@
 
 struct VillageInformations
 {
+	VillageBuilding* selectedBuilding;
+
 	VillageBuilding* farm;
 	VillageBuilding* tavern;
 	VillageBuilding* casern;
@@ -54,7 +56,7 @@ struct ElementsInformations
 
 class Village : public Map
 {
-	VillageInformations buildings;
+	VillageInformations* buildings;
 
 	ElementsInformations elementsInformations;
 
