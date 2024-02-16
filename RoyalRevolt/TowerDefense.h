@@ -24,14 +24,6 @@ public:
 		vector<Drawable*> _cellDrawables = GetCellsDrawables();
 		_drawables.insert(_drawables.begin(), _cellDrawables.begin(), _cellDrawables.end());
 
-		for (vector<Cell*> _cells : cells)
-		{
-			for (Cell* _cell : _cells)
-			{
-				_drawables.push_back(_cell->cellShape);
-			}
-		}
-
 		for (BasicElement* _element : activeElements)
 		{
 			if (_element->GetIsDraw()) _element->PutInDrawables(_drawables);
