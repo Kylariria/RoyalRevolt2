@@ -36,6 +36,7 @@ public:
 	GameInstance();
 
 public:
+	void LaunchMenu();
 	void LaunchTD();
 	void LaunchVillage();
 	void LaunchMapCreator();

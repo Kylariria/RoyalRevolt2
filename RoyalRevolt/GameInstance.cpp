@@ -3,6 +3,7 @@
 #include "MapCreator.h"
 #include "Village.h"
 #include "FileManager.h"
+#include "Menu.h"
 
 #define PATH_LEVEL1 "LevelEditor/Level1.txt"
 #define PATH_LEVEL2 "LevelEditor/Level2.txt"
@@ -10,6 +11,12 @@
 
 GameInstance::GameInstance()
 {
+}
+
+void GameInstance::LaunchMenu()
+{
+	Menu _menu;
+	_menu.Launch();
 }
 
 void GameInstance::LaunchTD()
